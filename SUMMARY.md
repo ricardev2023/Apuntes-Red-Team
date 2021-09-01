@@ -7,7 +7,8 @@
 
 ## RECON <a id="reconocimiento"></a>
 
-* [Fuzzing \(traducir\)](reconocimiento/fuzzing.md)
+* [FUZZING](reconocimiento/fuzzing-1/README.md)
+  * [WFUZZ](reconocimiento/fuzzing-1/fuzzing.md)
 
 ## SERVICES HACKING \(LINUX\)
 
@@ -25,12 +26,15 @@
   * [1. Instalación de Windows Server 2016](active-directory-hacking/creando-un-laboratorio-de-ad/1.-instalacion-de-windows-server-2016.md)
   * [2. ROL DE ACTIVE DIRECTORY](active-directory-hacking/creando-un-laboratorio-de-ad/2.-rol-de-active-directory.md)
   * [3. MALAS PRÁCTICAS NECESARIAS](active-directory-hacking/creando-un-laboratorio-de-ad/3.-misconfiguraciones-importantes.md)
-* [SMB RELAY](active-directory-hacking/smb-relay.md)
-* [NTLM RELAY](active-directory-hacking/ntlm-relay.md)
-* [CONCEPTOS IMPORTANTES ANTES DE CONTINUAR](active-directory-hacking/conceptos-importantes-antes-de-continuar.md)
-* [KERBEROASTING](active-directory-hacking/kerberoasting.md)
-* [AS\_REP ROASTING](active-directory-hacking/as_rep-roasting.md)
-* [BLOODHOUND](active-directory-hacking/bloodhound.md)
+* [CONCEPTOS](active-directory-hacking/conceptos/README.md)
+  * [SPN Y KERBEROS](active-directory-hacking/conceptos/conceptos-importantes-antes-de-continuar.md)
+* [ENUMERACIÓN](active-directory-hacking/enumeracion/README.md)
+  * [BLOODHOUND](active-directory-hacking/enumeracion/bloodhound.md)
+* [ATAQUES](active-directory-hacking/ataques/README.md)
+  * [SMB RELAY](active-directory-hacking/ataques/smb-relay.md)
+  * [NTLM RELAY](active-directory-hacking/ataques/ntlm-relay.md)
+  * [KERBEROASTING](active-directory-hacking/ataques/kerberoasting.md)
+  * [AS\_REP ROASTING](active-directory-hacking/ataques/as_rep-roasting.md)
 
 ## WEB HACKING
 
