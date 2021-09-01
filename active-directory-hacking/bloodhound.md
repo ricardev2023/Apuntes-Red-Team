@@ -16,11 +16,11 @@ En este artículo nos centraremos en entender en profundidad la herramienta **Bl
 
 ## QUE ES BLOODHOUND <a id="cec3"></a>
 
-**BloodHound** es una aplicación web basada en **JavaScript** y compilada con Electron. Utiliza **Neo4j** como base de datos \(backend\). **BloodHound** utiliza gráficos para mapear un **entorno de Directorio Activo** y, de esta manera, ayuda  a identificar varios vectores de ataque para **movimiento lateral** y **escalada de privilegios**. 
+**BloodHound** es una aplicación web basada en **JavaScript** y compilada con Electron. Utiliza **Neo4j** como base de datos \(backend\). **BloodHound** utiliza gráficos para mapear un **entorno de Directorio Activo** y, de esta manera, ayuda a identificar varios vectores de ataque para **movimiento lateral** y **escalada de privilegios**.
 
 ![Acceso a la aplicaci&#xF3;n BloodHound.](../.gitbook/assets/imagen%20%2817%29.png)
 
-Los datos son suministrados utilizando recolectores de datos \(en ingles Ingestors\) que se conocen como **SharpHound**. Estos **SharpHound Ingestors** vienen en dos formas: script de Powershell y binario .NET precompilado. Además existen recolectores de datos desarrollados en python para poder ejecutar los ataques desde linux. 
+Los datos son suministrados utilizando recolectores de datos \(en ingles Ingestors\) que se conocen como **SharpHound**. Estos **SharpHound Ingestors** vienen en dos formas: script de Powershell y binario .NET precompilado. Además existen recolectores de datos desarrollados en python para poder ejecutar los ataques desde linux.
 
 ![SharpHound Ingestors.](../.gitbook/assets/imagen%20%2868%29.png)
 

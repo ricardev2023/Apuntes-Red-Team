@@ -17,9 +17,9 @@ Spawn `/bin/bash` using [Python's PTY module](https://docs.python.org/3/library/
 Background the current remote shell \(`^Z`\), update the **local** terminal line settings with `stty`[2](https://0xffsec.com/handbook/shells/full-tty/#fn:2) and bring the remote shell back.  
 After bringing the job back the cursor will be pushed to the left. Reinitialize the terminal with `reset`.
 
-`Ctrl-Z  
-stty raw -echo  
-fg  
-reset  
+`Ctrl-Z    
+stty raw -echo    
+fg    
+reset    
 xterm`
 

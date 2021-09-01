@@ -26,7 +26,7 @@ En una red empresarial no hemos conseguido acceso a ningún activo por ahora, si
 {% hint style="info" %}
 La base de este ataque está en usuarios que tengan activa la Opción "No requiere preautenticación de Kerberos". Esto hace que el protocolo Kerberos expida un Ticket-Granting Ticket en nombre de dicho usuario sin comprobar su identidad.
 
-Por tanto, cualquiera puede solicitar un **KRB\_AS\_REQ** en nombre del usuario y Kerberos devolverá un **KRB\_AS\_REP** que, recordemos, incluye una **Session Key** que está encriptado con el secreto del usuario. 
+Por tanto, cualquiera puede solicitar un **KRB\_AS\_REQ** en nombre del usuario y Kerberos devolverá un **KRB\_AS\_REP** que, recordemos, incluye una **Session Key** que está encriptado con el secreto del usuario.
 
 Por tanto, tenemos el Hash krb5asrep del usuario que podemos crackear facilmente, siempre y cuando la contraseña no sea muy robusta.
 {% endhint %}
@@ -41,7 +41,7 @@ Para entender más en profundidad estos conceptos puede leer el siguiente artíc
 
 Herramienta para ejecutar el cliente de MS-RPC. Viene instalada por defecto en Linux.
 
-{% embed url="https://web.mit.edu/darwin/src/modules/samba/docs/htmldocs/rpcclient.1.html" %}
+{% embed url="https://web.mit.edu/darwin/src/modules/samba/docs/htmldocs/rpcclient.1.html" caption="" %}
 
 #### CrackMapExec <a id="crackmapexec"></a>
 
@@ -49,7 +49,7 @@ Es una herramienta de post-explotación que se aprovecha de protocolos y caracte
 
 Utiliza **Impacket** y **Powersploit Toolkit**
 
-{% embed url="https://github.com/byt3bl33d3r/CrackMapExec" %}
+{% embed url="https://github.com/byt3bl33d3r/CrackMapExec" caption="" %}
 
 #### **Impacket**
 
@@ -57,19 +57,19 @@ Es una colección de clases de Python para trabajar con protocolos de red. Está
 
 Concretamente para este ataque vamos a utilizar **impacket-GetNPUsers**
 
-{% embed url="https://github.com/SecureAuthCorp/impacket" %}
+{% embed url="https://github.com/SecureAuthCorp/impacket" caption="" %}
 
 #### PowerSploit Toolkit <a id="powersploit-toolkit"></a>
 
 Es una colección de scripts de Powershell orientados a ayudar a pentesters en su proceso. Éste repositorio se encuentra deprecated.
 
-{% embed url="https://github.com/PowerShellMafia/PowerSploit" %}
+{% embed url="https://github.com/PowerShellMafia/PowerSploit" caption="" %}
 
 #### Hashcat <a id="hashcat"></a>
 
-Es el crackeador de hashes más rápido del mundo actualmente. Puede aprovecharse de la pontecia de una GPU. 
+Es el crackeador de hashes más rápido del mundo actualmente. Puede aprovecharse de la pontecia de una GPU.
 
-{% embed url="https://github.com/hashcat/hashcat" %}
+{% embed url="https://github.com/hashcat/hashcat" caption="" %}
 
 #### **Resumen**
 
@@ -127,7 +127,5 @@ El usuario que hemos obtenido es un usuario administrador de dominio por lo que 
 
 ## REFERENCIAS
 
-{% embed url="https://en.hackndo.com/kerberos-asrep-roasting/%0Ahttps://www.youtube.com/watch?v=KYFlvFfh-Js&list=PLlb2ZjHtNkpg2Mc3mbkdYAhEoqnMGdl2Z&index=2" %}
-
-
+{% embed url="https://en.hackndo.com/kerberos-asrep-roasting/%0Ahttps://www.youtube.com/watch?v=KYFlvFfh-Js&list=PLlb2ZjHtNkpg2Mc3mbkdYAhEoqnMGdl2Z&index=2" caption="" %}
 

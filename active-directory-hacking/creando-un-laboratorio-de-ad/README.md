@@ -6,9 +6,9 @@ description: Creación de un laboratorio de Active Directory desde cero.
 
 ## EXPLICACIÓN
 
-Los entornos empresariales reales están en una gran proporción creados en base a diferentes versiones de **Windows Server**. 
+Los entornos empresariales reales están en una gran proporción creados en base a diferentes versiones de **Windows Server**.
 
-**Active Directory**  \(o Directorio Activo en castellano\) es un servicio de directorio implementado por Microsoft en sus distribuciones de Windows Server y que permiten administrar una red distribuida.
+**Active Directory** \(o Directorio Activo en castellano\) es un servicio de directorio implementado por Microsoft en sus distribuciones de Windows Server y que permiten administrar una red distribuida.
 
 De forma sencilla se puede decir que es un servicio establecido en uno o varios servidores en donde se crean **objetos** tales como _usuarios, equipos o grupos_, con el objetivo de administrar los inicios de sesión en los equipos conectados a la red, así como también la administración de políticas en toda la red.
 
@@ -20,7 +20,7 @@ Active Directory trabaja principalmente con los protocolos: **LDAP, DNS, DHCP, R
 
 ## ACCIONES PREVIAS
 
-El despliegue de nuestra red empresarial va a realizarse utilizando máquinas virtuales, aunque si lo prefiere puede utilizar equipos físicos para cada una de las máquinas. 
+El despliegue de nuestra red empresarial va a realizarse utilizando máquinas virtuales, aunque si lo prefiere puede utilizar equipos físicos para cada una de las máquinas.
 
 {% hint style="warning" %}
 Tenga en cuenta que el objetivo de esta sección es desarrollar un **ENTORNO VULNERABLE Y MUY SIMPLE**. Por lo tanto, es recomendable que éstas máquinas no tengan acceso a internet.
@@ -39,6 +39,5 @@ Para ésta sección vamos a necesitar:
 
 [https://es.wikipedia.org/wiki/Active\_Directory](https://es.wikipedia.org/wiki/Active_Directory)  
 [https://www.youtube.com/watch?v=LLevcaB4qew&list=PLlb2ZjHtNkpg2Mc3mbkdYAhEoqnMGdl2Z](https://www.youtube.com/watch?v=LLevcaB4qew&list=PLlb2ZjHtNkpg2Mc3mbkdYAhEoqnMGdl2Z)  
-[https://en.hackndo.com/service-principal-name-spn/](https://en.hackndo.com/service-principal-name-spn/)  
-
+[https://en.hackndo.com/service-principal-name-spn/](https://en.hackndo.com/service-principal-name-spn/)
 

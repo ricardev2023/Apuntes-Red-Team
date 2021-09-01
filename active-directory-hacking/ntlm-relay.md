@@ -44,7 +44,7 @@ A riesgo de ser repetitivo, voy a incluir las herramientas que vamos a utilizar 
 
 Es un envenenador de tráfico que se puede aplicar a una gran variedad de protocolos.
 
-{% embed url="https://github.com/SpiderLabs/Responder" %}
+{% embed url="https://github.com/SpiderLabs/Responder" caption="" %}
 
 #### CrackMapExec
 
@@ -52,7 +52,7 @@ Es una herramienta de post-explotación que se aprovecha de protocolos y caracte
 
 Utiliza **Impacket** y **Powersploit Toolkit**
 
-{% embed url="https://github.com/byt3bl33d3r/CrackMapExec" %}
+{% embed url="https://github.com/byt3bl33d3r/CrackMapExec" caption="" %}
 
 #### **Impacket**
 
@@ -60,31 +60,31 @@ Es una colección de clases de Python para trabajar con protocolos de red. Está
 
 Concretamente para este ataque vamos a utilizar **impacket-ntlmrelayx**
 
-{% embed url="https://github.com/SecureAuthCorp/impacket" %}
+{% embed url="https://github.com/SecureAuthCorp/impacket" caption="" %}
 
 #### PowerSploit Toolkit <a id="powersploit-toolkit"></a>
 
 Es una colección de scripts de Powershell orientados a ayudar a pentesters en su proceso. Éste repositorio se encuentra deprecated.
 
-{% embed url="https://github.com/PowerShellMafia/PowerSploit" %}
+{% embed url="https://github.com/PowerShellMafia/PowerSploit" caption="" %}
 
 #### John the Ripper
 
 Es un crackeador de Hashes que se caracteríza por su velocidad y versatilidad.
 
-{% embed url="https://github.com/openwall/john" %}
+{% embed url="https://github.com/openwall/john" caption="" %}
 
 #### RLWrap
 
 Es un wraper \(readline wrapper\) que permite la edición del input del teclado para cualquier comando. Esto es especialmente util a la hora de obtener una reverse shell con netcat ya que la shell obtenida pasa a ser una shell interactiva directamente.
 
-{% embed url="https://github.com/hanslub42/rlwrap" %}
+{% embed url="https://github.com/hanslub42/rlwrap" caption="" %}
 
 #### Nishang
 
 Es una suite de scripts y payloads que permiten utilizar PowerShell para la seguridad ofensiva.
 
-{% embed url="https://github.com/samratashok/nishang" %}
+{% embed url="https://github.com/samratashok/nishang" caption="" %}
 
 ### Resumen
 
@@ -101,7 +101,7 @@ Algunas de las imágenes estan sacadas de la guía de S4vitar que desarrolla en 
 
 ### 1. Obtener el Hash NTLM
 
-Para obtener el Hash NTLM lo primero que tenemos que hacer es configurar nuestro envenenador de paquetes, el **responder**. 
+Para obtener el Hash NTLM lo primero que tenemos que hacer es configurar nuestro envenenador de paquetes, el **responder**.
 
 Como hemos visto en el artículo de [SMB Relay](https://ajcruz15.gitbook.io/red-team/active-directory-hacking/smb-relay), **responder** viene configurado por defecto para envenenar paquetes SMB pero ahora no queremos que haga eso por lo que hay que modificarlo para que quede de la siguiente manera \(Desactivamos SMB y HTTP\):
 
@@ -119,7 +119,7 @@ Una vez tenemos el responder configurado debemos correr a la vez el **responder*
 
 {% hint style="warning" %}
 En los sistemas más nuevos es necesario utilizar:  
-`impacket-ntlmrelayx -tf fichero.txt -smb2support`   
+`impacket-ntlmrelayx -tf fichero.txt -smb2support`  
 Ya que trabajan con la versión 2 del protocolo smb y sin esto no obtendremos nada.
 {% endhint %}
 
@@ -129,7 +129,7 @@ Con ambas herramientas a la escucha, es cuestión de tiempo que algún usuario s
 
 ![SAM dumpeada con NTLMRelayx.](../.gitbook/assets/imagen%20%286%29.png)
 
-Como podemos ver en la imagen anterior, hemos dumpeado la SAM del equipo **192.168.1.135** que es el equipo cliente que **NO REALIZA LA BUSQUEDA**. 
+Como podemos ver en la imagen anterior, hemos dumpeado la SAM del equipo **192.168.1.135** que es el equipo cliente que **NO REALIZA LA BUSQUEDA**.
 
 En este caso, podemos ver que el usuario **mvazquez** \(Administrador local\) ha solicitado desde el equipo **192.168.1.134** acceso a un recurso compartido inexistente llamado **noexisto**. Al no encontrarlo, hemos podido envenenarlo y con estos credenciales dumpear la SAM de la victima que habiamos añadido al documento targets.txt \(equipo **192.168.1.135**\).
 
@@ -161,7 +161,7 @@ Para obtener una shell interactiva con este ataque podemos desarrollar el siguie
 
 El primer paso ya lo hemos realizado en el paso anterior, si **impacket-ntlmrelayx** tiene capacidad de dumpear la SAM, podemos esperar tener permisos de ejecución de comandos.
 
-Para el segundo paso, ejecutamos un **servidor http** con python en la máquina atacante y desde la victima descargamos el binario de **netcat** en `C:\Windows\Temp` 
+Para el segundo paso, ejecutamos un **servidor http** con python en la máquina atacante y desde la victima descargamos el binario de **netcat** en `C:\Windows\Temp`
 
 `python3 -m http.server`
 
@@ -177,7 +177,7 @@ Para subir el binario de netcat a la máquina atacante cualquiera de los tres m�
 
 ![Ejecuci&#xF3;n correcta del comando certutil.](../.gitbook/assets/ntlmrelay4.png)
 
-Una vez cumplidas las dos primeras acciones, procedemos a ejecutar una reverse shell. Para ello ponemos en el atacante un nc a la escucha y ejecutamos el nc en la victima 
+Una vez cumplidas las dos primeras acciones, procedemos a ejecutar una reverse shell. Para ello ponemos en el atacante un nc a la escucha y ejecutamos el nc en la victima
 
 `atacante --> nc -lvnp PUERTO` Para obtener una shell más comoda podemos utilizar **rlwrap**.
 
@@ -224,6 +224,5 @@ Las capacidades de post-exploiting son las mismas que las de SMB Relay desde el 
 ## REFERENCIAS
 
 [https://en.hackndo.com/ntlm-relay/](https://en.hackndo.com/ntlm-relay/)  
-[https://en.hackndo.com/pass-the-hash/](https://en.hackndo.com/pass-the-hash/)  
-
+[https://en.hackndo.com/pass-the-hash/](https://en.hackndo.com/pass-the-hash/)
 

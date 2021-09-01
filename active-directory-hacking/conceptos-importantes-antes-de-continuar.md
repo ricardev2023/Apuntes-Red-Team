@@ -28,13 +28,13 @@ Un **Servicio** es una capacidad, un software o algo que puede ser utilizado por
 * Un mismo servicio puede ser ejecutado por varios equipos. Por lo tanto necesitamos el **Host**
 * Obviamente necesitamos el nombre del Servicio.
 
-En resumen, la combinación de estas dos cosas de manera oficial es lo que se denomina **Service Principal Name**  y luce asÍ:
+En resumen, la combinación de estas dos cosas de manera oficial es lo que se denomina **Service Principal Name** y luce asÍ:
 
 `service_class/hostname_or_FQDN:PORT/Nombre_dado_por_mi`
 
 Service_class no es más que una denominación genérica para el servicio \(por ejemplo, los servidores web tienen la_ **service\_class www** y los servicios SQL tienen la **SqlServer**.
 
-Un SPN se ve de la siguiente manera: 
+Un SPN se ve de la siguiente manera:
 
 ![SPN de un servicio en un Ticket de Kerberos. ](../.gitbook/assets/imagen%20%2838%29.png)
 
@@ -58,7 +58,7 @@ Para conseguir lo anterior, hacen falta 3 entidades:
 
 ![Las tres entidades.](../.gitbook/assets/imagen%20%282%29.png)
 
-La idea es que cuando un usuario quiera acceder a un servicio, la contreseña no viaje por la red para evitar comprometer la misma. 
+La idea es que cuando un usuario quiera acceder a un servicio, la contreseña no viaje por la red para evitar comprometer la misma.
 
 Para esto, el proceso es un poco engorroso pero se puede dividir en tres pasos:
 
@@ -102,7 +102,7 @@ El **KDC** recibe el nombre de usuario y lo comprueba con la base de datos. Como
 
 El **timestamp** no se desencripta correctamente \(por lo tanto la contraseña suministrada por el usuario es incorrecta\).
 
-El timestamp se desencripta lo que asegura que el usuario es quien dice ser. El **KDC**  genera una session key unica para este usuario y con una duración limitada.
+El timestamp se desencripta lo que asegura que el usuario es quien dice ser. El **KDC** genera una session key unica para este usuario y con una duración limitada.
 
 ![Sessi&#xF3;n Key](../.gitbook/assets/imagen%20%2843%29.png)
 
@@ -168,7 +168,7 @@ El usuario en este momento desencripta la primera capa de cifrado con la primera
 
 * **KRB\_AP\_REQ**
 
-En este momento, el usuario `strelock` genera un nuevo **autenticador** que encripta con la nueva Session Key. 
+En este momento, el usuario `strelock` genera un nuevo **autenticador** que encripta con la nueva Session Key.
 
 ![Encriptado del nuevo autenticador con la 2&#xAA; Session Key.](../.gitbook/assets/imagen%20%2854%29.png)
 

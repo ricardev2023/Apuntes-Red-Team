@@ -20,7 +20,7 @@ Este ataque está relacionado a las [malas prácticas](https://ajcruz15.gitbook.
 
 Vamos a explotar el siguiente esquema:
 
-En los entornos empresariales existen actividades programadas que comprueban los recursos compartidos para ver si siguen existiendo. Esto hace que en muchas ocasiones, un equipo \(normalmente con un administrador local detrás\) se trate de conectar a muchos recursos compartidos que no existen a lo largo del día. Teniendo esto en  cuenta, este ataque consiste en lo siguiente:
+En los entornos empresariales existen actividades programadas que comprueban los recursos compartidos para ver si siguen existiendo. Esto hace que en muchas ocasiones, un equipo \(normalmente con un administrador local detrás\) se trate de conectar a muchos recursos compartidos que no existen a lo largo del día. Teniendo esto en cuenta, este ataque consiste en lo siguiente:
 
 1. El equipo víctima le preguntará al DC, ‘Oye, me dejas conectarme a \archivos?’ 
 2. El DC le responderá, ‘pues no tengo ni idea de lo que me estás hablando’ 
@@ -34,7 +34,7 @@ En los entornos empresariales existen actividades programadas que comprueban los
 
 Es un envenenador de tráfico que se puede aplicar a una gran variedad de protocolos.
 
-{% embed url="https://github.com/SpiderLabs/Responder" %}
+{% embed url="https://github.com/SpiderLabs/Responder" caption="" %}
 
 #### CrackMapExec
 
@@ -42,39 +42,37 @@ Es una herramienta de post-explotación que se aprovecha de protocolos y caracte
 
 Utiliza **Impacket** y **Powersploit Toolkit**
 
-{% embed url="https://github.com/byt3bl33d3r/CrackMapExec" %}
+{% embed url="https://github.com/byt3bl33d3r/CrackMapExec" caption="" %}
 
 #### **Impacket**
 
 Es una colección de clases de Python para trabajar con protocolos de red. Está pensada para obtener control a bajo nivel de los paquetes utilizados por algunos protocolos y, en algunos casos como SMBv1, la propia implementación del protocolo en sí mismo.
 
-{% embed url="https://github.com/SecureAuthCorp/impacket" %}
+{% embed url="https://github.com/SecureAuthCorp/impacket" caption="" %}
 
 #### PowerSploit Toolkit
 
 Es una colección de scripts de Powershell orientados a ayudar a pentesters en su proceso. Éste repositorio se encuentra deprecated.
 
-{% embed url="https://github.com/PowerShellMafia/PowerSploit" %}
+{% embed url="https://github.com/PowerShellMafia/PowerSploit" caption="" %}
 
 #### John the Ripper
 
 Es un crackeador de Hashes que se caracteríza por su velocidad y versatilidad.
 
-{% embed url="https://github.com/openwall/john" %}
+{% embed url="https://github.com/openwall/john" caption="" %}
 
 #### RPCClient
 
 Herramienta para ejecutar el cliente de MS-RPC. Viene instalada por defecto en Linux.
 
-{% embed url="https://web.mit.edu/darwin/src/modules/samba/docs/htmldocs/rpcclient.1.html" %}
+{% embed url="https://web.mit.edu/darwin/src/modules/samba/docs/htmldocs/rpcclient.1.html" caption="" %}
 
 #### PTH-WinExe
 
 Una aplicación que forma parte de la suite PTH-Toolkit y que permite ejecutar comandos en Windows realizando la técnica de PassTheHash.
 
-{% embed url="https://github.com/byt3bl33d3r/pth-toolkit" %}
-
-
+{% embed url="https://github.com/byt3bl33d3r/pth-toolkit" caption="" %}
 
 ### Resumen
 
@@ -114,7 +112,6 @@ WINRM = On
 
 ; Custom challenge. 
 ; Use "Random" for generating a random challenge for each requests (Default)
-
 ```
 
 Hemos comprobado que sí, por lo tanto, lanzamos el responder con el siguiente comando:
@@ -174,12 +171,10 @@ Ya sabemos que con este usuario podemos obtener una shell interactiva así que v
 ![&#xA1;Premio!](../.gitbook/assets/psexec1.png)
 
 {% hint style="danger" %}
-Si el equipo víctima tiene la Protección en tiempo real de Windows Defender activa, este ataque no se puede realizar. Por eso es tan importante tener un buen antivirus en ambientes empresariales. 
+Si el equipo víctima tiene la Protección en tiempo real de Windows Defender activa, este ataque no se puede realizar. Por eso es tan importante tener un buen antivirus en ambientes empresariales.
 {% endhint %}
 
 Ya tenemos una shell interactiva en un activo de la empresa desde el que poder realizar movimiento lateral al DC.
-
-
 
 ### 6. Post-Exploiting
 
@@ -193,7 +188,7 @@ Una vez tenemos unos credenciales válidos, podemos utilizar RPCClient para obte
 Esta parte está sacada exactamente del ejemplo de S4vitar en el siguiente [video](https://www.youtube.com/watch?v=LLevcaB4qew&list=PLlb2ZjHtNkpg2Mc3mbkdYAhEoqnMGdl2Z&index=2).
 {% endhint %}
 
-Utilizamos el comando rpcclient para obtener información sobre 
+Utilizamos el comando rpcclient para obtener información sobre
 
 ![Listamos los usuarios del domino \(el rid es el identificador del usuario\).](../.gitbook/assets/imagen%20%2880%29.png)
 
@@ -240,7 +235,5 @@ Por último podemos utilizar PTH-Winexe para utilizar estos Hashes para acceder 
 ## REFERENCIAS
 
 [https://en.hackndo.com/pass-the-hash/\#protocol-ntlm](https://en.hackndo.com/pass-the-hash/#protocol-ntlm)  
-[https://ethicalhackingguru.com/the-complete-ntlm-relay-attack-tutorial/](https://ethicalhackingguru.com/the-complete-ntlm-relay-attack-tutorial/)  
-  
-
+[https://ethicalhackingguru.com/the-complete-ntlm-relay-attack-tutorial/](https://ethicalhackingguru.com/the-complete-ntlm-relay-attack-tutorial/)
 

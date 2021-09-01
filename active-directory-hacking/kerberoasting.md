@@ -22,12 +22,12 @@ Este ataque está relacionado a las [malas prácticas](https://ajcruz15.gitbook.
 
 Vamos a explotar el siguiente esquema:
 
-En un Directorio Activo hemos obtenido un acceso inicial con un usuario con bajos privilegios, por ejemplo, utilizando SMB Relay o NTLM Relay. \(vgarcia:Password2\). 
+En un Directorio Activo hemos obtenido un acceso inicial con un usuario con bajos privilegios, por ejemplo, utilizando SMB Relay o NTLM Relay. \(vgarcia:Password2\).
 
 Con este acceso inicial en mente vamos a tratar de crackear el Hash de un Ticket-Granting Service \(TGS\) expedido en nombre de un usuario que posee un SPN asociado.
 
 {% hint style="info" %}
-En este ataque explotamos la capacidad de todos y cada uno de los usuarios autenticados de un dominio de solicitar un Ticket-Granting Service. 
+En este ataque explotamos la capacidad de todos y cada uno de los usuarios autenticados de un dominio de solicitar un Ticket-Granting Service.
 
 Recordemos que este TGS se encuentra encriptado con el secreto del servicio al que queremos acceder. Si este servicio es un usuario con un SPN asociado \(un usuario que Active Directory entiende como un servicio\) entonces su secreto será su contraseña y por lo tanto, el Hash obtenido se podrá crackear si la contraseña no es muy robusta.
 {% endhint %}
@@ -44,7 +44,7 @@ Es una herramienta de post-explotación que se aprovecha de protocolos y caracte
 
 Utiliza **Impacket** y **Powersploit Toolkit**
 
-{% embed url="https://github.com/byt3bl33d3r/CrackMapExec" %}
+{% embed url="https://github.com/byt3bl33d3r/CrackMapExec" caption="" %}
 
 #### **Impacket**
 
@@ -52,19 +52,19 @@ Es una colección de clases de Python para trabajar con protocolos de red. Está
 
 Concretamente para este ataque vamos a utilizar **impacket-GetUserSPNs**
 
-{% embed url="https://github.com/SecureAuthCorp/impacket" %}
+{% embed url="https://github.com/SecureAuthCorp/impacket" caption="" %}
 
 #### PowerSploit Toolkit <a id="powersploit-toolkit"></a>
 
 Es una colección de scripts de Powershell orientados a ayudar a pentesters en su proceso. Éste repositorio se encuentra deprecated.
 
-{% embed url="https://github.com/PowerShellMafia/PowerSploit" %}
+{% embed url="https://github.com/PowerShellMafia/PowerSploit" caption="" %}
 
 #### Hashcat
 
-Es el crackeador de hashes más rápido del mundo actualmente. Puede aprovecharse de la pontecia de una GPU. 
+Es el crackeador de hashes más rápido del mundo actualmente. Puede aprovecharse de la pontecia de una GPU.
 
-{% embed url="https://github.com/hashcat/hashcat" %}
+{% embed url="https://github.com/hashcat/hashcat" caption="" %}
 
 ### Resumen
 
