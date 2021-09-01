@@ -41,8 +41,8 @@ Here you can observe, we are using nmap the most famous network scanning tool fo
 `nmap -p 445 -A 192.168.1.101`
 
 As a result, we enumerated the following information about the target machine:  
-`Operating System: Windows 7 ultimate  
-Computer Name & NetBIOS Name: Raj  
+`Operating System: Windows 7 ultimate    
+Computer Name & NetBIOS Name: Raj    
 SMB security mode: SMB 2.02`  
 There are so many automated scripts and tools available for SMB enumeration and if you want to know more about SMB Enumeration then read below.
 
@@ -58,35 +58,35 @@ We started with nmblookup tool. It is designed to make use of queries for the Ne
 
 For unique names:
 
- 00: Workstation Service \(workstation name\)
+00: Workstation Service \(workstation name\)
 
- 03: Windows Messenger service
+03: Windows Messenger service
 
- 06: Remote Access Service
+06: Remote Access Service
 
- 20: File Service \(also called Host Record\)
+20: File Service \(also called Host Record\)
 
- 21: Remote Access Service client
+21: Remote Access Service client
 
- 1B: Domain Master Browser – Primary Domain Controller for a domain
+1B: Domain Master Browser – Primary Domain Controller for a domain
 
- 1D: Master Browser
+1D: Master Browser
 
 For group names:
 
- 00: Workstation Service \(workgroup/domain name\)
+00: Workstation Service \(workgroup/domain name\)
 
- 1C: Domain Controllers for a domain
+1C: Domain Controllers for a domain
 
- 1E: Browser Service Elections
+1E: Browser Service Elections
 
 `nmblookup -A 192.168.1.17`
 
- **nbtscan**
+**nbtscan**
 
- Moving Forward we used nbtscan tool. NBTscan is a program for scanning IP networks for NetBIOS name information. It sends NetBIOS status query to each address in supplied range and lists received information in human-readable form. For each responded host it lists IP address, NetBIOS computer name, logged-in user name and MAC address \(such as Ethernet\).
+Moving Forward we used nbtscan tool. NBTscan is a program for scanning IP networks for NetBIOS name information. It sends NetBIOS status query to each address in supplied range and lists received information in human-readable form. For each responded host it lists IP address, NetBIOS computer name, logged-in user name and MAC address \(such as Ethernet\).
 
- **nbstat NSE Script**
+**nbstat NSE Script**
 
 This nmap script attempts to retrieve the targetâ€™s NetBIOS names and MAC address. By default, the script displays the name of the computer and the logged-in user; if the verbosity is turned up, it displays all names the system thinks it owns. It also shows the flags that we studied in nmblookup tool.
 
@@ -126,7 +126,7 @@ As we discussed earlier that SMB works on sharing files and resources. In order 
 
 SMBMap allows users to enumerate samba share drives across an entire domain. List share drives, drive permissions, share contents, upload/download functionality, file name auto-download pattern matching, and even execute remote commands. This tool was designed with pen testing in mind and is intended to simplify searching for potentially sensitive data across large networks.
 
-Let’s enumerate a user-specific share using the credentials for that user.  We are enumerating the share for the user raj as shown in the image below.
+Let’s enumerate a user-specific share using the credentials for that user. We are enumerating the share for the user raj as shown in the image below.
 
 `smbmap -H 192.168.1.17 -u raj -p 123`
 
@@ -134,14 +134,14 @@ Let’s enumerate a user-specific share using the credentials for that user.  We
 
 smbclient is samba client with an “ftp like” interface. It is a useful tool to test connectivity to a Windows share. It can be used to transfer files, or to look at share names. In addition, it has a nifty ability to ‘tar’ \(backup\) and restore files from a server to a client and vice versa. We enumerated the target machine and found the guest share using the smbclient directly. Then we connect to the guest share and see that there is a text file by the name of file.txt. We can download it using the get command.
 
-`smbclient -L 192.168.1.40  
-smbclient //192.168.1.40/guest  
+`smbclient -L 192.168.1.40    
+smbclient //192.168.1.40/guest    
 get file.txt`
 
 Now we enumerate the user-specific share. We connect to the SMB as user raj and find a share by the name of ‘share’. We reconfigured the smbclient command to access the share and we see that we find a file named raj.txt. Again, we can download this file as well as using the get command.
 
-`smbclient -L 192.168.1.17 -U raj%123  
-smbclient //192.168.1.17/share -U raj%123  
+`smbclient -L 192.168.1.17 -U raj%123    
+smbclient //192.168.1.17/share -U raj%123    
 get raj.txt`
 
 **smb-enum-shares NSE Script**
@@ -194,8 +194,7 @@ Nmap in past used to have a script by the name of smb-check-vulns. It used to sc
 
 Then the script was divided into single vulnerability checks that can run individually such as smb-vuln-ms08-067. Hence to check all SMB vulnerabilities available in the Nmap Scripting Engine we use the \* with the script.
 
-`nmap --script smb-vuln* 192.168.1.16`  
-
+`nmap --script smb-vuln* 192.168.1.16`
 
 ## OVERALL SCAN
 

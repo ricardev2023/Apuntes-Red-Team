@@ -105,7 +105,7 @@ Para obtener el Hash NTLM lo primero que tenemos que hacer es configurar nuestro
 
 Como hemos visto en el artículo de [SMB Relay](https://ajcruz15.gitbook.io/red-team/active-directory-hacking/smb-relay), **responder** viene configurado por defecto para envenenar paquetes SMB pero ahora no queremos que haga eso por lo que hay que modificarlo para que quede de la siguiente manera \(Desactivamos SMB y HTTP\):
 
-![Configuraci&#xF3;n de responder.conf.](../../.gitbook/assets/responder4.png)
+![Configuraci&#xF3;n de responder.conf.](../../.gitbook/assets/responder4%20%281%29.png)
 
 Debemos preparar un documento con las IPs de los objetivos para el relay:
 

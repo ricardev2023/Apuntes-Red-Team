@@ -16,7 +16,7 @@
 
 ## SERVICES HACKING \(WINDOWS\)
 
-* [135, 539 - MSRPC \(traducir\)](services-hacking-windows/135-539-msrpc-traducir.md)
+* [135, 539 - MSRPC](services-hacking-windows/135-539-msrpc.md)
 * [389, 636 - LDAP / LDAPS](services-hacking-windows/389-636-ldap-ldaps.md)
 * [445 - SMB \(traducir\)](services-hacking-windows/445-smb-traducir.md)
 
