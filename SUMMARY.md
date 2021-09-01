@@ -14,11 +14,11 @@
 
 * [Untitled](services-hacking-linux/untitled.md)
 
-## SERVICES HACKING \(WINDOWS\) <a id="services-hacking"></a>
+## SERVICES HACKING \(WINDOWS\)
 
-* [135, 539 - MSRPC \(traducir\)](services-hacking/135-539-msrpc-traducir.md)
-* [389, 636 - LDAP / LDAPS](services-hacking/389-636-ldap-ldaps.md)
-* [445 - SMB \(traducir\)](services-hacking/445-smb-traducir.md)
+* [135, 539 - MSRPC \(traducir\)](services-hacking-windows/135-539-msrpc-traducir.md)
+* [389, 636 - LDAP / LDAPS](services-hacking-windows/389-636-ldap-ldaps.md)
+* [445 - SMB \(traducir\)](services-hacking-windows/445-smb-traducir.md)
 
 ## ACTIVE DIRECTORY HACKING
 
