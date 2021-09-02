@@ -10,10 +10,15 @@
 * [OSINT](reconocimiento/osint.md)
 * [DESCUBRIENDO LA RED](reconocimiento/descubriendo-la-red/README.md)
   * [NMAP NSE](reconocimiento/descubriendo-la-red/nse-scripts.md)
-* [FUZZING](reconocimiento/fuzzing-1/README.md)
-  * [WFUZZ](reconocimiento/fuzzing-1/fuzzing.md)
 * [SNIFFING](reconocimiento/sniffing/README.md)
   * [TCPDUMP](reconocimiento/sniffing/tcpdump.md)
+
+## WEB HACKING
+
+* [FUZZING](web-hacking/fuzzing-1/README.md)
+  * [WFUZZ](web-hacking/fuzzing-1/fuzzing.md)
+  * [OTRAS HERRAMIENTAS DE RECONOCIMIENTO WEB](web-hacking/fuzzing-1/otras-herramientas-de-reconocimiento-web.md)
+* [Untitled](web-hacking/untitled.md)
 
 ## SERVICES HACKING \(LINUX\)
 
@@ -40,10 +45,6 @@
   * [NTLM RELAY](active-directory-hacking/ataques/ntlm-relay.md)
   * [KERBEROASTING](active-directory-hacking/ataques/kerberoasting.md)
   * [AS\_REP ROASTING](active-directory-hacking/ataques/as_rep-roasting.md)
-
-## WEB HACKING
-
-* [Untitled](web-hacking/untitled.md)
 
 ## PRIVESC
 
