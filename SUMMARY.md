@@ -22,6 +22,7 @@
   * [SQL INJECTION](web-hacking/untitled/sql-injection/README.md)
     * [LOGIN FORM BYPASS](web-hacking/untitled/sql-injection/untitled.md)
     * [EXTRACCIÓN DE INFORMACIÓN.](web-hacking/untitled/sql-injection/extraccion-de-informacion..md)
+    * [SQLI MODIFIED HEADERS](web-hacking/untitled/sql-injection/untitled-1.md)
 
 ## SERVICES HACKING \(LINUX\)
 
