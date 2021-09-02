@@ -19,7 +19,9 @@
   * [WFUZZ](web-hacking/fuzzing-1/fuzzing.md)
   * [OTRAS HERRAMIENTAS DE RECONOCIMIENTO WEB](web-hacking/fuzzing-1/otras-herramientas-de-reconocimiento-web.md)
 * [OWASP TOP 10](web-hacking/untitled/README.md)
-  * [SQL INJECTION](web-hacking/untitled/sql-injection.md)
+  * [SQL INJECTION](web-hacking/untitled/sql-injection/README.md)
+    * [LOGIN FORM BYPASS](web-hacking/untitled/sql-injection/untitled.md)
+    * [EXTRACCIÓN DE INFORMACIÓN.](web-hacking/untitled/sql-injection/extraccion-de-informacion..md)
 
 ## SERVICES HACKING \(LINUX\)
 
