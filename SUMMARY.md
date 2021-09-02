@@ -25,6 +25,7 @@
     * [SQLI MODIFIED HEADERS](web-hacking/untitled/sql-injection/untitled-1.md)
     * [BOOLEAN BLIND SQLI](web-hacking/untitled/sql-injection/untitled-2.md)
     * [TIME-BASED BLIND SQLI](web-hacking/untitled/sql-injection/untitled-3.md)
+    * [AUTOMATIC INJECTION](web-hacking/untitled/sql-injection/untitled-4.md)
 
 ## SERVICES HACKING \(LINUX\)
 
