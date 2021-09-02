@@ -1,206 +1,288 @@
-# 445 - SMB \(traducir\)
+---
+description: Protocolo SMB y como enumerarlo
+---
 
-## SMB PROTOCOL
+# 445 - SMB
 
-### **Introduction to SMB Protocol**
+{% hint style="info" %}
+Este artículo es una traducción de un artículo de Hacking Articles sobre SMB Pentesting
+{% endhint %}
 
-Server Message Block \(SMB\), the modern dialect of which was known as Common Internet File System, operates as an application-layer network protocol for file sharing that allows applications on a computer to read and write to files and to request services from server programs in a computer network. The SMB protocol can be used on top of its TCP/IP protocol or other network protocols. Using the SMB protocol, an application \(or the user of an application\) can access files or other resources at a remote server. This allows applications to read, create, and update files on the remote server. It can also communicate with any server program that is set up to receive an SMB client request
+{% embed url="https://www.hackingarticles.in/smb-penetration-testing-port-445/" %}
 
-### **Working of SMB**
+## PROTOCOLO SMB
 
-SMB functions as a request-response or client-server protocol. The only time that the protocol does not work in a response-request framework is when a client requests an opportunistic lock \(oplock\) and the server has to break an existing oplock because the current mode is incompatible with the existing oplock. Client computers using SMB connect to a supporting server using NetBIOS over TCP/IP, IPX/SPX, or NetBUI. Once the connection is established, the client computer or program can then open, read/write, and access files similar to the file system on a local computer.
+### **Introducción al protocolo SMB**
+
+**Server Message Block \(SMB\)** es el nuevo "dialecto" de lo que antes era conocido como **Common Internet File System**. Opera en la capa de aplicación como protocolo de red para compartir archivos que permite a las aplicaciones en un equipo leer y escribir archivos así como solicitar servicios de un servidor en la red. El protocolo SMB puede ser utilizado sobre  protocolo TCP/IP u otros protocolos de red. 
+
+Utilizando SMB, una aplicación \(o el usuario de la aplicación\) puede acceder recursos en el servidor remoto. Esto permite a las aplicaciones leer, crear y actualizar archivos en el servidor remoto. Tambien puede comunicarse con todas las aplicaciones del lado del servidor que esten configuradas para recibir solicitudes SMB. 
+
+### **Funcionamiento de SMB**
+
+SMB funciona como protocolo de solicitud-respuest o cliente servidor. El único momento en que no actua de esta manera es cuando un cliente solicita un "opportunistic lock" \(oplock\) y el servidor tiene que romper un oplock existente.
+
+Los clientes que se conectan utilizando el protocolo SMB lo hacen a un servidor a través de NetBIOS sobre TCP/IP, IPX/SPX o NetBUI. Una vez la conexión es establecida, El cliente puede acceder a los recursos compartidos de la misma manera que si se encontraran en su sistema de archivos local.
 
 ### **Versions of Windows SMB**
 
-CIFS: The old version of SMB, which was included in Microsoft Windows NT 4.0 in 1996.  
-SMB 1.0 / SMB1: The version used in Windows 2000, Windows XP, Windows Server 2003 and Windows Server 2003 R2.  
-SMB 2.0 / SMB2: This version used in Windows Vista and Windows Server 2008.  
-SMB 2.1 / SMB2.1: This version used in Windows 7 and Windows Server 2008 R2.  
-SMB 3.0 / SMB3: This version used in Windows 8 and Windows Server 2012.  
-SMB 3.02 / SMB3: This version used in Windows 8.1 and Windows Server 2012 R2.  
-SMB 3.1: This version used in Windows Server 2016 and Windows 10.  
-Presently, the latest version of SMB is the SMB 3.1.1 which was introduced with Windows 10 and Windows Server 2016. This version supports AES 128 GCM encryption in addition to AES 128 CCM encryption added in SMB3, and implements pre-authentication integrity check using SHA-512 hash. SMB 3.1.1 also makes secure negotiation mandatory when connecting to clients using SMB 2.x and higher.
+* **CIFS**: La versión antigua de SMB que fue incluida con Win NT 4.0 en 1996.
+* **SMB 1.0 / SMB1**: Version utilizada en Windows 2000, Windows XP, Windows Server 2003 y Windows Server 2003 R2.
+* **SMB 2.0 / SMB2**: Versión utilizada en Windows Vista y Windows Server 2008.
+* **SMB 2.1 / SMB2.1**: Versión utilizade en Windows 7 y Windows Server 2008 R2.
+* **SMB 3.0 / SMB3**: Versión utilizada en Windows 8 y Windows Server 2012.
+* **SMB 3.02 / SMB3**: Versión utilizada en Windows 8.1 y Windows Server 2012 R2.
+* **SMB 3.1**: Versión utilizada en Windows Server 2016 y Windows 10.
 
-### **SMB Protocol Security**
+Actualmente la última versión de SMB es la 3.1.1 que fue introducida en Windows 10 y Windows Server 2016. Esta versión soporta encriptado AES 128 GCM además de AES 128 CCM que fue incluido en SMB 3. Además implementa control de integridad previo a la autenticación utilizando hash SHA-512. 
 
-The SMB protocol supports two levels of security. The first is the share level. The server is protected at this level and each share has a password. The client computer or user has to enter the password to access data or files saved under the specific share. This is the only security model available in the Core and Core plus SMG protocol definitions. User level protection was later added to the SMB protocol. It is applied to individual files and each share is based on specific user access rights. Once a server authenticates the client, he/she is given a unique identification \(UID\) that is presented upon access to the server. The SMB protocol has supported individual security since LAN Manager 1.0 was implemented.
+SMB 3.1.1 obliga a utilizar conexión segura cuando se conecta con clientes SMB 2.x y posteriores.
 
-## **SMB Enumeration**
+### **Seguridad del protocolo SMB**
 
-To identify the following information of Windows or Samba system, every pentester go for SMB enumeration during network penetration testing.  
-• Banner Grabbing  
-• RID cycling  
-• User listing  
-• Listing of group membership information  
-• Share enumeration  
-• Detecting if a host is in a workgroup or a domain  
-• Identifying the remote operating system  
-• Password policy retrieval
+El protocolo SMB soporta dos niveles de seguridad:
 
-Here you can observe, we are using nmap the most famous network scanning tool for SMB enumeration.  
+El primero es el **nivel del recurso compartido**.  El servidor está protegido a este nivel y cada recurso compartido tiene una contraseña. El cliente tiene que introducir la contraseña para acceder a los datos guardados en determinados recursos compartidos.
+
+La protección a niver de usuario o cliente se añadió más tarde al protocolo. Esta se aplica a archivos concretos y cada recurso compartido está atado a unos privilegios de acceso diferentes. Una vez el servidor autentica al usuario, éste recibe una identificación única \(UID\) que se debe presentar al acceder al servidor. Esta seguridad individual existe desde que se implementó LAN Manager 1.0.
+
+## **ENUMERACIÓN SMB**
+
+Para identificar esta información en sistemas Windows o Linux \(Samba\), el hacker busca enumerar el servicio SMB. Podemos obtener la siguiente información:
+
+*  **Banner Grabbing**
+* **RID cycling**
+* **Listado de Usuarios.**
+* **Listado de información acerca de miembros de grupos.**
+* **Enumeración de recursos compartidos.**
+* **Detectar si el equipo pertenece a un Workgroup o a un Dominio.**
+* **Identificación de sistema operativo remota.**
+* **Recuperación de la política de contraseñas.**
+
+Aquí puede observar como podemos utilizar **nmap** para enumerar SMB  
 `nmap -p 445 -A 192.168.1.101`
 
-As a result, we enumerated the following information about the target machine:  
-`Operating System: Windows 7 ultimate    
-Computer Name & NetBIOS Name: Raj    
-SMB security mode: SMB 2.02`  
-There are so many automated scripts and tools available for SMB enumeration and if you want to know more about SMB Enumeration then read below.
+![](../.gitbook/assets/imagen%20%2811%29.png)
 
-### HOSTNAME
+As a result, we enumerated the following information about the target machine:
 
-[https://www.hackingarticles.in/a-little-guide-to-smb-enumeration/](https://www.hackingarticles.in/a-little-guide-to-smb-enumeration/)
+```text
+Operating System: Windows 7 ultimate  
+Computer Name & NetBIOS Name: Raj  
+SMB security mode: SMB 2.02
+```
 
-We will start the enumeration of the SMB by finding the hostname of the target machine. This can be done by various tools.
+Hay muchas herramientas y scripts que automatizan la enumeración de SMB. En este artículo presentamos las más importantes.
 
-**nmblookup**
+### Hostname
 
-We started with nmblookup tool. It is designed to make use of queries for the NetBIOS names and then map them to their subsequent IP addresses in a network. The options allow the name queries to be directed at a particular IP broadcast area or to a particular machine. All queries are done over UDP.
+Empezamos la enumeración de SMB encontrando el **Hostname** de la máquina objetivo. Para eso podemos utilizar varias herramientas:
 
-For unique names:
+#### **nmblookup**
 
-00: Workstation Service \(workstation name\)
+La primera herramienta es nmblookup. Esta herramienta está desarrollada para hacer uso de busquedas de nombres de NetBIOS y luego mapearlas con las direcciones IP de la red. Las opciones permiten que estas busquedas sean dirigidas sobre una única máquina  o sobre una red. Todas las busquedas se realizan por UDP.
 
-03: Windows Messenger service
+Para nombres únicos:
 
-06: Remote Access Service
+* 00: Workstation Service \(workstation name\)
+* 03: Windows Messenger service
+* 06: Remote Access Service
+* 20: File Service \(also called Host Record\)
+* 21: Remote Access Service client
+* 1B: Domain Master Browser – Primary Domain Controller for a domain
+* 1D: Master Browser
 
-20: File Service \(also called Host Record\)
+Para nombres de grupos:
 
-21: Remote Access Service client
-
-1B: Domain Master Browser – Primary Domain Controller for a domain
-
-1D: Master Browser
-
-For group names:
-
-00: Workstation Service \(workgroup/domain name\)
-
-1C: Domain Controllers for a domain
-
-1E: Browser Service Elections
+* 00: Workstation Service \(workgroup/domain name\)
+* 1C: Domain Controllers for a domain
+* 1E: Browser Service Elections
 
 `nmblookup -A 192.168.1.17`
 
-**nbtscan**
+#### **nbtscan**
 
-Moving Forward we used nbtscan tool. NBTscan is a program for scanning IP networks for NetBIOS name information. It sends NetBIOS status query to each address in supplied range and lists received information in human-readable form. For each responded host it lists IP address, NetBIOS computer name, logged-in user name and MAC address \(such as Ethernet\).
+**NBTscan** es otro programa que escanea las IPs de la red en busca de nombres NetBIOS. Envia una "NetBIOS status query" a cada una de las direcciones en el rango y lista la información recibida en formato "human-readable" es decir, entendible por humanos. 
+
+Para cada respuesta lista:
+
+* dirección IP
+* Nombre NetBIOS
+* nombre del usuario logueado
+* dirección MAC
 
 **nbstat NSE Script**
 
-This nmap script attempts to retrieve the targetâ€™s NetBIOS names and MAC address. By default, the script displays the name of the computer and the logged-in user; if the verbosity is turned up, it displays all names the system thinks it owns. It also shows the flags that we studied in nmblookup tool.
+Este script de **Nmap** permite recopilar información del nombre NetBIOS del objetivo y su dirección MAC. Por defecto, el script muestra el nombre del equipo y el usuario logueado. Si activamos la verbosidad, muestra tambien todos los nombres que cree que posee el equipo. Tambien muestra las flags de nmblookup.
 
 `nmap --script nbstat.nse 192.168.1.17`
 
-**nbtstat** \(windows\)
+#### **nbtstat** \(windows\)
 
-This Windows command displays the NetBIOS over TCP/IP \(NetBT\) protocol statistics. It can read the NetBIOS name tables for both the local computer and remote computers. It can also read the NetBIOS name cache. This command allows a refresh of the NetBIOS name cache and the names registered with Windows Internet Name Service \(WINS\). When used without any parameters, this command displays Help Information. This command is available only if the Internet Protocol \(TCP/IP\) protocol is installed as a component in the properties of a network adapter in Network Connections.
+Este comando para Windows muestralas estadísticas del protocolo NetBIOS sobre TCP/IP \(NetBT\). Puede leer la tabla de nombres NetBIOS de equipos locales y remotos. Tambien puede leer la cache de nombres NetBIOS.
 
-**Ping**
+Este comando permite que se actualice la caché de nombres de NetBIOS y de los nombres registrados con "Windows Internet Name Service" \(WINS\).
 
-We can also use the ping command to detect the hostname of an SMB server or machine. The -a parameter specifies reverse name resolution to be performed on the destination IP address. If this is successful, ping displays the corresponding hostname.
+Si lo utilizamos sin parametros, muestra la información de ayuda. Solo funciona si está instalado el protocolo TCP/IP como componente.
 
-**smb-os-discovery NSE Script**
+#### **Ping**
 
-This NSE script attempts to determine the operating system, computer name, domain, workgroup, and current time over the SMB protocol \(ports 445 or 139\). It is achieved by initiating a session with the anonymous account \(or with a proper user account, if one is given; it likely doesnâ€™t make a difference\); in response to a session starting, the server will send back all this information.  
-The following fields may be included in the output, depending on the circumstances \(e.g., the workgroup name is mutually exclusive with domain and forest names\) and the information available:  
-• OS  
-• Computer name  
-• Domain name  
-• Forest name  
-• FQDN  
-• NetBIOS computer name  
-• NetBIOS domain name  
-• Workgroup  
-• System time
+Tambien podemos utilizar el comando ping para detectar el hostname de una maquina o servidor SMB. el parámetro **-a** especifica la resolución reversa de nombre en la IP de destino. Si funciona, ping muestra el hostname.
+
+#### **smb-os-discovery NSE Script**
+
+Este script NSE para Nmap trata de determinar el sistema operativo, nombre del equipo, dominio, workgroup y hora actual a través del protocolo SMB \(puertos 445 o 139\). Lo consigue conectandose con una sesión anónima \(si lo permite el servidor\) o con una cuenta de usuario si se la suministramos.
+
+En respuesta a un inicio de sesión el servidor enviará toda esta información.
+
+Los siguientes campos son los que se incluyen en el output:
+
+* Sistema Operativo.
+* Nombre del equipo.
+* Nombre del Dominio.
+* Nombre del Bosque.
+* FQDN
+* NetBIOS Hostname
+* NetBIOS Domain name
+* Workgroup
+* Hora del sistema.
 
 `nmap --script smb-os-discovery 192.168.1.17`
 
-### SHARES AND NULL SESSION
+### Recursos compartidos y sesion nula
 
-[https://www.hackingarticles.in/a-little-guide-to-smb-enumeration/](https://www.hackingarticles.in/a-little-guide-to-smb-enumeration/)
+Como ya vimos antes, SMB se encarga de compartir archivos y recursos. Con el objetivo de transferir estos archivos o recursos, existen los recursos compartidos. Existen recurso compartidos públicos que son accesibles por todos los miembros de una red y los recursos compartidos específicos que solo pueden acceder algunos usuarios. 
 
-As we discussed earlier that SMB works on sharing files and resources. In order to transfer these files or resources, there are data streams that are called shares. There are public shares that are accessible to everyone on the network and then there are the user-specific shares. Letâ€™s enumerate these shares.
+Vamos a enumerar estos recursos compartidos.
 
 **SMBMap**
 
-SMBMap allows users to enumerate samba share drives across an entire domain. List share drives, drive permissions, share contents, upload/download functionality, file name auto-download pattern matching, and even execute remote commands. This tool was designed with pen testing in mind and is intended to simplify searching for potentially sensitive data across large networks.
+Permite enumerar recursos compartidos por SMB o Samba a lo largo de todo el dominio. Lista los recursos compartidos, los permisos de acceso, las funcionalidades de subida y descarga de archivos e incluso puede ejecutar comandos remotos.
 
-Let’s enumerate a user-specific share using the credentials for that user. We are enumerating the share for the user raj as shown in the image below.
+Esta herramienta se centra en el pentesting y trata de simplificar la busqueda de datos potencialmente sensibles a lo largo de grandes redes.
+
+Vamos a enumerar los recursos compartidos específicos de un usuario \(raj\) utilizando sus credenciales:
 
 `smbmap -H 192.168.1.17 -u raj -p 123`
 
 **smbclient**
 
-smbclient is samba client with an “ftp like” interface. It is a useful tool to test connectivity to a Windows share. It can be used to transfer files, or to look at share names. In addition, it has a nifty ability to ‘tar’ \(backup\) and restore files from a server to a client and vice versa. We enumerated the target machine and found the guest share using the smbclient directly. Then we connect to the guest share and see that there is a text file by the name of file.txt. We can download it using the get command.
+Es un cliente de Samba con una interfaz parecida a la de una FTP. Es una herramienta muy util para comprobar la conectividad con un recurso compartidod de Windows. Puede utilizarse para transferir archivos y para ver los nombres de los recursos compartidos. Además, tiene la capacidad de generar un backup \(con tar\) de todos los datos y restaurarlos de un servidor a un cliente y viceversa.
+
+En este ejemplo enumeramos la máquina objetivo y encontramos los recursos compartidos directamente con smbclient. Despues nos conectamos al equipo y descargamos el archivo que hemos encontrado.
 
 `smbclient -L 192.168.1.40    
 smbclient //192.168.1.40/guest    
 get file.txt`
 
-Now we enumerate the user-specific share. We connect to the SMB as user raj and find a share by the name of ‘share’. We reconfigured the smbclient command to access the share and we see that we find a file named raj.txt. Again, we can download this file as well as using the get command.
+![](../.gitbook/assets/imagen%20%2818%29.png)
+
+Ahora enumeramos un recurso compartido especifico del usuario raj \(como hemos hecho antes\). Nos conectamos a SMB como el usuario raj y encontramos un recurso compartido con el nombre de "share". Reconfiguramos nuestro comando para poder acceder a share y ahora podemos descargar el archivo que hemos encontrado.
 
 `smbclient -L 192.168.1.17 -U raj%123    
 smbclient //192.168.1.17/share -U raj%123    
 get raj.txt`
 
+![](../.gitbook/assets/imagen%20%2850%29.png)
+
 **smb-enum-shares NSE Script**
 
-This NSE scirpt attempts to list shares using the srvsvc.NetShareEnumAll MSRPC function and retrieve more information about them using srvsvc.NetShareGetInfo. If access to those functions is denied, a list of common share names are checked. Calling NetShareGetInfo requires an administrator account on all versions of Windows up to 2003, as well as Windows Vista and Windows 7 and 10, if UAC is turned down. Even if NetShareEnumAll is restricted, attempting to connect to a share will always reveal its existence. So, if NetShareEnumAll fails, a pre-generated list of shares, based on a large test network, are used. If any of those succeed, they are recorded. After a list of shares is found, the script attempts to connect to each of them anonymously, which divides them into “anonymous”, for shares that the NULL user can connect to, or “restricted”, for shares that require a user account.
+Este Script NSE de Nmap permite listar los recursos compartidos utilizando la función de MSRPC **srvsvc.NetShareEnumAll**  y obtiene más información sobre ellos utilizando **srvsvc.NetShareGetInfo.** Si el acceso a estas funciones es denegado, se comprueba un listado de nombres habituales de recursos compartidos. NetShareGetInfo requiere de permisos de administrador si UAC esta apagado. 
+
+Incluso si no tenemos permisos para utilizar ninguna de estas funciones, intentar conectarse a un recurso compartido revelará siempre su existencia. Una vez comprobada la lista de nombres habituales, el script coge la lista de recursos compartidos que existen y trata de autenticarse como anónimo. Finalmente las divide entre restringidas y anonimas.
 
 `nmap --script smb-enum-shares -p139,445 192.168.1.17`
 
 **Net view** \(windows\)
 
-Displays a list of domains, computers, or resources that are being shared by the specified computer. Used without parameters, net view displays a list of computers in your current domain. This time we are on the Windows machine. We used the net view with the /All parameter to list all the shares on the target machine.
+Muestra una lista de dominios, equipos y recursos que estan siendo compartidos por el equipo especificado. Sin parámetros muestra la lista de equipos del dominio.
+
+En este caso, en una máquina Windows, utilizamos el parámetro /All para listar todos los recursos compartidos a los que tiene acceso la víctima.
 
 `net view \\192.168.1.17 /All`
 
 **CrackMapExec** \(postexploitation\)
 
-CrackMapExec \(a.k.a CME\) is a post-exploitation tool that helps automate assessing the security of large Active Directory networks. Built with stealth in mind, CME follows the concept of “Living off the Land”: abusing built-in Active Directory features/protocols to achieve its functionality and allowing it to evade most endpoint protection/IDS/IPS solutions. CrackMapExec can Map the network hosts, Generate Relay List, enumerate shares and access, enumerate active sessions, enumerate disks, enumerate logged on users, enumerate domain users, Enumerate Users by bruteforcing RID, enumerate domain groups, Enumerate local groups etc.
+CrackMapExec \(tambien conocido como CME\)  es una herramienta de postexplotación que permite automatizar el analisis de grandes redes de Active Directory.
+
+Desarrollado con la intención de ser sigiloso, CME sigue el concepto de "vivir de la tierra" \(Living off the Land en inglés\) aprovechandose de características y protocolos que forman parte de Active Directory para conseguir funcionar y así evitando la mayor parte de protecciones.
+
+CrackMapExec puede:
+
+* Mapear los equipos de una red.
+* Generar una lista de repetidores. 
+* Enumerar recursos compartidos. 
+* Acceder a ellos.
+* Enumerar sesiones activas.
+* Enumerar discos.
+* Enumerar usuarios logueados.
+* Enumerar usuarios del dominio.
+* Enumerar usuarios por fuerza bruta del RID.
+* Enumerar grupos del dominio.
+* Enumerar grupos locales.
+* Etc...
 
 `crackmapexec smb 192.168.1.17 -u 'raj' -p '123' --shares`
 
-### USERS
+### Usuarios
 
-[https://www.hackingarticles.in/a-little-guide-to-smb-enumeration/](https://www.hackingarticles.in/a-little-guide-to-smb-enumeration/)
 
-**Impacket: Lookupsid**
 
-A Security Identifier \(SID\) is a unique value of variable length that is used to identify a user account. Through a SID User Enumeration, we can extract information about what users exist and their data. Lookupsid script can enumerate both local and domain users. There is a Metasploit module too for this attack. If you are planning on injecting a target server with a golden or a silver ticket then one of the things that are required is the SID of the 500 user. Lookupsid.py can be used in that scenario. When we provide the following parameters to the Lookupsid in such a format as shown below.
+#### **Impacket: Lookupsid**
 
-Requirements:  
-• Domain  
-• Username  
-• Password/Password Hash  
-• Target IP Address
+Un identificador de seguridad \(SID\) es un valor único de longitud variable que es utilizado para identificar cuentas de usuario.
+
+A través de la enumeración SID podemos extraer información acerca de qué usuarios existen y sus datos.
+
+**impacket-lookupsid** puede enumerar usuarios a nivel local y a nivel de dominio. Tambien existe un módulo de metasploit para esto.
+
+Si estás pensando en injectar un **silver** o **golden** **ticket** en un servidor, entonces una de las cosas que necesitas es el SID del usuario 500. En este escenario podemos utilizar la herramienta.
+
+**Lookupsid** requiere la siguiente información:
+
+* Dominio.
+* Nombre de usuario.
+* Contraseña o Hash NTLM.
+* Dirección IP objetivo.
 
 `python3 lookupsid.py DESKTOP-ATNONJ9/raj:123@192.168.1.17`
 
-### VULNERABILITIES
+### Vulnerabilidades
 
-[https://www.hackingarticles.in/a-little-guide-to-smb-enumeration/](https://www.hackingarticles.in/a-little-guide-to-smb-enumeration/)
+#### **smb-vuln NSE Script**
 
-**smb-vuln NSE Script**
+Nmap solía tener un script NSE que se llamaba **smb-check-vulns** que comprobaba varias vulnerabilidades en el servidor como son:
 
-Nmap in past used to have a script by the name of smb-check-vulns. It used to scan the target server for the various vulnerabilities such as:  
-• conficker  
-• cve2009-3103  
-• ms06-025  
-• ms07-029  
-• regsvc-dos  
-• ms08-067
+* conficker
+* cve2009-3103
+* ms06-025
+* ms07-029
+* regsvc-dos
+* ms08-067
 
-Then the script was divided into single vulnerability checks that can run individually such as smb-vuln-ms08-067. Hence to check all SMB vulnerabilities available in the Nmap Scripting Engine we use the \* with the script.
+Después se dividió este script en varios comprobadores de vulnerabilidades que funcionan individualmente, los **smb-vuln-\***.
 
 `nmap --script smb-vuln* 192.168.1.16`
 
-## OVERALL SCAN
+![](../.gitbook/assets/imagen%20%2859%29.png)
 
-[https://www.hackingarticles.in/a-little-guide-to-smb-enumeration/](https://www.hackingarticles.in/a-little-guide-to-smb-enumeration/)
+{% hint style="danger" %}
+El artículo original incluye un apartado de explotación y otro de post-explotación en el que utiliza metasploit para explotar el servicio SMB.
+{% endhint %}
 
-Enum4linux
+## ENUMERACIÓN COMPLETA
+
+### Enum4linux
+
+Es una herramienta diseñada para detectar, extraer y enumerar datos de sistemas Windows y Linux, incluyendo la información obtenida a través de SMB. Enum4Linux puede descubrir  lo siguiente:
+
+* Dominios y Miembros de grupos.
+* Listado de usuarios.
+* Recursos compartidos en un equipo.
+* Politicas de contraseñas en el objetivo.
+* Sistema operativo del objetivo.
+
+Iniciamos un escaneo normal utilizando Enum4Linux y extraemos el rango RID, nombres de usuarios, workgroup, información de NetBIOS \(con nbtstat\), sesiones, SIDs e información del Sistema Operativo.
 
 is a tool that is designed to detecting and extracting data or enumerate from Windows and Linux operating systems, including SMB hosts those are on a network. Enum4linux is can discover the following:  
 • Domain and group membership  
@@ -210,4 +292,8 @@ is a tool that is designed to detecting and extracting data or enumerate from Wi
 • The operating system of a remote target
 
 We start to normal scan using enum4linux. It extracts the RID Range, Usernames, Workgroup, Nbtstat Information, Sessions, SID Information, OS Information.
+
+## REFERENCIAS
+
+[https://www.hackingarticles.in/a-little-guide-to-smb-enumeration/](https://www.hackingarticles.in/a-little-guide-to-smb-enumeration/)
 
