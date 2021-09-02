@@ -1,10 +1,16 @@
+---
+description: >-
+  Si el servidor no muestra los resultados de las busquedas, tendremos que
+  utilizar este método o el siguiente para obtener los resultados.
+---
+
 # BOOLEAN BLIND SQLI
 
 ## **DETERMINAR EL NOMBRE DE LA BASE DE DATOS CON BOOLEAN BLIND SQL INJECTION**
 
 En este caso, al poner una comilla simple \('\) la web no me da error, por lo que no puedo saber si me encuentro ante un SQL Injection.
 
- **1.** Comprobamos el funcionamiento normal de la aplicacion.
+ **1.** Comprobamos el funcionamiento normal de la aplicacion. Este es el valor TRUE. Si la página no responde o da error, ese será el valor FALSE
 
  **2.** Para comprobar si es vulnerable a SQL Injection, lanzo un valor valido y una declaracion Verdadera o, al reves, un valor invalido O una declaracion verdadera.
 

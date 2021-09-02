@@ -24,6 +24,7 @@
     * [EXTRACCIÓN DE INFORMACIÓN.](web-hacking/untitled/sql-injection/extraccion-de-informacion..md)
     * [SQLI MODIFIED HEADERS](web-hacking/untitled/sql-injection/untitled-1.md)
     * [BOOLEAN BLIND SQLI](web-hacking/untitled/sql-injection/untitled-2.md)
+    * [TIME-BASED BLIND SQLI](web-hacking/untitled/sql-injection/untitled-3.md)
 
 ## SERVICES HACKING \(LINUX\)
 
