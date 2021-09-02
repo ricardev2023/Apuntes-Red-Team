@@ -7,6 +7,7 @@
 
 ## RECON <a id="reconocimiento"></a>
 
+* [OSINT](reconocimiento/osint.md)
 * [FUZZING](reconocimiento/fuzzing-1/README.md)
   * [WFUZZ](reconocimiento/fuzzing-1/fuzzing.md)
 
