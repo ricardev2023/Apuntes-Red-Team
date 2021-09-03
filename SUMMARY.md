@@ -30,6 +30,8 @@
   * [A3-2017 - EXPOSICIÓN DE DATOS SENSIBLES](web-hacking/untitled/a3-2017-exposicion-de-datos-sensibles.md)
   * [A4-2017. XXE](web-hacking/untitled/a4-2017.-xxe.md)
   * [A5-2017. CONTROL DE ACCESO VULNERABLE](web-hacking/untitled/untitled.md)
+  * [A6-2017. SEGURIDAD MAL CONFIGURADA](web-hacking/untitled/a6-2017.-seguridad-mal-configurada.md)
+  * [Untitled](web-hacking/untitled/untitled-1.md)
 
 ## SERVICES HACKING \(LINUX\)
 

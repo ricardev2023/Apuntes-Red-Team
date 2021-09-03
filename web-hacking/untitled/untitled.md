@@ -55,7 +55,7 @@ Para responder esta pregunta es necesario hacer un análisis de la política de 
 
 Si una política de asignación de permisos definida no existe en relación a la creación de nuevos usuarios o de asignación de permisos a archivos y carpetas, es muy probable que su sitio Web sea vulnerable.
 
-**Solución y prevención**
+#### **Solución y prevención**
 
 [https://seguridad-ofensiva.com/evaluaciones-de-vulnerabilidades](https://seguridad-ofensiva.com/evaluaciones-de-vulnerabilidades)
 
@@ -63,7 +63,7 @@ Si una política de asignación de permisos definida no existe en relación a la
 
 [https://seguridad-ofensiva.com/pruebas-de-penetracion-en-sitios-web](https://seguridad-ofensiva.com/pruebas-de-penetracion-en-sitios-web)
 
-**Recursos adicionales con relación a este tipo de ataque**:
+#### **Recursos adicionales con relación a este tipo de ataque**:
 
 [https://owasp.org/www-project-top-ten/OWASP\_Top\_Ten\_2017/Top\_10-2017\_A5-Broken\_Access\_Control.html](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A5-Broken_Access_Control.html)
 
