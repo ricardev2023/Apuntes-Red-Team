@@ -7,6 +7,12 @@ description: >-
 
 # A3-2017 - EXPOSICIÓN DE DATOS SENSIBLES
 
+{% hint style="info" %}
+
+
+Este artículo está copiado de Seguridad Ofensiva, en su artículo: ****[**OWASP Top 3 – Exposición de datos confidenciales**](https://seguridad-ofensiva.com/blog/owasp-top-10/owasp-top-3/)**.**
+{% endhint %}
+
 ##  EXPOSICIÓN DE DATOS SENSIBLES
 
 ![OWASP Top 3](https://seguridad-ofensiva.com/blog/ptukregr/2019/10/123.jpg)
