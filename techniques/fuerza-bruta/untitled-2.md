@@ -1,3 +1,7 @@
+---
+description: Explicación detallada de la herramienta John the ripper.
+---
+
 # JOHN THE RIPPER
 
 ## **JOHN THE RIPPER**

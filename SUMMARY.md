@@ -19,6 +19,7 @@
   * [HYDRA](techniques/fuerza-bruta/untitled.md)
   * [MEDUSA](techniques/fuerza-bruta/untitled-1.md)
   * [JOHN THE RIPPER](techniques/fuerza-bruta/untitled-2.md)
+  * [NCRACK](techniques/fuerza-bruta/untitled-3.md)
 
 ## WEB HACKING
 
