@@ -6,6 +6,8 @@ description: Explicación detallada de la herramienta Hydra.
 
 ## **HYDRA**
 
+Hydra es una poderosa herramienta la cual permite realizar ataques de fuerza bruta a servicios online como ejemplo, FTP, SSH, Mysql, POP3, Telnet, etc. Es importante mencionar que ataques como por ejemplo al servicio Gmail se encuentran obsoletos, por lo tanto es recomendable no realizar ataques a este servicio con Hydra.
+
 En este ejemplo vamos a utilizar Hydra para obtener desde cero unos credenciales válidos para acceder a una página wordpress con poca seguridad.
 
 ### Obtener nombre de Usuario válido
@@ -62,5 +64,6 @@ La aplicacion permite tambien hacer ataques de fuerza buta sobre direcciones de 
 
 ## REFERENCIAS
 
-[https://github.com/vanhauser-thc/thc-hydra](https://github.com/vanhauser-thc/thc-hydra)
+[https://github.com/vanhauser-thc/thc-hydra](https://github.com/vanhauser-thc/thc-hydra)  
+****[https://backtrackacademy.com/articulo/hydra-ataques-de-fuerza-bruta-online](https://backtrackacademy.com/articulo/hydra-ataques-de-fuerza-bruta-online)
 

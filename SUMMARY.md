@@ -17,6 +17,7 @@
 
 * [FUERZA BRUTA](techniques/fuerza-bruta/README.md)
   * [HYDRA](techniques/fuerza-bruta/untitled.md)
+  * [MEDUSA](techniques/fuerza-bruta/untitled-1.md)
 
 ## WEB HACKING
 
