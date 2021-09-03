@@ -8,8 +8,6 @@ description: >-
 # A3-2017 - EXPOSICIÓN DE DATOS SENSIBLES
 
 {% hint style="info" %}
-
-
 Este artículo está copiado de Seguridad Ofensiva, en su artículo: ****[**OWASP Top 3 – Exposición de datos confidenciales**](https://seguridad-ofensiva.com/blog/owasp-top-10/owasp-top-3/)**.**
 {% endhint %}
 
@@ -60,20 +58,4 @@ Unos pocos clics en los resultados le mostrarán la prevalencia de esta vulnerab
 [https://cheatsheetseries.owasp.org/cheatsheets/Password\_Storage\_Cheat\_Sheet.html](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html)
 
 [https://cheatsheetseries.owasp.org/cheatsheets/HTTP\_Strict\_Transport\_Security\_Cheat\_Sheet.html](https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html)
-
-#### **Otras vulnerabilidades pertenecientes a OWASP:**
-
-_Uso de componentes con vulnerabilidades conocidas_: [https://seguridad-ofensiva.com/blog/owasp-top-10/uso-de-componentes-con-vulnerabilidades-conocidas-owasp-top-9/](https://seguridad-ofensiva.com/blog/owasp-top-10/uso-de-componentes-con-vulnerabilidades-conocidas-owasp-top-9/)
-
-_Deserialización insegura_: [https://seguridad-ofensiva.com/blog/owasp-top-10/deserializacion-insegura-owasp-top-8/](https://seguridad-ofensiva.com/blog/owasp-top-10/deserializacion-insegura-owasp-top-8/)
-
-_Seguridad no configurada_: [https://seguridad-ofensiva.com/blog/owasp-top-10/seguridad-no-configurada-owasp-top-6/](https://seguridad-ofensiva.com/blog/owasp-top-10/seguridad-no-configurada-owasp-top-6/)
-
-_Control de acceso vulnerable:_ [_https://seguridad-ofensiva.com/blog/owasp-top-10/control-de-acceso-vulnerable-owasp-top-5/_](https://seguridad-ofensiva.com/blog/owasp-top-10/control-de-acceso-vulnerable-owasp-top-5/)
-
-_Ataques en sistemas de autenticación_: [https://seguridad-ofensiva.com/blog/owasp-top-10/ataques-en-los-sistemas-de-autenticacion/](https://seguridad-ofensiva.com/blog/owasp-top-10/ataques-en-los-sistemas-de-autenticacion/)
-
-_Ataques por Inyección SQL_: [https://seguridad-ofensiva.com/blog/owasp-top-10/ataques-por-inyeccion-sql/](https://seguridad-ofensiva.com/blog/owasp-top-10/ataques-por-inyeccion-sql/)
-
-_Registro y monitoreo insuficiente:_ [_https://seguridad-ofensiva.com/blog/owasp-top-10/registro-y-monitoreo-insuficiente-owasp-top-10/_](https://seguridad-ofensiva.com/blog/owasp-top-10/registro-y-monitoreo-insuficiente-owasp-top-10/)
 

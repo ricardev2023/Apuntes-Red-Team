@@ -1,7 +1,7 @@
 ---
 description: >-
-  La vulnerabilidad SQLi es muy habitual y puede dejar a la vista grandes
-  cantidades de información sensible en un servidor.
+  SQL Injection está reconocido como la 1ª vulnerabilidad Web más importante
+  según OWASP. Aquí aprenderemos qué es, como funciona y como explotarlo.
 ---
 
 # A1-2017. SQL INJECTION
