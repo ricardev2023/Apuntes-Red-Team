@@ -26,6 +26,7 @@
     * [BOOLEAN BLIND SQLI](web-hacking/untitled/sql-injection/untitled-2.md)
     * [TIME-BASED BLIND SQLI](web-hacking/untitled/sql-injection/untitled-3.md)
     * [AUTOMATIC INJECTION](web-hacking/untitled/sql-injection/untitled-4.md)
+  * [A3-2017 - EXPOSICIÓN DE DATOS SENSIBLES](web-hacking/untitled/a3-2017-exposicion-de-datos-sensibles.md)
   * [A4-2017. XXE](web-hacking/untitled/a4-2017.-xxe.md)
 
 ## SERVICES HACKING \(LINUX\)

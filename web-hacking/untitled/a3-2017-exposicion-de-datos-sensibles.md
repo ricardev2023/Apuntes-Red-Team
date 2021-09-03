@@ -1,0 +1,73 @@
+---
+description: >-
+  La exposición de datos sensibles está reconocido como la 3ª vulnerabilidad Web
+  más importante según OWASP. Aquí aprenderemos qué es, como funciona y como
+  explotarlo.
+---
+
+# A3-2017 - EXPOSICIÓN DE DATOS SENSIBLES
+
+##  EXPOSICIÓN DE DATOS SENSIBLES
+
+![OWASP Top 3](https://seguridad-ofensiva.com/blog/ptukregr/2019/10/123.jpg)
+
+**La exposición de datos confidenciales** se clasifica como la vulnerabilidad número tres en la lista de OWASP-Top 10. Esta vulnerabilidad cubre un amplio espectro y los piratas informáticos tienen un arsenal de herramientas y procedimientos que pueden utilizar, por ejemplo:
+
+#### **Ataques MIMT** 
+
+Ataque donde el atacante retransmite en secreto y posiblemente altera las comunicaciones entre dos partes para acceder a datos confidenciales
+
+#### **Rastreo manual del sitio web** 
+
+Permite encontrar datos sensibles expuestos en el código fuente del sitio web.
+
+#### **Uso de “Google Dorks”** 
+
+Los Google Dorks permiten ****escanear todas las páginas web indexadas por Google para encontrar información que les de acceso no autorizado a diferentes redes.    ****
+
+Esta es una vulnerabilidad que afecta a sitios web, redes Wi-Fi y redes internas, por igual. Es por eso la importancia de ejecutar evaluaciones constantes de vulnerabilidad y pruebas de penetración centradas en toda la red. Vemos empresas que solo solicitan pruebas de penetración de sitios web y no se centran en otros servicios expuestos a Internet como FTP, SSH, SMTP, TELNET o IMAP, por nombrar algunos. Es común que el sitio web pudiese estar lo suficientemente protegido, pero la vulnerabilidad puede residir en un servicio FTP no seguro configurado con una cuenta anónima sin contraseña.
+
+## ANATOMÍA DE UN ATAQUE
+
+Hay una manera fácil de verificar la prevalencia de esta vulnerabilidad utilizando un ejemplo muy simple. **Google Dorks** es una técnica de piratería informática que utiliza el buscador de Google para encontrar agujeros de seguridad en la configuración de sitios web; recuerde, estamos buscando datos confidenciales expuestos. Ejecutamos el siguiente comando en el buscador de Google:
+
+![](https://seguridad-ofensiva.com/blog/ptukregr/2019/10/1234-1.png)
+
+Unos pocos clics en los resultados le mostrarán la prevalencia de esta vulnerabilidad y la cantidad de nombres de usuarios con sus respectivas contraseñas. Esta misma técnica puede ser usada para referenciar todo tipo de plataformas, bases de datos, servicios, protocolos y configuraciones con el fin de encontrar cualquier tipo de información que permita el acceso no autorizado a un sistema determinado.
+
+{% embed url="https://gbhackers.com/latest-google-dorks-list/" caption="Lista de Google Dorks" %}
+
+#### **Solución y prevención**
+
+[https://seguridad-ofensiva.com/evaluaciones-de-vulnerabilidades](https://seguridad-ofensiva.com/evaluaciones-de-vulnerabilidades)
+
+[https://seguridad-ofensiva.com/pruebas-de-penetracion-externas](https://seguridad-ofensiva.com/pruebas-de-penetracion-externas)
+
+[https://seguridad-ofensiva.com/pruebas-de-penetracion-en-sitios-web](https://seguridad-ofensiva.com/pruebas-de-penetracion-en-sitios-web)
+
+#### **Recursos adicionales con relación a este tipo de ataque**:
+
+[https://owasp.org/www-project-top-ten/OWASP\_Top\_Ten\_2017/Top\_10-2017\_A3-Sensitive\_Data\_Exposure.html](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A3-Sensitive_Data_Exposure.html)
+
+[https://cheatsheetseries.owasp.org/cheatsheets/User\_Privacy\_Protection\_Cheat\_Sheet.html](https://cheatsheetseries.owasp.org/cheatsheets/User_Privacy_Protection_Cheat_Sheet.html)
+
+[https://cheatsheetseries.owasp.org/cheatsheets/Password\_Storage\_Cheat\_Sheet.html](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html)
+
+[https://cheatsheetseries.owasp.org/cheatsheets/HTTP\_Strict\_Transport\_Security\_Cheat\_Sheet.html](https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html)
+
+#### **Otras vulnerabilidades pertenecientes a OWASP:**
+
+_Uso de componentes con vulnerabilidades conocidas_: [https://seguridad-ofensiva.com/blog/owasp-top-10/uso-de-componentes-con-vulnerabilidades-conocidas-owasp-top-9/](https://seguridad-ofensiva.com/blog/owasp-top-10/uso-de-componentes-con-vulnerabilidades-conocidas-owasp-top-9/)
+
+_Deserialización insegura_: [https://seguridad-ofensiva.com/blog/owasp-top-10/deserializacion-insegura-owasp-top-8/](https://seguridad-ofensiva.com/blog/owasp-top-10/deserializacion-insegura-owasp-top-8/)
+
+_Seguridad no configurada_: [https://seguridad-ofensiva.com/blog/owasp-top-10/seguridad-no-configurada-owasp-top-6/](https://seguridad-ofensiva.com/blog/owasp-top-10/seguridad-no-configurada-owasp-top-6/)
+
+_Control de acceso vulnerable:_ [_https://seguridad-ofensiva.com/blog/owasp-top-10/control-de-acceso-vulnerable-owasp-top-5/_](https://seguridad-ofensiva.com/blog/owasp-top-10/control-de-acceso-vulnerable-owasp-top-5/)
+
+_Ataques en sistemas de autenticación_: [https://seguridad-ofensiva.com/blog/owasp-top-10/ataques-en-los-sistemas-de-autenticacion/](https://seguridad-ofensiva.com/blog/owasp-top-10/ataques-en-los-sistemas-de-autenticacion/)
+
+_Ataques por Inyección SQL_: [https://seguridad-ofensiva.com/blog/owasp-top-10/ataques-por-inyeccion-sql/](https://seguridad-ofensiva.com/blog/owasp-top-10/ataques-por-inyeccion-sql/)
+
+_Registro y monitoreo insuficiente:_ [_https://seguridad-ofensiva.com/blog/owasp-top-10/registro-y-monitoreo-insuficiente-owasp-top-10/_](https://seguridad-ofensiva.com/blog/owasp-top-10/registro-y-monitoreo-insuficiente-owasp-top-10/)
+
