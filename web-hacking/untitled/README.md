@@ -12,6 +12,8 @@ description: >-
 **OWASP Top 10** es un documento de los diez riesgos de seguridad más importantes en aplicaciones web según la organización OWASP \(en inglés Open Web Application Security Project, en español Proyecto Abierto de Seguridad de Aplicaciones Web\). Esta lista se publica y actualiza cada tres años por dicha organización.
 {% endhint %}
 
+{% embed url="https://wiki.owasp.org/images/5/5e/OWASP-Top-10-2017-es.pdf" %}
+
 ## REFERENCIAS
 
 {% embed url="https://es.wikipedia.org/wiki/OWASP\_Top\_10" %}

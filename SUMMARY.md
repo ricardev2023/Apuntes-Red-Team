@@ -19,13 +19,14 @@
   * [WFUZZ](web-hacking/fuzzing-1/fuzzing.md)
   * [OTRAS HERRAMIENTAS DE RECONOCIMIENTO WEB](web-hacking/fuzzing-1/otras-herramientas-de-reconocimiento-web.md)
 * [OWASP TOP 10](web-hacking/untitled/README.md)
-  * [SQL INJECTION](web-hacking/untitled/sql-injection/README.md)
+  * [A1-2017. SQL INJECTION](web-hacking/untitled/sql-injection/README.md)
     * [LOGIN FORM BYPASS](web-hacking/untitled/sql-injection/untitled.md)
     * [EXTRACCIÓN DE INFORMACIÓN.](web-hacking/untitled/sql-injection/extraccion-de-informacion..md)
     * [SQLI MODIFIED HEADERS](web-hacking/untitled/sql-injection/untitled-1.md)
     * [BOOLEAN BLIND SQLI](web-hacking/untitled/sql-injection/untitled-2.md)
     * [TIME-BASED BLIND SQLI](web-hacking/untitled/sql-injection/untitled-3.md)
     * [AUTOMATIC INJECTION](web-hacking/untitled/sql-injection/untitled-4.md)
+  * [A4-2017. XXE](web-hacking/untitled/a4-2017.-xxe.md)
 
 ## SERVICES HACKING \(LINUX\)
 
