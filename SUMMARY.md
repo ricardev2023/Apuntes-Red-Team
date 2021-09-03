@@ -32,6 +32,9 @@
   * [A5-2017. CONTROL DE ACCESO VULNERABLE](web-hacking/untitled/untitled.md)
   * [A6-2017. SEGURIDAD MAL CONFIGURADA](web-hacking/untitled/a6-2017.-seguridad-mal-configurada.md)
   * [A7-2017. XSS](web-hacking/untitled/untitled-1.md)
+  * [A8-2017. DESERIALIZACIÓN INSEGURA](web-hacking/untitled/a8-2017.-deserializacion-insegura.md)
+  * [Untitled](web-hacking/untitled/untitled-2.md)
+  * [Untitled](web-hacking/untitled/untitled-3.md)
 
 ## SERVICES HACKING \(LINUX\)
 
