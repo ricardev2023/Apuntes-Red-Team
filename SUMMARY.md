@@ -15,7 +15,8 @@
 
 ## TECHNIQUES
 
-* [FUERZA BRUTA](techniques/fuerza-bruta.md)
+* [FUERZA BRUTA](techniques/fuerza-bruta/README.md)
+  * [HYDRA](techniques/fuerza-bruta/untitled.md)
 
 ## WEB HACKING
 
