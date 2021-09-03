@@ -13,6 +13,10 @@
 * [SNIFFING](reconocimiento/sniffing/README.md)
   * [TCPDUMP](reconocimiento/sniffing/tcpdump.md)
 
+## TECHNIQUES
+
+* [FUERZA BRUTA](techniques/fuerza-bruta.md)
+
 ## WEB HACKING
 
 * [FUZZING](web-hacking/fuzzing-1/README.md)
