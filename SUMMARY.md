@@ -25,6 +25,7 @@
 ## WEB HACKING
 
 * [FUZZING](web-hacking/fuzzing-1/README.md)
+  * [GOBUSTER](web-hacking/fuzzing-1/gobuster.md)
   * [WFUZZ](web-hacking/fuzzing-1/fuzzing.md)
   * [OTRAS HERRAMIENTAS DE RECONOCIMIENTO WEB](web-hacking/fuzzing-1/otras-herramientas-de-reconocimiento-web.md)
 * [OWASP TOP 10](web-hacking/untitled/README.md)

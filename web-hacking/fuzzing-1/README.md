@@ -16,3 +16,5 @@ La técnica de fuzzing se utiliza normalmente para descubrir problemas de seguri
 En este caso vamos a utilizar la técnica de Fuzzing para listar los recursos ocultos de una página web, analizando las respuestas del navegador a las diferentes solicitudes.
 {% endhint %}
 
+{% embed url="https://github.com/danielmiessler/SecLists" caption="Listas fundamentales para fuzzing." %}
+

@@ -10,9 +10,11 @@ description: Explicación detallada de la herramienta John the ripper.
 
 ## Ejemplo de funcionamiento
 
-Lo primero que hacemos es generar un archivocomando incluido con John con los usuarios y las passwords con el siguiente :
+Lo primero que hacemos es generar un archivo con los usuarios y las passwords con el siguiente :
 
  **`unshadow /etc/passwd /etc/shadow > passwd.txt`**
+
+comando incluido con la instalación de John.
 
 ###  **ARGUMENTOS**
 

@@ -16,10 +16,6 @@ Un fuzzer eficaz y muy sencillo de utilizar. Por defecto es recursivo y utiliza 
 
 Es el único que cuenta con interfaz gráfica lo que lo hace más amigable a la hora de representar la información obtenida en forma de arbol. Desarrollado por el proyecto [OWASP](https://owasp.org/).
 
-### GOBUSTER
-
-Es otro fuzzer de linea de comandos desarrollado en lenguaje GO. Es más versatil que DirB.
-
 ### SKIPFISH
 
 Es otra herramienta activa de reconocimiento web que realiza un fuzzing recursivo de rutas en base a diccionario para despues pasar a través de las rutas disponibles una serie de test de seguridad.
