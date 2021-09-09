@@ -84,4 +84,5 @@
 ## PWN
 
 * [CREANDO UN LABORATORIO SIN MITIGACIONES](pwn/creando-un-laboratorio-sin-mitigaciones.md)
+* [ESTRUCTURA DE UN BINARIO DE LINUX](pwn/estructura-de-un-binario-de-linux.md)
 
