@@ -81,9 +81,10 @@
 * [Transfiriendo datos \(traducir\)](shell-and-powershell-tricks/untitled.md)
 * [MEJORANDO SHELL A TTY INTERACTIVA \(Traducir\)](shell-and-powershell-tricks/mejorando-shell-a-tty-interactiva.md)
 
-## PWN
+## PWN LINUX
 
-* [CREANDO UN LABORATORIO SIN MITIGACIONES](pwn/creando-un-laboratorio-sin-mitigaciones.md)
-* [ESTRUCTURA DE UN BINARIO DE LINUX](pwn/estructura-de-un-binario-de-linux.md)
-* [HERRAMIENTAS](pwn/herramientas.md)
+* [CREANDO UN LABORATORIO SIN MITIGACIONES](pwn-linux/creando-un-laboratorio-sin-mitigaciones.md)
+* [ESTRUCTURA DE UN BINARIO DE LINUX](pwn-linux/estructura-de-un-binario-de-linux.md)
+* [HERRAMIENTAS](pwn-linux/herramientas.md)
+* [ENSAMBLADOR](pwn-linux/ensamblador.md)
 
