@@ -81,3 +81,7 @@
 * [Transfiriendo datos \(traducir\)](shell-and-powershell-tricks/untitled.md)
 * [MEJORANDO SHELL A TTY INTERACTIVA \(Traducir\)](shell-and-powershell-tricks/mejorando-shell-a-tty-interactiva.md)
 
+## PWN
+
+* [CREANDO UN LABORATORIO SIN MITIGACIONES](pwn/creando-un-laboratorio-sin-mitigaciones.md)
+
