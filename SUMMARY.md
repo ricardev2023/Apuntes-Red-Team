@@ -87,4 +87,5 @@
 * [ESTRUCTURA DE UN BINARIO DE LINUX](pwn-linux/estructura-de-un-binario-de-linux.md)
 * [HERRAMIENTAS](pwn-linux/herramientas.md)
 * [ENSAMBLADOR](pwn-linux/ensamblador.md)
+* [MITIGACIONES](pwn-linux/mitigaciones.md)
 
