@@ -84,8 +84,10 @@
 ## PWN LINUX
 
 * [CREANDO UN LABORATORIO SIN MITIGACIONES](pwn-linux/creando-un-laboratorio-sin-mitigaciones.md)
-* [ESTRUCTURA DE UN BINARIO DE LINUX](pwn-linux/estructura-de-un-binario-de-linux.md)
-* [HERRAMIENTAS](pwn-linux/herramientas.md)
-* [ENSAMBLADOR](pwn-linux/ensamblador.md)
-* [MITIGACIONES](pwn-linux/mitigaciones.md)
+* [TEORÍA](pwn-linux/teoria/README.md)
+  * [ESTRUCTURA DE UN BINARIO DE LINUX](pwn-linux/teoria/estructura-de-un-binario-de-linux/README.md)
+    * [HERRAMIENTAS](pwn-linux/teoria/estructura-de-un-binario-de-linux/herramientas.md)
+  * [ENSAMBLADOR](pwn-linux/teoria/ensamblador.md)
+  * [MITIGACIONES](pwn-linux/teoria/mitigaciones.md)
+  * [SYSCALL Y SHELLCODE](pwn-linux/teoria/syscall-y-shellcode.md)
 
