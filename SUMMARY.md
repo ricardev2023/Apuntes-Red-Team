@@ -90,4 +90,6 @@
   * [ENSAMBLADOR](pwn-linux/teoria/ensamblador.md)
   * [MITIGACIONES](pwn-linux/teoria/mitigaciones.md)
   * [SYSCALL Y SHELLCODE](pwn-linux/teoria/syscall-y-shellcode.md)
+* [ESTRATEGIAS DE EXPLOIT](pwn-linux/estrategias-de-exploit/README.md)
+  * [ATAQUE “SMASH THE STACK” SENCILLO](pwn-linux/estrategias-de-exploit/ataque-smash-the-stack-sencillo.md)
 
