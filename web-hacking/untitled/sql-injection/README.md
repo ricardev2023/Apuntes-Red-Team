@@ -8,10 +8,10 @@ description: >-
 
 ## **QUE ES SQL**
 
- **Structured Query Language**. Lenguaje de consultas estructuradas
+&#x20;**Structured Query Language**. Lenguaje de consultas estructuradas
 
- Es un lenguaje que permite especificar mediante consultas diversos tipos de operaciones en un gestor de base de datos.  
- Estas **operaciones** pueden ser:
+&#x20;Es un lenguaje que permite especificar mediante consultas diversos tipos de operaciones en un gestor de base de datos.\
+&#x20;Estas **operaciones** pueden ser:
 
 * Crear
 * Modificar
@@ -19,7 +19,7 @@ description: >-
 * Incluir
 * etc...
 
- Los **Gestores de Bases de datos** mas conocidos son:
+&#x20;Los **Gestores de Bases de datos** mas conocidos son:
 
 * MariaDB
 * SQL Server
@@ -28,7 +28,7 @@ description: >-
 * PostgreSQL
 * etc...
 
-##  **SQL INJECTION**
+## &#x20;**SQL INJECTION**
 
 Es una **vulnerabilidad** que permite la inyeccion de codigo SQL mediante la **entrada de datos provenientes del lado del cliente hacia el servidor**.
 
@@ -41,12 +41,12 @@ Existen varios **tipos:**
 * **INYECCION SQL IN-BAND** → injeccion SQL Clasico.
   * Inyeccion SQL Basada en Error
   * Inyeccion SQL Basada en Uniones
-* **INYECCION SQL INFERENCIAL** → Blind SQL Injection \(SQLi ciega\).
+* **INYECCION SQL INFERENCIAL** → Blind SQL Injection (SQLi ciega).
   * Inyeccion SQL Basada en Booleanos
   * Inyeccion SQL Basada en Tiempo
 * **INYECCION SQL OUT-OF-BAND** → Envio de peticiones a un servidor controlado por el atacante.
 
-###  **Metodos de inyección**
+### &#x20;**Metodos de inyección**
 
 * Entrada de valores enteros en URL
 * Entrada de valores de cadena en URL
@@ -57,14 +57,13 @@ Existen varios **tipos:**
   * Cookies
   * User-Agent
 
-###  **Como identificar vulnerabilidades SQLi**
+### &#x20;**Como identificar vulnerabilidades SQLi**
 
-Para empezar, debo encontrar un elemento de la pagina web que obtenga informacion de una base de datos, ya sea un formulario o un parámetro de una URL ****\(normalmente los parámetros tienen la forma **url?dato=valor**\).
+Para empezar, debo encontrar un elemento de la pagina web que obtenga informacion de una base de datos, ya sea un formulario o un parámetro de una URL **** (normalmente los parámetros tienen la forma **url?dato=valor**).
 
-Una vez lo he encontrado, la forma mas sencilla de comprobar si es vulnerable o no es modificando el **valor de busqueda por una comilla simple** \('\). De esta manera, obtendremos un **error de sintaxis de SQL** que no solo confirmara que nos encontramos ante una vulnerabilidad sino que ademas **nos indicara el Gestor de Base de Datos que se esta utilizando.**
+Una vez lo he encontrado, la forma mas sencilla de comprobar si es vulnerable o no es modificando el **valor de busqueda por una comilla simple** ('). De esta manera, obtendremos un **error de sintaxis de SQL** que no solo confirmara que nos encontramos ante una vulnerabilidad sino que ademas **nos indicara el Gestor de Base de Datos que se esta utilizando.**
 
-```text
+```
 You have an error in your SQL syntax; check the manual that corresponds to 
 your MySQL server version for the right syntax to use near ''''' at line 1
 ```
-

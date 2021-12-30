@@ -12,40 +12,40 @@ Un ataque de fuerza bruta es un intento de descifrar una contraseña o nombre de
 
 En función de la longitud y complejidad de la contraseña, descifrarla puede llevar desde unos segundos hasta varios años. De hecho, apunta a que algunos hackers tienen los mismos sistemas como objetivo a diario durante meses e, incluso, años.
 
- Existen dos tipos de ataques de fuerza bruta:
+&#x20;Existen dos tipos de ataques de fuerza bruta:
 
 * **Ataque de diccionario.**
 
- Se utiliza un diccionario con nombres de usuario y passwords obtenidas en la fase de reconocimiento o las predefinidas del servicio que queremos explotar.
+&#x20;Se utiliza un diccionario con nombres de usuario y passwords obtenidas en la fase de reconocimiento o las predefinidas del servicio que queremos explotar.
 
 * **Ataque por espacios clave.**
 
 Consiste en pasar por todas la combinaciones posibles. Por un lado, al final consigues la clave, por otro, el diccionario sería infinito.
 
-###  **DICCIONARIOS**
+### &#x20;**DICCIONARIOS**
 
- Podemos encontrar los diccionarios predefinidos de Kali Linux o Parrot OS en **`/usr/share/wordlist`**
+&#x20;Podemos encontrar los diccionarios predefinidos de Kali Linux o Parrot OS en **`/usr/share/wordlist`**
 
-####  **CRUNCH**
+#### &#x20;**CRUNCH**
 
- Es una aplicacion que nos permite crear diccionarios para ambos tipos de ataques.
+&#x20;Es una aplicacion que nos permite crear diccionarios para ambos tipos de ataques.
 
- **`crunch 4 4 -f /usr/share/crunch/charset.lst ualpha`**
+&#x20;**`crunch 4 4 -f /usr/share/crunch/charset.lst ualpha`**
 
- Genera un diccionario de 4 caracteres \(minimos y maximos\) con el **charset** \(**-f**\) ualpha
+&#x20;Genera un diccionario de 4 caracteres (minimos y maximos) con el **charset** (**-f**) ualpha
 
- Permite marcar el tipo de caracteres que queremos con la opcion **-t**
+&#x20;Permite marcar el tipo de caracteres que queremos con la opcion **-t**
 
- **- Minusculas @   
- - Mayusculas ,   
- - Numeros %   
- - Caracter Especial ^** 
+&#x20;**- Minusculas @** \
+&#x20;**- Mayusculas ,** \
+&#x20;**- Numeros %** \
+&#x20;**- Caracter Especial ^**&#x20;
 
- **`crunch 6 6 -t @,%^%% -f ./charset.lst mixalpha-numeric-all-space`**
+&#x20;**`crunch 6 6 -t @,%^%% -f ./charset.lst mixalpha-numeric-all-space`**
 
 ## **TIPOS DE HASHES**
 
-```text
+```
 DES: rEK1ecacw.7.c (Algunos UNIX, Solaris, PHP)
 
 BSDI: _J9..K0AyUubDrfOgO4s (*BSD, algunos Linux y PHP)
@@ -67,51 +67,50 @@ Oracle: 000EA4D72A142E29 (Oracle 10)
 SAP: $7369F1C8ECD6FCA1C6413F07408CA281C7A85EF0 (SAP)
 ```
 
-##  **AUTENTICACION EN WINDOWS**
+## &#x20;**AUTENTICACION EN WINDOWS**
 
-###  **HOSTS INDEPENDIENTES**
+### &#x20;**HOSTS INDEPENDIENTES**
 
- Para poder autenticarse en un sistema windows, las password deben estar almacenadas en local  
- Para ganar seguridad se hashean antes de almacenarse.
+&#x20;Para poder autenticarse en un sistema windows, las password deben estar almacenadas en local\
+&#x20;Para ganar seguridad se hashean antes de almacenarse.
 
- **C:\system32\config\SAM**
+&#x20;**C:\system32\config\SAM**
 
- Es un archivo sin extension donde se almacenan las password para hosts aislados.
+&#x20;Es un archivo sin extension donde se almacenan las password para hosts aislados.
 
-###  **ACTIVE DIRECTORY**
+### &#x20;**ACTIVE DIRECTORY**
 
- En el caso de que se trate de un Server, la autenticacion se realiza en tres fases
+&#x20;En el caso de que se trate de un Server, la autenticacion se realiza en tres fases
 
- **1**. Mensaje de Negociacion \(Cliente → Servidor\)  
- **2**. ID Cliente \(Servidor → Cliente\)  
- **3**. Autenticacion \(Cliente → Servidor\)
+&#x20;**1**. Mensaje de Negociacion (Cliente → Servidor)\
+&#x20;**2**. ID Cliente (Servidor → Cliente)\
+&#x20;**3**. Autenticacion (Cliente → Servidor)
 
-###  **KERBEROS**
+### &#x20;**KERBEROS**
 
- A partir de WIN XP y de 2000 Server, se trabaja con **Kerberos**.
+&#x20;A partir de WIN XP y de 2000 Server, se trabaja con **Kerberos**.
 
- Si hay un **desfase de mas de 5 minutos** entre la hora del Controlador de Dominido y la del cliente, no se puede autenticar ni el Administrador. \(muy potente pero con algunas vulnerabilidades\)
+&#x20;Si hay un **desfase de mas de 5 minutos** entre la hora del Controlador de Dominido y la del cliente, no se puede autenticar ni el Administrador. (muy potente pero con algunas vulnerabilidades)
 
-###  **SYSKEY**
+### &#x20;**SYSKEY**
 
- **A partir de Win 2000** **Cifra los hashes** almacenados en la base de datos de autenticacion.
+&#x20;**A partir de Win 2000** **Cifra los hashes** almacenados en la base de datos de autenticacion.
 
-##  **APLICACIONES PARA CONSEGUIR LOS HASHES DE WINDOWS**
+## &#x20;**APLICACIONES PARA CONSEGUIR LOS HASHES DE WINDOWS**
 
-###  **FGDUMP.EXE**
+### &#x20;**FGDUMP.EXE**
 
- **Obtiene los hashes de la base de datos de autenticacion en local**, es decir, hay que instalarlo en local para que funcione.
+&#x20;**Obtiene los hashes de la base de datos de autenticacion en local**, es decir, hay que instalarlo en local para que funcione.
 
- Genera un archivo 127.0.0.1.pwdump con el contenido
+&#x20;Genera un archivo 127.0.0.1.pwdump con el contenido
 
-###  **WCE.EXE -W**
+### &#x20;**WCE.EXE -W**
 
-###  **MIMIKATZ**
+### &#x20;**MIMIKATZ**
 
- Obtiene los hashes en local. Lo bueno que tiene es que con una sesion meterpreter de msf, podemos ejecutarlo directamente sin tener que descargarlo.
+&#x20;Obtiene los hashes en local. Lo bueno que tiene es que con una sesion meterpreter de msf, podemos ejecutarlo directamente sin tener que descargarlo.
 
 ## **REFERENCIAS**
 
-\*\*\*\*[https://www.kaspersky.es/resource-center/definitions/brute-force-attack](https://www.kaspersky.es/resource-center/definitions/brute-force-attack)  
+****[https://www.kaspersky.es/resource-center/definitions/brute-force-attack](https://www.kaspersky.es/resource-center/definitions/brute-force-attack)****\
 ****
-

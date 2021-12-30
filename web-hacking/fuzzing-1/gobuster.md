@@ -7,7 +7,7 @@ description: >-
 # GOBUSTER
 
 {% hint style="info" %}
-Éste artículo está traducido del artículo [**Gobuster for directory, DNS and virtual hosts bruteforcing**](https://erev0s.com/blog/gobuster-directory-dns-and-virtual-hosts-bruteforcing/) ****de la página web erev0s.
+Éste artículo está traducido del artículo [**Gobuster for directory, DNS and virtual hosts bruteforcing**](https://erev0s.com/blog/gobuster-directory-dns-and-virtual-hosts-bruteforcing/) **** de la página web erev0s.
 {% endhint %}
 
 En este artículo vamos a explorar el fuzzer llamado GoBuster. El proyecto está disponible en Github.
@@ -24,7 +24,7 @@ Hay tres características que ponen Gobuster en el primer lugar de la lista de f
 * Permite hacer fuerza bruta a ficheros y a varios tipos de extensiones al mismo tiempo.
 * Velocidad.
 
-GoBuster está escrito en Go, esto lo hace muy bueno a la hora de realizar trabajos concurrentes \(utilizar hilos para ejecutar acciones simultaneas\). Esto desemboca en más velocidad a la hora de realizar fuerza bruta. Además, el hecho de no necesitar especificar si realizamos el ataque sobre directorios o sobre archivos simplifica mucho las tareas de fuzzing.
+GoBuster está escrito en Go, esto lo hace muy bueno a la hora de realizar trabajos concurrentes (utilizar hilos para ejecutar acciones simultaneas). Esto desemboca en más velocidad a la hora de realizar fuerza bruta. Además, el hecho de no necesitar especificar si realizamos el ataque sobre directorios o sobre archivos simplifica mucho las tareas de fuzzing.
 
 Tiene tres modos principales de funcionamiento:
 
@@ -34,7 +34,7 @@ Tiene tres modos principales de funcionamiento:
 
 La ayuda de GoBuster muestra lo siguiente:
 
-```text
+```
 [email protected]:~$ gobuster help
 Usage:
   gobuster [command]
@@ -67,7 +67,7 @@ Primero hablaremos de los tres argumentos globales más útiles del programa:
 
 ### DIR mode
 
-```text
+```
 [email protected]:~$ gobuster dir --help
 Uses directory/file brutceforcing mode
 
@@ -98,15 +98,15 @@ Flags:
 
 Ahora para los argumentos concretos del **modo dir**, la ayuda se explica sola, sin embargo, vamos a explicar algunos de los argumentos que más vamos a utilizar.
 
-En muchos CTFs la certificación SSL está autofirmada y por lo tanto, no verificada. Utilizando `-k` podemos saltarnos la verificación SSL y continuar con el fuzz. 
+En muchos CTFs la certificación SSL está autofirmada y por lo tanto, no verificada. Utilizando `-k` podemos saltarnos la verificación SSL y continuar con el fuzz.&#x20;
 
-Otra cosa muy útil es que nos permite decidir qué codigos de respuesta son válidos y cuales no. Con los argumentos `-s` \(para la lista blanca\) y `-b` \(para la lista negra\) 
+Otra cosa muy útil es que nos permite decidir qué codigos de respuesta son válidos y cuales no. Con los argumentos `-s` (para la lista blanca) y `-b` (para la lista negra)&#x20;
 
 Tambien le podemos decir a GoBuster qué tipo de archivos queremos que busque utilizando el argumento `-x` donde podemos definir las extensiones que estamos buscando. Por ejemplo, si busco imágenes puedo utilizar `-x jpg,png,gif`
 
 Un ejemplo básico quedaría como sigue:
 
-```text
+```
 [email protected]:~$ gobuster dir -u https://erev0s.com -w awesome_wordlist.txt
 ===============================================================
 Gobuster v3.0.1
@@ -133,7 +133,7 @@ En el modo DNS estamos buscando subdominios de un dominio específico. Es muy im
 
 Como su nombre indica, en este modo GoBuster trata de resolver el nombre de los subdominios mediante DNS. Así puede verificar su existencia o no.
 
-```text
+```
 [email protected]:~$ gobuster help dns
 Uses DNS subdomain bruteforcing mode
 
@@ -154,11 +154,11 @@ El argumento `-d` es el encargado de definir el nombre de dominio víctima.
 
 Hay casos en los que es necesario definir el servidor DNS a utilizar. Esto se hace con `-r` .
 
-Con `-i` podemos obtener la IP asociada al subdominio. 
+Con `-i` podemos obtener la IP asociada al subdominio.&#x20;
 
 Un ejemplo sencillo quedaría como sigue:
 
-```text
+```
 [email protected]:~$ gobuster dns -d erev0s.com -w awesome_wordlist.txt -i
 ===============================================================
 Gobuster v3.0.1
@@ -180,9 +180,9 @@ Found: dok.erev0s.com [185.165.40.5]
 
 ### VHOST mode
 
-Este modo no debe ser confundico con ser lo mismo que el modo DNS. Mientras que el modo DNS trata de resolver los nombres de los subdominios mediante DNS, el modo VHOST chequea si el subdominio existe visitando la url y verificando la IP. 
+Este modo no debe ser confundico con ser lo mismo que el modo DNS. Mientras que el modo DNS trata de resolver los nombres de los subdominios mediante DNS, el modo VHOST chequea si el subdominio existe visitando la url y verificando la IP.&#x20;
 
-```text
+```
 [email protected]:~$ gobuster vhost --help
 Uses VHOST bruteforcing mode
 
@@ -203,11 +203,11 @@ Flags:
   -U, --username string       Username for Basic Auth
 ```
 
-Los argumentos que se pueden utilizar ya estaban incluidos en el modo DIR. 
+Los argumentos que se pueden utilizar ya estaban incluidos en el modo DIR.&#x20;
 
 Veamos un ejemplo sencillo:
 
-```text
+```
 [email protected]:~$ gobuster vhost -u erev0s.com -w awesome_wordlist.txt
 ===============================================================
 Gobuster v3.0.1
@@ -234,7 +234,7 @@ Una página web que se esconda tras Cloudflare, puede estropearnos este tipo de 
 
 Por ejemplo, si el servidor ever0s.com estuviera detrás de CLoudFlare, esto es lo que obtendríamos:
 
-```text
+```
 [email protected]:~$ gobuster vhost -u erev0s.com -w awesome_wordlist.txt -v
 ===============================================================
 Gobuster v3.0.1
@@ -263,11 +263,10 @@ Podemos ver que GoBuster muestra como encontradas todas las entradas de nuestro 
 
 ## CHEATSEET
 
-| **Description** | **Command** |
-| :--- | :--- |
-| archivos interesantes web | gobuster dir -u mytarget.com -w path/to/my/awesome/wordlist.txt -e -t 100 -x php,txt,html,htm |
-| Encontrar imágenes | gobuster dir -u mytarget.com -w path/to/my/awesome/wordlist.txt -e -t 100 -x jpg,jpeg,png,gif,ico |
-| Evitar verificación SSL | gobuster dir -u mytarget.com -w path/to/my/awesome/wordlist.txt -k |
+| **Description**                | **Command**                                                                                       |
+| ------------------------------ | ------------------------------------------------------------------------------------------------- |
+| archivos interesantes web      | gobuster dir -u mytarget.com -w path/to/my/awesome/wordlist.txt -e -t 100 -x php,txt,html,htm     |
+| Encontrar imágenes             | gobuster dir -u mytarget.com -w path/to/my/awesome/wordlist.txt -e -t 100 -x jpg,jpeg,png,gif,ico |
+| Evitar verificación SSL        | gobuster dir -u mytarget.com -w path/to/my/awesome/wordlist.txt -k                                |
 | Bypasear Autenticación simple. | gobuster dir -u mytarget.com -w path/to/my/awesome/wordlist.txt -U BasicAuthUser -P BasicAuthPass |
-| Personalizar Servidor DNS.. | gobuster dns -d mytarget.com -w path/to/my/awesome/wordlist.txt -r 10.10.10.10 -i -v |
-
+| Personalizar Servidor DNS..    | gobuster dns -d mytarget.com -w path/to/my/awesome/wordlist.txt -r 10.10.10.10 -i -v              |

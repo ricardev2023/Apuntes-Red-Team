@@ -44,11 +44,10 @@ Asegurarse de que estas prácticas son parte de una política de seguridad activ
 
 #### **Recursos adicionales con relación a este tipo de ataque**:
 
-[https://owasp.org/www-project-top-ten/OWASP\_Top\_Ten\_2017/Top\_10-2017\_A10-Insufficient\_Logging%252526Monitoring](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A10-Insufficient_Logging%252526Monitoring)
+[https://owasp.org/www-project-top-ten/OWASP\_Top\_Ten\_2017/Top\_10-2017\_A10-Insufficient\_Logging%252526Monitoring](https://owasp.org/www-project-top-ten/OWASP\_Top\_Ten\_2017/Top\_10-2017\_A10-Insufficient\_Logging%2526Monitoring)
 
 [https://cwe.mitre.org/data/definitions/359.html](https://cwe.mitre.org/data/definitions/359.html)
 
 [https://cwe.mitre.org/data/definitions/778.html](https://cwe.mitre.org/data/definitions/778.html)
 
 [https://cwe.mitre.org/data/definitions/223.html](https://cwe.mitre.org/data/definitions/223.html)
-

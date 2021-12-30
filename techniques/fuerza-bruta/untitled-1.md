@@ -6,7 +6,7 @@ description: Explicación detallada de la herramienta Medusa.
 
 ## **MEDUSA**
 
-Medusa es una herramienta para realizar ataques por fuerza bruta desarrollada por JoMo-Kun cuyo objetivo es conseguir acceso a sistemas remotos probando pares de usuarios/contraseñas de manera eficaz \(login cracker\). Las características más importantes de medusa son:  
+Medusa es una herramienta para realizar ataques por fuerza bruta desarrollada por JoMo-Kun cuyo objetivo es conseguir acceso a sistemas remotos probando pares de usuarios/contraseñas de manera eficaz (login cracker). Las características más importantes de medusa son:\
 
 
 * Posee un diseño modular lo que nos permite modificar el módulo de un servicio concreto sin tener que modificar el core de medusa. Además esto se realiza de una manera muy cómoda mediante los archivos .mod que son absolutamente independientes entre si, pudiendo ampliar por tanto cualquier funcionalidad que Medusa traiga de serie.
@@ -18,37 +18,36 @@ Medusa es una herramienta para realizar ataques por fuerza bruta desarrollada po
 
 **`medusa -h [ip] -u [usuario] -P [wordlist de password] -M [modulo de protocolo] -m [opciones de modulo]`**
 
- **-h** → IP del host
+&#x20;**-h** → IP del host
 
- **-H** → listado de hosts en archivo
+&#x20;**-H** → listado de hosts en archivo
 
- **-u** → usuario
+&#x20;**-u** → usuario
 
- **-U** → listado de usuarios en archivo
+&#x20;**-U** → listado de usuarios en archivo
 
- **-p** → password
+&#x20;**-p** → password
 
- **-P** → wordlist de passwords
+&#x20;**-P** → wordlist de passwords
 
- **-e** → Prueba passwords especiales \(n= vacia s=usuario ns= las dos\)
+&#x20;**-e** → Prueba passwords especiales (n= vacia s=usuario ns= las dos)
 
- **-M** → selecciona el modulo
+&#x20;**-M** → selecciona el modulo
 
- **-d** → lista los protocolos
+&#x20;**-d** → lista los protocolos
 
- **-m** → incluye las opciones de los modulos
+&#x20;**-m** → incluye las opciones de los modulos
 
- **-n** → seleccion de puerto
+&#x20;**-n** → seleccion de puerto
 
- **-s** → habilita SSL
+&#x20;**-s** → habilita SSL
 
- **-f** → se detiene cuando detecta una pareja user:password valida
+&#x20;**-f** → se detiene cuando detecta una pareja user:password valida
 
- **-g** → marca el tiempo de espera de respuesta desde la solicitud en segundos
+&#x20;**-g** → marca el tiempo de espera de respuesta desde la solicitud en segundos
 
- **-r** → sleep entre intentos
+&#x20;**-r** → sleep entre intentos
 
 ## REFERENCIAS
 
 [https://www.lapsusmentis.com/2015/08/ataque-por-fuerza-bruta-con-medusa.html](https://www.lapsusmentis.com/2015/08/ataque-por-fuerza-bruta-con-medusa.html)
-
