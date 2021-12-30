@@ -78,7 +78,9 @@
 
 ## PRIVESC
 
-* [Untitled](privesc/untitled.md)
+* [WINDOWS](privesc/untitled.md)
+* [LINUX](privesc/linux/README.md)
+  * [LXD/LXC GROUP](privesc/linux/lxd-lxc-group.md)
 
 ## SHELL AND POWERSHELL TRICKS
 
