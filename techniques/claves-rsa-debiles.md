@@ -18,7 +18,7 @@ RSA, al ser un cifrador asimétrico, trabaja con dos claves, una pública y una 
 
 ### Como se generan claves RSA
 
-![Resumen RSA](../.gitbook/assets/rsa.jpg)
+![Resumen RSA. Fuente: Junto TIC](../.gitbook/assets/rsa.jpg)
 
 1. Se eligen dos números primos, por ejemplo, **p=3** y **q=11**
 2. Calcula el producto **`n=p*q`**, en este caso, **n=3\*11=33**

