@@ -31,11 +31,13 @@ Características de Microsoft SQL Server :
 
 ## INFORMACIÓN
 
+{% embed url="https://book.hacktricks.xyz/pentesting/pentesting-mssql-microsoft-sql-server" %}
+Fuente
+{% endembed %}
+
 ### Tablas de sistema por defecto
 
 El servicio MSSQL crea una serie de tablas por defecto que contienen la siguiente información:
-
-
 
 * **master Database** : Guarda toda la información a nivel de sistema para una instancia de SQL Server.
 * **msdb Database** : Utilizada por el SQL Server Agent para tareas programadas y alertas.
