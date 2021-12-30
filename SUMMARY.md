@@ -5,7 +5,7 @@
 * [Apuntes Blue Team](https://ajcruz15.gitbook.io/blue-team/)
 * [Strelock15 github](https://github.com/strelock15)
 
-## RECON <a id="reconocimiento"></a>
+## RECON <a href="#reconocimiento" id="reconocimiento"></a>
 
 * [OSINT](reconocimiento/osint.md)
 * [DESCUBRIENDO LA RED](reconocimiento/descubriendo-la-red/README.md)
@@ -46,11 +46,11 @@
   * [A9-2017. USO DE COMPONENTES CON VULNERABILIDADES CONOCIDAS](web-hacking/untitled/untitled-2.md)
   * [A10-2017. REGISTRO Y MONITOREO INSUFICIENTE](web-hacking/untitled/untitled-3.md)
 
-## SERVICES HACKING \(LINUX\)
+## SERVICES HACKING (LINUX)
 
-* [Untitled](services-hacking-linux/untitled.md)
+* [3632 -DISTCCD](services-hacking-linux/untitled.md)
 
-## SERVICES HACKING \(WINDOWS\)
+## SERVICES HACKING (WINDOWS)
 
 * [135, 539 - MSRPC](services-hacking-windows/135-539-msrpc.md)
 * [389, 636 - LDAP / LDAPS](services-hacking-windows/389-636-ldap-ldaps.md)
@@ -70,7 +70,7 @@
   * [SMB RELAY](active-directory-hacking/ataques/smb-relay.md)
   * [NTLM RELAY](active-directory-hacking/ataques/ntlm-relay.md)
   * [KERBEROASTING](active-directory-hacking/ataques/kerberoasting.md)
-  * [AS\_REP ROASTING](active-directory-hacking/ataques/as_rep-roasting.md)
+  * [AS\_REP ROASTING](active-directory-hacking/ataques/as\_rep-roasting.md)
 
 ## PRIVESC
 
@@ -78,8 +78,8 @@
 
 ## SHELL AND POWERSHELL TRICKS
 
-* [Transfiriendo datos \(traducir\)](shell-and-powershell-tricks/untitled.md)
-* [MEJORANDO SHELL A TTY INTERACTIVA \(Traducir\)](shell-and-powershell-tricks/mejorando-shell-a-tty-interactiva.md)
+* [Transfiriendo datos (traducir)](shell-and-powershell-tricks/untitled.md)
+* [MEJORANDO SHELL A TTY INTERACTIVA (Traducir)](shell-and-powershell-tricks/mejorando-shell-a-tty-interactiva.md)
 
 ## PWN LINUX
 
@@ -92,4 +92,3 @@
   * [SYSCALL Y SHELLCODE](pwn-linux/teoria/syscall-y-shellcode.md)
 * [ESTRATEGIAS DE EXPLOIT](pwn-linux/estrategias-de-exploit/README.md)
   * [ATAQUE “SMASH THE STACK” SENCILLO](pwn-linux/estrategias-de-exploit/ataque-smash-the-stack-sencillo.md)
-
