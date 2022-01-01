@@ -47,7 +47,8 @@
   * [A9-2017. USO DE COMPONENTES CON VULNERABILIDADES CONOCIDAS](web-hacking/untitled/untitled-2.md)
   * [A10-2017. REGISTRO Y MONITOREO INSUFICIENTE](web-hacking/untitled/untitled-3.md)
 * [SERVICIOS WEB](web-hacking/servicios-web/README.md)
-  * [APACHE TOMCAT](web-hacking/servicios-web/apache-tomcat.md)
+  * [APACHE TOMCAT (RCE)](web-hacking/servicios-web/apache-tomcat-rce.md)
+  * [PRTG NETWORK MONITOR (RCE)](web-hacking/servicios-web/prtg-network-monitor-rce.md)
 
 ## SERVICES HACKING (LINUX)
 
