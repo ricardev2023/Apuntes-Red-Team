@@ -21,6 +21,7 @@
   * [JOHN THE RIPPER](techniques/fuerza-bruta/untitled-2.md)
   * [NCRACK](techniques/fuerza-bruta/untitled-3.md)
   * [RAINBOW TABLES](techniques/fuerza-bruta/untitled-4.md)
+  * [CHEATSHEET](techniques/fuerza-bruta/cheatsheet.md)
 * [CLAVES RSA DÉBILES](techniques/claves-rsa-debiles.md)
 
 ## WEB HACKING
