@@ -53,10 +53,10 @@
 
 ## SERVICES HACKING (BOTH)
 
-* [25, 465 587 - SMTP](services-hacking-both/25-465-587-smtp.md)
-* [111, 2049 - RPCBIND Y NFS](services-hacking-both/111-2049-rpcbind-y-nfs.md)
-* [161,162,10161,10162/udp - SNMP](services-hacking-both/161-162-10161-10162-udp-snmp.md)
-* [Page 2](services-hacking-both/page-2.md)
+* [25, 465 587 - SMTP](services-hacking-linux/25-465-587-smtp.md)
+* [111, 2049 - RPCBIND Y NFS](services-hacking-linux/111-2049-rpcbind-y-nfs.md)
+* [161,162,10161,10162/udp - SNMP](services-hacking-both/161-162-10161-10162-udp-snmp/README.md)
+  * [SNMP (RCE Linux)](services-hacking-both/161-162-10161-10162-udp-snmp/snmp-rce-linux.md)
 
 ## SERVICES HACKING (LINUX)
 

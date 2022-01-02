@@ -42,7 +42,7 @@ Son Identificadores de Objetos. Únicamente identifican objetos en la jerarquía
 
 Las empresas que ofrecen este servicio definen ramas privadas que incluyen objetos para sus propios productos.
 
-![OID ejemplo.](../.gitbook/assets/snmp1.png)
+![OID ejemplo.](../../.gitbook/assets/snmp1.png)
 
 Puedes navegar a través de un OID desde la siguiente página:
 
