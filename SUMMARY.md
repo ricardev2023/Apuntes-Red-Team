@@ -112,3 +112,7 @@
   * [SYSCALL Y SHELLCODE](pwn-linux/teoria/syscall-y-shellcode.md)
 * [ESTRATEGIAS DE EXPLOIT](pwn-linux/estrategias-de-exploit/README.md)
   * [ATAQUE “SMASH THE STACK” SENCILLO](pwn-linux/estrategias-de-exploit/ataque-smash-the-stack-sencillo.md)
+* [PRÁCTICA](pwn-linux/practica/README.md)
+  * [PHOENIX](pwn-linux/practica/phoenix/README.md)
+    * [0-SETUP](pwn-linux/practica/phoenix/0-setup.md)
+    * [STACK ZERO amd64](pwn-linux/practica/phoenix/stack-zero-amd64.md)
