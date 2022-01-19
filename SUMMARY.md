@@ -114,5 +114,6 @@
   * [ATAQUE “SMASH THE STACK” SENCILLO](pwn-linux/estrategias-de-exploit/ataque-smash-the-stack-sencillo.md)
 * [PRÁCTICA](pwn-linux/practica/README.md)
   * [PHOENIX](pwn-linux/practica/phoenix/README.md)
-    * [0-SETUP](pwn-linux/practica/phoenix/0-setup.md)
-    * [STACK ZERO amd64](pwn-linux/practica/phoenix/stack-zero-amd64.md)
+    * [SETUP](pwn-linux/practica/phoenix/setup.md)
+    * [STACK-ZERO amd64](pwn-linux/practica/phoenix/stack-zero-amd64.md)
+    * [STACK-ONE amd64](pwn-linux/practica/phoenix/stack-one-amd64.md)

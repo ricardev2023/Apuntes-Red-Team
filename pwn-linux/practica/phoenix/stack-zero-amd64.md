@@ -1,4 +1,4 @@
-# STACK ZERO amd64
+# STACK-ZERO amd64
 
 Este nivel introduce el concepto de que la memoria puede ser accedida, en ocasiones, fuera de la región predefinida, como se almacenan las variables en la pila y el hecho de que modificar la memoria fuera de los límites marcados puede modificar la ejecución del programa.
 
@@ -153,7 +153,7 @@ A continuación vamos a analizar el código referenciado en el binario. Para emp
 
 ![stack-zero. r2 aaa](../../../.gitbook/assets/stack-zero-4.png)
 
-A partir de aquí podríamos listar las funciones existentes en el binario con el comando **afl** (analize function list) y desensamblar la sección que deseemos con **pdf**:
+A partir de aquí podríamos listar las funciones existentes en el binario con el comando **afl** (analize function list) y desensamblar la sección que deseemos con **pdf** (print disassembly from):
 
 ![stack-zero. r2 afl pdf](../../../.gitbook/assets/stack-zero-5.png)
 
@@ -289,3 +289,8 @@ Por lo tanto, hemos corrompido la memoria, cambiado el contenido a voluntad y ga
 
 ![](../../../.gitbook/assets/stack-zero-16.png)
 
+Para obtener el mismo resultado fuera del depurador, debemos utilizar el comando:
+
+```
+/opt/phoenix/amd64/stack-zero < stack0-payload.txt
+```
