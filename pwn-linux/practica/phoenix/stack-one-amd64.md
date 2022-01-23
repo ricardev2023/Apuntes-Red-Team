@@ -160,9 +160,65 @@ Como siempre que utilizamos el depurador, tras abrir el archivo procedemos a ana
 
 Después podemos decidir si utilizamos `pdf main` (print disassembly from) o `s main` (seek) para colocarse ya en las direcciones de memoria de **main**.
 
+![](../../../.gitbook/assets/stack-one-9.png)
+
 Pasamos a modo gráfico para ver que efectivamente hay dos puntos de decisión en el camino principal, como habíamos visto en el código fuente:
 
 ![stack-one. r2 graph](../../../.gitbook/assets/stack-one-5.png)
+
+Para mejorar nuestro entendimiento del código ensamblador vamos a ponerlo al lado del código fuente:
+
+```c
+int main(int argc, char **argv) {        // push rbp
+                                         // mov rbp, rsp
+
+  struct {                               // sub rsp, 0x60
+    char buffer[64];                     // mov dword [rbp -local_54h], edi (argc)
+    volatile int changeme;               // mov qword [rbp - local_60h], rsi (buffer)
+  } locals;
+
+  printf("%s\n", BANNER);                 // call sym.imp.puts
+
+  if (argc < 2) {                         // COMPARACIÓN NÚMERO DE ARGS
+                                          // cmp dword [rbp - local_54h], 1
+                                          // jg 0x4006a0 (si es > 1 salta)
+                                          
+                                          // CAMINO <= 1        
+    errx(1, "specify an argument...");    // mov esi, str.sprecify_an_argument
+  }                                       // mov edi, 1
+                                          // mov eax, 0
+                                          // call sym.imp.errx 
+                                          
+                                          // CAMINO > 1
+  locals.changeme = 0;                    // mov dword [rbp - local_10h], 0 (changeme)
+  strcpy(locals.buffer, argv[1]);         // mov rax, qword [rbp - local_60h]
+                                          // add rax, 8
+                                          // mov rdx, qword [rax]
+                                          // lea rax, qword [rbp - local_50h]
+                                          // mov rsi, rdx
+                                          // moc rdi, rax
+                                          // call sym.imp.strcpy
+
+  if (locals.changeme == 0x496c5962) {    // COMPARACIÓN VALOR DE CHANGEME
+                                          // mov eax, dword [rbp - local_10h]
+                                          // cmp eax, 0x496c5962
+                                          // jne 0x4006d7
+                                          
+                                          // CAMINO = 0x496c5962
+    puts("Well done...");                 // mov edi, str.Well_done_...
+                                          // call sym.imp.puts
+                                          //jmp 0x4006eb (salta a exit) 
+    
+                                          // CAMINO != 0x496c5962
+  } else {                                // mov eax, dword [rbp - local_10h]
+                                          // mov esi, eax
+    printf("... we want 0x496c5962\n",    // mov edi, str.(...)_we_want...
+        locals.changeme);                 // call sym.imp.printf
+  }
+
+  exit(0);                                // mov edi, 0
+                                          // call sym.imp.exit
+```
 
 Ahora en el modo visual navegamos por los modos con `p` y aumentamos los bytes de stack que se muestran utilizando `:`&#x20;
 
