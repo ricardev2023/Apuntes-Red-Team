@@ -4,6 +4,12 @@ description: En éste artículo veremos la estructura de un Binario en formato E
 
 # ESTRUCTURA DE UN BINARIO DE LINUX
 
+{% hint style="info" %}
+Artículo copiado de la Fundación Sadosky escrito por Teresa Alberto.
+{% endhint %}
+
+{% embed url="https://fundacion-sadosky.github.io/guia-escritura-exploits/buffer-overflow/3-got.html" %}
+
 ## ESTRUCTURA DEL FORMATO ELF <a href="#layout-del-formato-elf-executable-and-linking-format-de-gnulinux" id="layout-del-formato-elf-executable-and-linking-format-de-gnulinux"></a>
 
 ### Secciones de la estructura

@@ -62,7 +62,7 @@ Para identificar esta información en sistemas Windows o Linux (Samba), el hacke
 Aquí puede observar como podemos utilizar **nmap** para enumerar SMB\
 `nmap -p 445 -A 192.168.1.101`
 
-![](<../../.gitbook/assets/imagen (11).png>)
+![](<../.gitbook/assets/imagen (11).png>)
 
 As a result, we enumerated the following information about the target machine:
 
@@ -175,7 +175,7 @@ En este ejemplo enumeramos la máquina objetivo y encontramos los recursos compa
 `smbclient //192.168.1.40/guest`  \
 `get file.txt`
 
-![](<../../.gitbook/assets/imagen (18).png>)
+![](<../.gitbook/assets/imagen (18).png>)
 
 Ahora enumeramos un recurso compartido especifico del usuario raj (como hemos hecho antes). Nos conectamos a SMB como el usuario raj y encontramos un recurso compartido con el nombre de "share". Reconfiguramos nuestro comando para poder acceder a share y ahora podemos descargar el archivo que hemos encontrado.
 
@@ -183,7 +183,7 @@ Ahora enumeramos un recurso compartido especifico del usuario raj (como hemos he
 `smbclient //192.168.1.17/share -U raj%123`  \
 `get raj.txt`
 
-![](<../../.gitbook/assets/imagen (50).png>)
+![](<../.gitbook/assets/imagen (50).png>)
 
 **smb-enum-shares NSE Script**
 
@@ -264,7 +264,7 @@ Después se dividió este script en varios comprobadores de vulnerabilidades que
 
 `nmap --script smb-vuln* 192.168.1.16`
 
-![](<../../.gitbook/assets/imagen (59).png>)
+![](<../.gitbook/assets/imagen (59).png>)
 
 {% hint style="danger" %}
 El artículo original incluye un apartado de explotación y otro de post-explotación en el que utiliza metasploit para explotar el servicio SMB.

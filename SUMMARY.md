@@ -66,7 +66,7 @@
 
 * [135, 539 - MSRPC](services-hacking-windows/135-539-msrpc.md)
 * [389, 636 - LDAP / LDAPS](services-hacking-windows/389-636-ldap-ldaps.md)
-* [445 - SMB](services-hacking-windows/445-smb-traducir/README.md)
+* [445 - SMB](services-hacking-windows/445-smb-traducir.md)
   * [ETERNALBLUE](services-hacking-windows/445-smb-traducir/eternalblue.md)
 * [1443 - MSSQL](services-hacking-windows/1443-mssql.md)
 
@@ -112,6 +112,7 @@
   * [SYSCALL Y SHELLCODE](pwn-linux/teoria/syscall-y-shellcode.md)
 * [ESTRATEGIAS DE EXPLOIT](pwn-linux/estrategias-de-exploit/README.md)
   * [ATAQUE “SMASH THE STACK” SENCILLO](pwn-linux/estrategias-de-exploit/ataque-smash-the-stack-sencillo.md)
+  * [ATAQUE “SMASH THE STACK” II](pwn-linux/estrategias-de-exploit/ataque-smash-the-stack-ii.md)
 * [PRÁCTICA](pwn-linux/practica/README.md)
   * [PHOENIX](pwn-linux/practica/phoenix/README.md)
     * [SETUP](pwn-linux/practica/phoenix/setup.md)
