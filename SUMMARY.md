@@ -122,6 +122,7 @@
     * [ATAQUE FORMAT STRING RET2SHELLCODE 2 BYTES](pwn-linux/estrategias-de-exploit/stack-exploits/ataque-format-string-ret2shellcode-2-bytes.md)
     * [ATAQUE FORMAT STRING RET2SHELLCODE 4 BYTES](pwn-linux/estrategias-de-exploit/stack-exploits/ataque-format-string-ret2shellcode-4-bytes.md)
     * [CANARY BYPASS](pwn-linux/estrategias-de-exploit/stack-exploits/canary-bypass.md)
+    * [ATAQUE RET2LIBC](pwn-linux/estrategias-de-exploit/stack-exploits/ataque-ret2libc.md)
 * [PRÁCTICA](pwn-linux/practica/README.md)
   * [PHOENIX](pwn-linux/practica/phoenix/README.md)
     * [SETUP](pwn-linux/practica/phoenix/setup.md)
