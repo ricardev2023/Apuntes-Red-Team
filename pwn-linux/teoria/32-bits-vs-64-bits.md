@@ -1,4 +1,4 @@
-# 32 BITS VS 64 BITS
+# CONVENCIÓN DE LLAMADAS
 
 La mayor parte de la teoría que se va a ver en la guía es aplicable tanto a arquitectura de 32bit como a 64bit. Sin embargo hay un detalle muy importante que varía y es necesario tenerlo en cuenta:
 
