@@ -105,6 +105,7 @@
 
 * [CREANDO UN LABORATORIO SIN MITIGACIONES](pwn-linux/creando-un-laboratorio-sin-mitigaciones.md)
 * [TEORÍA](pwn-linux/teoria/README.md)
+  * [32 BITS VS 64 BITS](pwn-linux/teoria/32-bits-vs-64-bits.md)
   * [ESTRUCTURA DE UN BINARIO DE LINUX](pwn-linux/teoria/estructura-de-un-binario-de-linux/README.md)
     * [HERRAMIENTAS](pwn-linux/teoria/estructura-de-un-binario-de-linux/herramientas.md)
   * [ENSAMBLADOR](pwn-linux/teoria/ensamblador.md)
@@ -112,8 +113,8 @@
   * [SYSCALL Y SHELLCODE](pwn-linux/teoria/syscall-y-shellcode.md)
 * [ESTRATEGIAS DE EXPLOIT](pwn-linux/estrategias-de-exploit/README.md)
   * [STACK EXPLOITS](pwn-linux/estrategias-de-exploit/stack-exploits/README.md)
-    * [ATAQUE “SMASH THE STACK” SENCILLO](pwn-linux/estrategias-de-exploit/stack-exploits/ataque-smash-the-stack-sencillo.md)
-    * [ATAQUE RET2WIN](pwn-linux/estrategias-de-exploit/stack-exploits/ataque-smash-the-stack-ii.md)
+    * [ATAQUE “SMASH THE STACK” SENCILLO](pwn-linux/estrategias-de-exploit/ataque-smash-the-stack-sencillo.md)
+    * [ATAQUE RET2WIN](pwn-linux/estrategias-de-exploit/ataque-smash-the-stack-ii.md)
     * [ATAQUE RET2SHELLCODE](pwn-linux/estrategias-de-exploit/stack-exploits/ataque-smash-the-stack-ii-1.md)
 * [PRÁCTICA](pwn-linux/practica/README.md)
   * [PHOENIX](pwn-linux/practica/phoenix/README.md)
