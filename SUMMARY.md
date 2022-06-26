@@ -132,3 +132,4 @@
     * [STACK-THREE amd64](pwn-linux/practica/phoenix/stack-three-amd64.md)
     * [STACK-FOUR amd64](pwn-linux/practica/phoenix/stack-four-amd64.md)
     * [STACK-FIVE amd64](pwn-linux/practica/phoenix/stack-five-amd64.md)
+    * [STACK-SIX amd64](pwn-linux/practica/phoenix/stack-six-amd64.md)
