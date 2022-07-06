@@ -68,7 +68,7 @@ Analizando el código que tenemos delante podemos ver que:
 * El código lee una variable de entorno llamada **ExploitEducation** y la pasa a la función **greet** en la variable **who**.
 * Después copia el mensaje **GREET** al buffer que dice `"Welcome, I am pleased to meet you"`.
 * Después chequea el tamaño del input (máximo **127 bytes**).
-* Ahora viene el fallo: Copia el input en el **buffer + 34** (longitud de GREET), por tanto, si el tamaño de nuestro input es **127 bytes** (máximo) podemos **sobreescribir 34 bytes** del **stack**.
+* Ahora viene el fallo: Copia el input en el **buffer + 34** (longitud de GREET), por tanto, si el tamaño de nuestro input es **127 bytes** (máximo) podemos **sobrescribir 34 bytes** del **stack**.
 
 {% hint style="danger" %}
 En total podemos escribir 34 + 127 = 161 bytes.&#x20;
