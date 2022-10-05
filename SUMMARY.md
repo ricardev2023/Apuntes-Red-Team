@@ -53,8 +53,11 @@
 
 ## SERVICES HACKING (BOTH)
 
+* [23 - TELNET](services-hacking-both/23-telnet.md)
 * [25, 465 587 - SMTP](services-hacking-linux/25-465-587-smtp.md)
 * [111, 2049 - RPCBIND Y NFS](services-hacking-linux/111-2049-rpcbind-y-nfs.md)
+* [445 - SMB](services-hacking-both/445-smb-traducir/README.md)
+  * [ETERNALBLUE](services-hacking-both/445-smb-traducir/eternalblue.md)
 * [161,162,10161,10162/udp - SNMP](services-hacking-both/161-162-10161-10162-udp-snmp/README.md)
   * [SNMP (RCE Linux)](services-hacking-both/161-162-10161-10162-udp-snmp/snmp-rce-linux.md)
 
@@ -66,8 +69,6 @@
 
 * [135, 539 - MSRPC](services-hacking-windows/135-539-msrpc.md)
 * [389, 636 - LDAP / LDAPS](services-hacking-windows/389-636-ldap-ldaps.md)
-* [445 - SMB](services-hacking-windows/445-smb-traducir.md)
-  * [ETERNALBLUE](services-hacking-windows/445-smb-traducir/eternalblue.md)
 * [1443 - MSSQL](services-hacking-windows/1443-mssql.md)
 
 ## ACTIVE DIRECTORY HACKING
