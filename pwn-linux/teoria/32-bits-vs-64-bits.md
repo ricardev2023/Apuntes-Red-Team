@@ -16,6 +16,6 @@ En arquitectura de 32 bits, los argumentos se almacenan directamente en el stack
 
 Por otro lado, en arquitecturas más modernas (64bits), los parámetros se almacenan en los **registros** a no ser que haya más de 6 argumentos, que los últimos se almacenarían en el stack.
 
-![Fijense que ésta imagen muestra el stack al revés que la imagen superior.](<../../.gitbook/assets/image (2).png>)
+![Fijense que ésta imagen muestra el stack al revés que la imagen superior.](<../../.gitbook/assets/image (2) (2).png>)
 
 Como se puede observar, los argumentos se almacenan en: **RDI, RSI, RDX, RCX, R8 y R9** y despúes se comienzan a almacenar en el **stack** desde el séptimo en adelante.
