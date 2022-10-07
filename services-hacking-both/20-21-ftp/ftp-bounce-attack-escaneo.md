@@ -25,7 +25,7 @@ Ejemplo utilizando **PORT** (Puerto 8080 abierto / Puerto 7777 cerrado):
 
 Ejemplo con **EPRT** (Puerto 8080 abierto / Puerto 7777 cerrado):
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 Ejemplo con **RETR** en vez de LIST:
 
