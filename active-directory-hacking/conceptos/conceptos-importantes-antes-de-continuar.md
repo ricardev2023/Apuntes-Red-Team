@@ -30,7 +30,7 @@ Service_class no es más que una denominación genérica para el servicio (por e
 
 Un SPN se ve de la siguiente manera:
 
-![SPN de un servicio en un Ticket de Kerberos. ](<../../.gitbook/assets/imagen (13).png>)
+![SPN de un servicio en un Ticket de Kerberos. ](<../../.gitbook/assets/imagen (38).png>)
 
 ## KERBEROS
 
@@ -50,7 +50,7 @@ Para conseguir lo anterior, hacen falta 3 entidades:
 * Un **servicio**.
 * Un **Key Distribution Center** (KDC) que es un **Domain Controler** (DC).
 
-![Las tres entidades.](<../../.gitbook/assets/imagen (77).png>)
+![Las tres entidades.](<../../.gitbook/assets/imagen (2).png>)
 
 La idea es que cuando un usuario quiera acceder a un servicio, la contreseña no viaje por la red para evitar comprometer la misma.
 
@@ -72,13 +72,13 @@ Esto significa que el TGS lo puedo obtener aunque yo no tenga autorización para
 
 Sin especificar, el proceso es el siguiente:
 
-![Proceso resumido sin especificar conceptos.](<../../.gitbook/assets/imagen (8).png>)
+![Proceso resumido sin especificar conceptos.](<../../.gitbook/assets/imagen (14).png>)
 
 ### Como funciona
 
 En el contexto de un **Directorio Activo**, el **KDC** siempre será un **Domain Controler**. El **KDC** contiene, por tanto, toda la información del dominio, incluyendo los secretos de cada servicio, equipo y usuario.
 
-![Representación gráfica de que el KDC tiene todos los secretos del domino.](<../../.gitbook/assets/imagen (19).png>)
+![Representación gráfica de que el KDC tiene todos los secretos del domino.](<../../.gitbook/assets/imagen (82).png>)
 
 Tomamos el usuario `strelock` como ejemplo. El usuario `strelock` quiere utilizar un servicio. Para ello, debe autenticarse frente al KDC y enviar una solicitud para utilizar el servicio. Esta es la fase de **Authentication Service (AS).**
 
@@ -90,7 +90,7 @@ Tomamos el usuario `strelock` como ejemplo. El usuario `strelock` quiere utiliza
 
 Para solicitar el TGT el usuario envia al KDC: su nombre en texto plano y la hora exacta (timestamp) de la solicitud encriptado con una versión hasheada de las contraseña del usuario `strelock` (Recordemos que el KDC posee este hash con el que hemos encriptado la información de antemano).
 
-![Contenido del KRB\_AS\_REQ](<../../.gitbook/assets/imagen (102).png>)
+![Contenido del KRB\_AS\_REQ](<../../.gitbook/assets/imagen (13).png>)
 
 El **KDC** recibe el nombre de usuario y lo comprueba con la base de datos. Como en esta base de datos tiene el hash de la contraseña del usuario `strelock` procede a desencriptar el **timestamp** con este **hash**. Pueden darse dos escenarios:
 
@@ -98,7 +98,7 @@ El **timestamp** no se desencripta correctamente (por lo tanto la contraseña su
 
 El timestamp se desencripta lo que asegura que el usuario es quien dice ser. El **KDC** genera una session key unica para este usuario y con una duración limitada.
 
-![Sessión Key](<../../.gitbook/assets/imagen (50).png>)
+![Sessión Key](<../../.gitbook/assets/imagen (43).png>)
 
 * **KRB\_AS\_REP**
 
@@ -111,7 +111,7 @@ La respuesta del **KDC** incluye lo siguiente:
   * La **Session Key** generada.
   * El **Privilege Attribute Certificate (PAC)** que contiene mucha información relevante del usuario como su SID y los grupos a los que pertenece.
 
-![Contenido del KRB\_AS\_REP](<../../.gitbook/assets/imagen (44).png>)
+![Contenido del KRB\_AS\_REP](<../../.gitbook/assets/imagen (31).png>)
 
 {% hint style="info" %}
 El **TGT** es información pública por lo que es facilmente interceptable en la fase de autenticación. Por eso es muy importante la **Session Key** que lo acompaña.
@@ -123,7 +123,7 @@ El cliente recibe el **TGT** y desencripta la **Session Key** que necesitará pr
 
 Ahora que el usuario está autenticado nos encontramos en el escenario en el que el cliente posee su propio **secreto**, la **Session Key** desencriptada y el **TGT** encriptado por el **KDC** que contiene entre otras cosas la misma **Session Key**. Esto se ilustra en la siguiente imagen.
 
-![Situación al inicio de esta fase.](<../../.gitbook/assets/imagen (31).png>)
+![Situación al inicio de esta fase.](<../../.gitbook/assets/imagen (74).png>)
 
 * **KRB\_TGS\_REQ**
 
@@ -133,11 +133,11 @@ Si el usuario quiere utilizar un servicio, como por ejemplo `CIFS` en el `SERVER
 * El servicio al que se quiere conectar, con el **formato SPN** `CIFS/SERVER01`.
 * Un **autenticador** parecido al que mandó en el **KRB\_AS\_REQ**. Es decir su **nombre de usuario** y **timestamp** solo que esta vez **encriptados con la Session Key**.
 
-![Contenido del KRB\_TGS\_REQ](<../../.gitbook/assets/imagen (35).png>)
+![Contenido del KRB\_TGS\_REQ](<../../.gitbook/assets/imagen (22).png>)
 
 Una vez recibida la solicitud, el KDC desencripta el TGT y con la información que contiene (nombre de usuario y Session Key) desencripta el Autenticador y comprueba los datos que contiene. Si los datos son correctos, el usuario es quien dice ser. En el siguiente diagrama se ve claro:
 
-![Diagrama de autenticación en la fase de TGS.](<../../.gitbook/assets/imagen (37).png>)
+![Diagrama de autenticación en la fase de TGS.](<../../.gitbook/assets/imagen (42).png>)
 
 * **KRB\_TGS\_REP**
 
@@ -152,11 +152,11 @@ Ahora que está verificado que el usuario strelock es quien dice ser, el KDC env
 
 Todo el paquete viene encriptado a su vez con la primera **Session Key**.
 
-![Contenido del KRB\_TGS\_REP](<../../.gitbook/assets/imagen (83).png>)
+![Contenido del KRB\_TGS\_REP](<../../.gitbook/assets/imagen (30).png>)
 
 El usuario en este momento desencripta la primera capa de cifrado con la primera **Session Key** obteniendo acceso así a la segunda **Session Key** y al **TGS encriptado por el servicio**.
 
-![Desencriptado de la primera capa y acceso al 2º Session Key y al TGS encriptado.](<../../.gitbook/assets/imagen (45).png>)
+![Desencriptado de la primera capa y acceso al 2º Session Key y al TGS encriptado.](<../../.gitbook/assets/imagen (63).png>)
 
 #### Application Request (AP)
 
@@ -164,11 +164,11 @@ El usuario en este momento desencripta la primera capa de cifrado con la primera
 
 En este momento, el usuario `strelock` genera un nuevo **autenticador** que encripta con la nueva Session Key.
 
-![Encriptado del nuevo autenticador con la 2ª Session Key.](<../../.gitbook/assets/imagen (33).png>)
+![Encriptado del nuevo autenticador con la 2ª Session Key.](<../../.gitbook/assets/imagen (54).png>)
 
 El servicio **CIFS** recibe el **TGS** y lo **desencripta con su propio secreto**. Este **TGS** contiene la **Session Key** que utiliza para **desencriptar el autenticador**. Así comprobamos la autenticidad del usuario.
 
-![Proceso de autenticación frente al Servicio.](<../../.gitbook/assets/imagen (104).png>)
+![Proceso de autenticación frente al Servicio.](<../../.gitbook/assets/imagen (61).png>)
 
 Si todo sale bien, el Servicio procede a dar acceso al usuario.
 
@@ -176,7 +176,7 @@ Si todo sale bien, el Servicio procede a dar acceso al usuario.
 
 En esta última imagen vemos todo el proceso de manera esquematizada:
 
-![Esquema de resumen.](<../../.gitbook/assets/imagen (79).png>)
+![Esquema de resumen.](<../../.gitbook/assets/imagen (9).png>)
 
 ## REFERENCIAS
 

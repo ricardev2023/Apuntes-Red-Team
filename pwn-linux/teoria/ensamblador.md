@@ -61,7 +61,7 @@ registro ebx = 00 00 00 07
 
 Una instrucción puede, dado el caso, manipular sólo una porción de los 32 bits de un registro, para ello accede únicamente a esa porción de bytes utilizando nombres como: `ax`, `ah` y `al` según el criterio que indica la imagen:
 
-![](../../.gitbook/assets/imagen.png)
+![](<../../.gitbook/assets/imagen (90).png>)
 
 Por ejemplo, para modificar el byte menos significativo de `eax` una instrucción usaría directamente `al`. Como se puede ver con ello la instrucción ocupa menos espacio en memoria. (Parece un detalle pero en la escritura de exploits la cuestión del espacio se vuelve muy relevante).
 
@@ -77,7 +77,7 @@ dir. mem. | contenido en mem.   |   instrucción
 >
 >
 
-![](<../../.gitbook/assets/imagen (15).png>)
+![](<../../.gitbook/assets/imagen (92).png>)
 
 > Por lo tanto, en _little endian_ el dato `0x12345678` se almacena en memoria:
 >
@@ -175,7 +175,7 @@ Uno de los registros especiales vinculados a la pila es el puntero de pila.
 
 El _**stack pointer register**_ (o _extended stack pointer_) apunta al tope de la pila, es decir al último elemento almacenado en ella. Cuando se almacena un nuevo valor en la pila con `push`, el valor del puntero se actualiza para siempre apuntar al tope de la pila.
 
-![](<../../.gitbook/assets/imagen (9).png>)
+![](<../../.gitbook/assets/imagen (86).png>)
 
 ```c
 ==========================
@@ -232,7 +232,7 @@ En el ejemplo anterior, contraintuitivamente, al almacenar un nuevo valor en la 
 &#x20;Al desapilar un elemento el proceso fue inverso, la pila decreció desde `0xbffff58c` hasta `0xbffff590`, es decir decreció hacia direcciones mayores.\
 &#x20;Esto se debe a que la pila crece desde direcciones numéricas mayores (que son usadas primero) hacia las direcciones de memoria menores. Es decir, crece desde `0xf...fff` hacia `0x0...000`. Como la pila crece desde su base -desde la dirección más alta- hacia direcciones menores de memoria, al apilar un nuevo elemento se debe decrementar el puntero de la pila y al desapilar un elemento se debe incrementar el puntero de la pila. Por eso con `push` se resta `esp = esp - 4` y con `pop` se suma `esp = esp + 4`.
 
-![](<../../.gitbook/assets/imagen (97).png>)
+![](<../../.gitbook/assets/imagen (71).png>)
 
 > **Consideraciones**: Es posible pensar a las instrucciones `push` y `pop` como dos instrucciones concatenadas.
 >
@@ -255,7 +255,7 @@ En assembler instrucciones del tipo `jump`, `branch` o `call` modifican el valor
 La instrucción `jmp` es un ejemplo de un salto incondicional, es decir, siempre va a ejecutarse.\
 &#x20;En cambio `jne` (`jump if not equal` o saltar si los operandos son distintos) es un salto condicional que depende del valor del flag zero. Existe un registro especial llamado **registro de estado** o registro eflags (rflags en 64 bits) donde cada bit almacena información de control que se modifica con las operaciones aritmético lógicas. Se compone de flags (o banderas en español) de 1 bit, como el `Z o zero flag` que se setea en 1 si la operación anterior resultó en 0, por ejemplo si el resultado de una resta como `sub ebx, eax` dió 0. Otros flags son `S o sign flag` si el resultado de la operación anterior da negativo y `O u overflow flag` si se produce un overflow.
 
-![](<../../.gitbook/assets/imagen (2).png>)
+![](<../../.gitbook/assets/imagen (89).png>)
 
 La información del registro de estado es utilizada luego por instrucciones de salto condicional. Si el resultado de una resta es 0, eso implica que ambos operandos son iguales y que la condición de `jump if equal` debe considerarse como verdadera y por lo tanto el salto debe producirse.
 
@@ -312,12 +312,12 @@ int main() {
 
 Después del llamado a las tres funciones (`funcion_a, funcion_b, funcion_c`) y cuando se están ejecutando instrucciones dentro de la `funcion_c` (`eip` apunta al cuerpo de esa función), el layout de la pila -en una versión simplificada- es:
 
-![](<../../.gitbook/assets/imagen (49).png>)
+![](<../../.gitbook/assets/imagen (91).png>)
 
 Por convención los parámetros de una función se encuentran disponibles en la pila y se almacenan en orden inverso: desde el último al primero, de esta manera se encontrarán disponibles en el orden correcto. (Bajo otras convenciones los parámetros se almacenan en registros).\
 &#x20;En el ejemplo anterior, el llamado a `funcion_a(arg_1, arg_2)` haría que primero se apile `arg_2` y después `arg_1`.
 
-![](<../../.gitbook/assets/imagen (65).png>)
+![](<../../.gitbook/assets/imagen (88).png>)
 
 Este gráfico es una versión simplificada del layout de la pila como se verá a continuación.
 
@@ -348,7 +348,7 @@ void funcion_a(param_1, param_2) {
 
 En la pila se observa el stack frame de la `funcion_a` después de ser llamada, con los respectivos offsets de `ebp`:
 
-![](<../../.gitbook/assets/imagen (3).png>)
+![](<../../.gitbook/assets/imagen (87).png>)
 
 Este es el layout resultante de la pila y ya no una versión simplificada, lo cual puede ser comprobado fácilmente debuggeando un programa como el del ejemplo.
 

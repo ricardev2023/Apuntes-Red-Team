@@ -571,7 +571,7 @@ grep -v "mysql_native_password"
 
 Se pueden activar los logs de MySQL en el archivo `/etc/mysql/my.cnf` descomentando las siguientes lineas:
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ### Archivos útiles
 

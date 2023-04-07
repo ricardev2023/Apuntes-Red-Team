@@ -20,11 +20,11 @@ En este artículo nos centraremos en entender en profundidad la herramienta **Bl
 
 **BloodHound** es una aplicación web basada en **JavaScript** y compilada con Electron. Utiliza **Neo4j** como base de datos (backend). **BloodHound** utiliza gráficos para mapear un **entorno de Directorio Activo** y, de esta manera, ayuda a identificar varios vectores de ataque para **movimiento lateral** y **escalada de privilegios**.
 
-![Acceso a la aplicación BloodHound.](<../../.gitbook/assets/imagen (14).png>)
+![Acceso a la aplicación BloodHound.](<../../.gitbook/assets/imagen (17).png>)
 
 Los datos son suministrados utilizando recolectores de datos (en ingles Ingestors) que se conocen como **SharpHound**. Estos **SharpHound Ingestors** vienen en dos formas: script de Powershell y binario .NET precompilado. Además existen recolectores de datos desarrollados en python para poder ejecutar los ataques desde linux.
 
-![SharpHound Ingestors.](<../../.gitbook/assets/imagen (59).png>)
+![SharpHound Ingestors.](<../../.gitbook/assets/imagen (68).png>)
 
 Bloodhound puede ser utilizado tanto por Red Team como por Blue Team. Los atacantes lo utilizan para mapear el dominio e identificar posibles vectores de ataque y, de manera similar, los defensores lo pueden utilizar para descubrir fallas de seguridad y paliarlas.
 
@@ -103,33 +103,33 @@ Genere un Dominio de prueba.
 $ clear_and_generate
 ```
 
-![Dominio de prueba creandose.](<../../.gitbook/assets/imagen (92).png>)
+![Dominio de prueba creandose.](<../../.gitbook/assets/imagen (45).png>)
 
 Tardará un poco en completarse. Cuando termine ejecute BloodHound e introduzca sus credenciales. La base de datos estará lista parsa ser importada a BloodHound y podrá ver una interfaz como esta:
 
-![](<../../.gitbook/assets/imagen (10).png>)
+![](<../../.gitbook/assets/imagen (28).png>)
 
 ### **Mapeando el dominio** <a href="#bb21" id="bb21"></a>
 
 Ahora que hemos importado el archivo .zip de la base de datos vamos a mapear el dominio. Vamos a ver unos cuantos ejemplos en este artículo. Para ver una vista general de nuestro Dominio debemos clicar en el boton con tres barras horizontales. Así veremos las estadisticas del Dominio.
 
-![](<../../.gitbook/assets/imagen (27).png>)
+![](<../../.gitbook/assets/imagen (47).png>)
 
 Para ejecutar búsquedas seleccionamos Queries en el menu:
 
-![](<../../.gitbook/assets/imagen (100).png>)
+![](<../../.gitbook/assets/imagen (23).png>)
 
 #### **Ejemplo 1: Identificando Administradores del dominio**
 
 Clicamos en "Find all Domain Admins" y nos presenta un gráfico con todos los Administradores de Dominio del entorno:
 
-![](<../../.gitbook/assets/imagen (72).png>)
+![](<../../.gitbook/assets/imagen (64).png>)
 
 #### **Ejemplo 2: Consiguiendo más información de un Administrador de Dominio específico**
 
 Si clicamos en uno de los Administradores de Dominio se mostrará un menú con todas las posibles propiedades para ese nodo de la red en concreto.
 
-![](<../../.gitbook/assets/imagen (4).png>)
+![](<../../.gitbook/assets/imagen (67).png>)
 
 ### **Identificando vectores de ataque** <a href="#0c53" id="0c53"></a>
 
@@ -139,57 +139,57 @@ BloodHound puede ser utilizado para identificar algunos vectores de ataque que p
 
 Clicando en "Find Shortest Path to Domain Admins" obtenemos un gráfico que muestra todos los usuarios que pueden llevar hasta el Administrador de Dominio.
 
-![](<../../.gitbook/assets/imagen (5).png>)
+![](<../../.gitbook/assets/imagen (4).png>)
 
 Vemos algunos usuarios que pueden utilizar el protocolo RDP con objetos equipo de la red mientras que otros tienen la sesión abierta. Todos lleva al Administrador de Dominio.
 
 Vamos a mapear un vector de ataque. Administrador de Dominio desde el grupo IT00238@TESTLAB.LOCAL:
 
-![](<../../.gitbook/assets/imagen (106).png>)
+![](<../../.gitbook/assets/imagen (76).png>)
 
 Hacemos click derecho en el grupo elegido (IT00238) y lo marcamos como nodo inicial con "set as starting node".
 
-![](<../../.gitbook/assets/imagen (62).png>)
+![](<../../.gitbook/assets/imagen (37).png>)
 
 Despues clicamos en el boton que parece una carretera y marcamos nuestro objetivo como Administrador de Dominio (Domain Admins)
 
-![](<../../.gitbook/assets/imagen (52).png>)
+![](<../../.gitbook/assets/imagen (36).png>)
 
 Ahora vemos que se ha generado un camino que lleva desde el grupo IT00238 hasta el grupo Domain Admins.
 
-![](<../../.gitbook/assets/imagen (70).png>)
+![](<../../.gitbook/assets/imagen (21).png>)
 
 Vemos que los usuarios miembros del grupo IT00238 tambien son miembros del grupo IT00408 y son administradores locales en la máquina COMP00037 donde el usuario BDETONE00479 tiene una sesion. En esta máquina el atacante puede dumpear los credenciales de éste usuario y ganar acceso a este usuario, lo que lo convertiría en miembro del grupo IT00314.
 
-![](<../../.gitbook/assets/imagen (23).png>)
+![](<../../.gitbook/assets/imagen (10).png>)
 
 Siguiendo el camino, los miembros del grupo IT00314 tienen acceso administrativo a un montón de activos del dominio donde algunos de los Administradores de Dominio tienen sesion.
 
-![](<../../.gitbook/assets/imagen (29).png>)
+![](<../../.gitbook/assets/imagen (7).png>)
 
 #### **Ejemplo 2: Kerberoasting**
 
 Volviendo atrás a las búsquedas, si clicamos en "List All Kerberoastable Accounts", veremos un gráfico con todos los usuarios susceptibles al ataque [Kereberoasting](https://ajcruz15.gitbook.io/red-team/active-directory-hacking/kerberoasting).
 
-![](<../../.gitbook/assets/imagen (18).png>)
+![](<../../.gitbook/assets/imagen (19).png>)
 
 #### **Ejemplo 3: Ataque DCSync**
 
 Volviendo a las búsquedas, si clicamos en "Find Principals with DCSync Rights" veremos un gráfico con vectores de ataque DCSync que nos llevan al Administrador de Dominio.
 
-![](<../../.gitbook/assets/imagen (81) (1).png>)
+![](<../../.gitbook/assets/imagen (81).png>)
 
 Desde aquí podemos ver que el camino del exito pasa por el grupo de administradores del dominio ya que antes habíamos mapeado nuestro ataque hasta tener el control de un usuario en este grupo. Con click derecho sobre "Domain Admins group" si presionamos expandir podremos ver los usuarios del grupo con permisos para realizar un [DCSync Attack](https://book.hacktricks.xyz/windows/active-directory-methodology/dcsync).
 
-![](<../../.gitbook/assets/imagen (60).png>)
+![](<../../.gitbook/assets/imagen (78).png>)
 
 Si seguimos más allá y hacemos click derecho sobre "GetChanges" o "GetChangesAll" y presionamos sobre "help", veremos un cuadro de dialogo con información detallada sobre esta propiedad.
 
-![](<../../.gitbook/assets/imagen (71).png>)
+![](../../.gitbook/assets/imagen.png)
 
 Si clicamos en la pestaña de "Abuse Info" obtenemos información sobre como realizar un DCSync Attack.
 
-![](<../../.gitbook/assets/imagen (38).png>)
+![](<../../.gitbook/assets/imagen (5).png>)
 
 Por último tenemos "OpSec Considerations" y "References" que proporcionan mitigaciones para este problema y más material relacionado respectivamente.
 

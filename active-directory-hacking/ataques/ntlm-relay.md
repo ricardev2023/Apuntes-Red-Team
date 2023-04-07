@@ -26,9 +26,9 @@ En este caso, no explotamos el **protocolo SMB** para obtener un **Hash NetNTLM-
 
 Como podemos ver en las imagenes inferiores, la esencia del ataque es un Man in the Middle durante la autenticación NTLM lo que hace que el atacante termine autenticandose con los credenciales del cliente.
 
-![Esquema NTLM Relay.](<../../.gitbook/assets/imagen (84).png>)
+![Esquema NTLM Relay.](<../../.gitbook/assets/imagen (66).png>)
 
-![Visión desde el punto de vista del atacante.](<../../.gitbook/assets/imagen (11).png>)
+![Visión desde el punto de vista del atacante.](<../../.gitbook/assets/imagen (8).png>)
 
 1. El equipo víctima le preguntará al DC, ‘Oye, me puedo autenticar para conectarme a \archivos?’&#x20;
 2. El DC le responderá, ‘No se donde está ese recurso’&#x20;
@@ -127,7 +127,7 @@ Ya que trabajan con la versión 2 del protocolo smb y sin esto no obtendremos na
 
 Con ambas herramientas a la escucha, es cuestión de tiempo que algún usuario solicite acceso a un recurso compartido inexistente o lo haga alguna herramienta automatizada:
 
-![SAM dumpeada con NTLMRelayx.](<../../.gitbook/assets/imagen (85).png>)
+![SAM dumpeada con NTLMRelayx.](<../../.gitbook/assets/imagen (6).png>)
 
 Como podemos ver en la imagen anterior, hemos dumpeado la SAM del equipo **192.168.1.135** que es el equipo cliente que **NO REALIZA LA BUSQUEDA**.
 
@@ -143,7 +143,7 @@ En este caso, la parte importante de la SAM es el último Hash de cada usuario. 
 
 `john --wordlist=/usr/share/wordlists/rockyou.txt /RUTA_A/hash.txt --format=NT`
 
-![obtención de la contraseña en texto plano.](<../../.gitbook/assets/imagen (6).png>)
+![obtención de la contraseña en texto plano.](<../../.gitbook/assets/imagen (72).png>)
 
 ### 3. Ejecución remota de comandos.
 

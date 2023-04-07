@@ -122,7 +122,7 @@ Hemos comprobado que sí, por lo tanto, lanzamos el responder con el siguiente c
 
 Con el responder activo, la victima tratará de abrir un recurso compartido que no existe y el responder envenenará esta solicitud:
 
-![Este recurso está siendo accedido desde un cliente y no existe.](<../../.gitbook/assets/recurso inexistente.png>)
+![Este recurso está siendo accedido desde un cliente y no existe.](../../.gitbook/assets/recurso-inexistente.png)
 
 ![Como podemos ver, tenemos el hash NetNTLM-v2 de vgarcía.](../../.gitbook/assets/responder2.png)
 
@@ -168,7 +168,7 @@ Ya sabemos que con este usuario podemos obtener una shell interactiva así que v
 
 `impacket-psexec DOMINIO/USUARIO:PASSWORD@IP cmd.exe`
 
-![¡Premio!](../../.gitbook/assets/PSExec1.png)
+![¡Premio!](../../.gitbook/assets/psexec1.png)
 
 {% hint style="danger" %}
 Si el equipo víctima tiene la Protección en tiempo real de Windows Defender activa, este ataque no se puede realizar. Por eso es tan importante tener un buen antivirus en ambientes empresariales.
@@ -190,19 +190,19 @@ Esta parte está sacada exactamente del ejemplo de S4vitar en el siguiente [vide
 
 Utilizamos el comando rpcclient para obtener información sobre
 
-![Listamos los usuarios del domino (el rid es el identificador del usuario).](<../../.gitbook/assets/imagen (32).png>)
+![Listamos los usuarios del domino (el rid es el identificador del usuario).](<../../.gitbook/assets/imagen (80).png>)
 
 ![Listamos los grupos del dominio (el rid es el identificador del grupo).](../../.gitbook/assets/rpcclient1.png)
 
 A mi me interesa saber quienes forman parte del grupo Admins. del Dominio (rid 0x200) pues lo intentamos:
 
-![Hay dos usuarios en el grupo Admins. del Dominio.](<../../.gitbook/assets/imagen (88).png>)
+![Hay dos usuarios en el grupo Admins. del Dominio.](<../../.gitbook/assets/imagen (84).png>)
 
 Hay dos usuarios en el grupo Admins del Dominio. Podemos ver los detalles de cada uno de ellos a ver si tenemos suerte.
 
 ![Este es el usuario Administrador.](../../.gitbook/assets/rpcclient2.png)
 
-![¡Premio!](<../../.gitbook/assets/imagen (41).png>)
+![¡Premio!](<../../.gitbook/assets/imagen (39).png>)
 
 {% hint style="success" %}
 Como habiamos generado un usuario administrador del dominio con contraseña temporal, hemos conseguido obtener esta contraseña utilizando RPCClient para ver los datos de los usuarios que pertenecen al grupo que nos interesa.
@@ -212,7 +212,7 @@ Esto no es habitual pero tampoco es extraño encontrar un usuario con bajos priv
 
 Utilizando estos nuevos credenciales, vemos que efectivamente hemos comprometido a un Administrador de dominio
 
-![DC-COMPANY es el Domain Controler.](<../../.gitbook/assets/imagen (39).png>)
+![DC-COMPANY es el Domain Controler.](<../../.gitbook/assets/imagen (73).png>)
 
 #### Dumpear la SAM
 
@@ -224,13 +224,13 @@ Ahora que tenemos los credenciales del Administrador de Dominio y si quisieramos
 
 De la misma manera podemos dumpear el NTDS (La base de datos del Directorio Activo) donde encontraremos el historial de contraseñas de todos los usuarios de AD.
 
-![Así ganamos acceso al NTDS.](<../../.gitbook/assets/imagen (99).png>)
+![Así ganamos acceso al NTDS.](<../../.gitbook/assets/imagen (44).png>)
 
 #### PassTheHash
 
 Por último podemos utilizar PTH-Winexe para utilizar estos Hashes para acceder al equipo:
 
-![¡Premio!](<../../.gitbook/assets/imagen (63).png>)
+![¡Premio!](<../../.gitbook/assets/imagen (12).png>)
 
 ## REFERENCIAS
 
