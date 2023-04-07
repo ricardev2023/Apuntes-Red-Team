@@ -1,9 +1,9 @@
 # Table of contents
 
 * [Presentación](README.md)
-* [Apuntes Linux](https://ajcruz15.gitbook.io/apuntes-linux/)
-* [Apuntes Blue Team](https://ajcruz15.gitbook.io/blue-team/)
-* [Apuntes Python](https://ajcruz15.gitbook.io/apuntes-python/)
+* [Apuntes Linux](https://ricardev.gitbook.io/apuntes-linux/)
+* [Apuntes Blue Team](https://ricardev.gitbook.io/blue-team/)
+* [Apuntes Python](https://ricardev.gitbook.io/apuntes-python/)
 * [Strelock15 github](https://github.com/strelock15)
 
 ## RECON <a href="#reconocimiento" id="reconocimiento"></a>

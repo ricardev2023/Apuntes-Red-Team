@@ -23,5 +23,5 @@ Esto pretende ser una herramienta para desarrolladores y hackers con una base en
 
 El recurso se encuentra en constante cambio y crecimiento pues es una de mis herramientas de trabajo a la hora de enfrentar un CTF o un Pentest. El contenido aumentará poco a poco.
 
-_strelock_\
-_ajcruz15@protonmail.com  (No duden en enviar propuestas y correcciones)_
+_Ricardev_\
+_contacto@ricar.dev  (No duden en enviar propuestas y correcciones)_
