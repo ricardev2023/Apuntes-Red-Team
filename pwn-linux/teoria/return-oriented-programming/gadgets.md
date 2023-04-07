@@ -10,11 +10,11 @@ Los Gadgets son pequeños fragmentos de código seguidos de una instrucción `re
 
 Vamos a suponer que el stack está así durante la ejecución de un gadget `pop rdi; ret`.
 
-![](<../../../.gitbook/assets/1 (2).png>)
+![](../../../.gitbook/assets/1.png)
 
 Lo que ocurre es bastante obvio. `0x10` pasa a `rdi` al estar en lo alto del stack durante la instrucción `pop rdi`. Una vez que ocurre el pop, el `rsp` se mueve:
 
-![](<../../../.gitbook/assets/2 (2).png>)
+![](<../../../.gitbook/assets/2 (1).png>)
 
 Y puesto que `ret` es equivalente a `pop rip`, `0x5655576724` es movido al `rip`.
 
@@ -24,15 +24,15 @@ Cuando sobreescribimos el **puntero de retorno**, sobreescribimos el valor al qu
 
 Digamos que para explotar un binario debemos utilizar un gadget pop rdi; ret para hacer introducir 0x100 en el rdi y luego saltar a flag(). Vamos a ejecutar paso por paso.&#x20;
 
-![](<../../../.gitbook/assets/3 (2).png>)
+![](../../../.gitbook/assets/3.png)
 
 Cuando el `rip` apunta a la instrucción `ret` original, el `rsp` está apuntado a la `dirección del gadget` que realiza un `pop`. Ahora el `rip` se mueve para apuntar al  `gadget` y el `rsp` se mueve a la `siguiente dirección de memoria`.
 
-![](<../../../.gitbook/assets/4 (2).png>)
+![](../../../.gitbook/assets/4.png)
 
 El `rsp` se mueve a `0x100`; el `rip` se mueve al `pop rdi`. Por tanto hacemos un pop y metemos `0x100` al `rdi`.
 
-![](<../../../.gitbook/assets/5 (2).png>)
+![](<../../../.gitbook/assets/5 (1).png>)
 
 el `rsp` se mueve a la dirección de `flag()` y el `rip` se mueve al `ret del gadget`. El `ret` es ejecutado y **llamamos a la función flag().**
 
@@ -40,11 +40,11 @@ el `rsp` se mueve a la dirección de `flag()` y el `rip` se mueve al `ret del ga
 
 Esencialmente, si el gadget saca valores del stack (pop), simplemente coloque esos valores después. Si queremos hacer pop 0x10 y despues saltar a 0x16, debemos utilizar:
 
-![](<../../../.gitbook/assets/6 (2).png>)
+![](../../../.gitbook/assets/6.png)
 
 Tenga en cuenta que si tenemos varias instrucciones pop, podemos añadir varios valores:
 
-![](<../../../.gitbook/assets/7 (1).png>)
+![](../../../.gitbook/assets/7.png)
 
 {% hint style="info" %}
 Utilizamos rdi en los ejemplos por que es el registro que almacena el primer argumento en la arquitectura de 64 bits.&#x20;

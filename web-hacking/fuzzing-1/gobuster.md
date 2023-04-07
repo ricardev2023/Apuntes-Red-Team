@@ -7,7 +7,7 @@ description: >-
 # GOBUSTER
 
 {% hint style="info" %}
-Éste artículo está traducido del artículo [**Gobuster for directory, DNS and virtual hosts bruteforcing**](https://erev0s.com/blog/gobuster-directory-dns-and-virtual-hosts-bruteforcing/) **** de la página web erev0s.
+Éste artículo está traducido del artículo [**Gobuster for directory, DNS and virtual hosts bruteforcing**](https://erev0s.com/blog/gobuster-directory-dns-and-virtual-hosts-bruteforcing/) de la página web erev0s.
 {% endhint %}
 
 En este artículo vamos a explorar el fuzzer llamado GoBuster. El proyecto está disponible en Github.

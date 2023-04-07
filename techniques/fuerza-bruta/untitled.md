@@ -64,5 +64,5 @@ La aplicacion permite tambien hacer ataques de fuerza buta sobre direcciones de 
 
 ## REFERENCIAS
 
-[https://github.com/vanhauser-thc/thc-hydra](https://github.com/vanhauser-thc/thc-hydra)****\
-****[https://backtrackacademy.com/articulo/hydra-ataques-de-fuerza-bruta-online](https://backtrackacademy.com/articulo/hydra-ataques-de-fuerza-bruta-online)
+[https://github.com/vanhauser-thc/thc-hydra](https://github.com/vanhauser-thc/thc-hydra)\
+[https://backtrackacademy.com/articulo/hydra-ataques-de-fuerza-bruta-online](https://backtrackacademy.com/articulo/hydra-ataques-de-fuerza-bruta-online)

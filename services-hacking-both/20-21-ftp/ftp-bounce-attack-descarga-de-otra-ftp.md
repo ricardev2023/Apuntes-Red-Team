@@ -6,7 +6,7 @@
 
 Si tienes acceso a un servidor FTP del que se pueda explotar el Bounce Attack, puedes hacerle solicitar archivos en otro servidor FTP (del que conoces alguna credencial) y descargarlo hasta tu sistema.
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Esto puede ser muy útil en CTFs donde hemos conseguido unos credenciales para una FTP donde se guardan datos críticos pero que solo está conectada a una red local. Utilizando éste método (parecido al port mirroring) podemos obtener esos datos sin tener acceso a la red interna.&#x20;

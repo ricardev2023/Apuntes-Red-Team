@@ -305,8 +305,8 @@ user@abos:~$ gcc -m32 -no-pie -mpreferred-stack-boundary=2 -o imprimir imprimir.
 
 
     **¿Por qué las entradas en la GOT apuntan a la sección `.plt` nuevamente?**\
-    ****\
-    **** En un primer llamado a una función de una biblioteca compartida, en la entrada de la GOT correspondiente se apunta a un sector de la tabla PLT que hace un llamado a una función trampolín. Esa función se encarga de transferirle el control al _dynamic linker_. Este es el encargado de hacer un llamado a la función invocada y después actualizar la entrada en la GOT con su dirección efectiva en la biblioteca correspondiente.\
+    \
+    &#x20;En un primer llamado a una función de una biblioteca compartida, en la entrada de la GOT correspondiente se apunta a un sector de la tabla PLT que hace un llamado a una función trampolín. Esa función se encarga de transferirle el control al _dynamic linker_. Este es el encargado de hacer un llamado a la función invocada y después actualizar la entrada en la GOT con su dirección efectiva en la biblioteca correspondiente.\
     &#x20;A partir de entonces la entrada en la GOT se encuentra actualizada, y ya no apuntará a la función trampolín dentro de `.plt` sino directamente a una dirección en una biblioteca compartida.
 
     En el ejemplo, el llamado al _linker_ sucede con el `jmp 80482e0` que es un salto a una función trampolin también dentro de la sección `.plt` que invoca al _dynamic linker_. Este será el encargado de actualizar la GOT, es decir, reemplazar las direcciones `0x080482f6` en el caso de `printf()` y `0x08048316` en el caso de `exit()` por sus direcciones efectivas en la `libc.so` cargada en memoria.

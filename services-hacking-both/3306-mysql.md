@@ -431,7 +431,8 @@ Por ese motivo, si eres capaz de iniciar un cliente MySQL y conectarlo a tu prop
 
 <pre class="language-sql"><code class="lang-sql"><strong>mysql -u &#x3C;USER> -p --enable-local-infile
 </strong><strong>
-</strong><strong>load data local infile "/etc/passwd" into table test FIELDS TERMINATED BY '\n';</strong></code></pre>
+</strong><strong>load data local infile "/etc/passwd" into table test FIELDS TERMINATED BY '\n';
+</strong></code></pre>
 
 Es importante utilizar el modificador local, ya que sino podemos obtener el siguiente error:
 
@@ -570,7 +571,7 @@ grep -v "mysql_native_password"
 
 Se pueden activar los logs de MySQL en el archivo `/etc/mysql/my.cnf` descomentando las siguientes lineas:
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 ### Archivos útiles
 

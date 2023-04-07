@@ -59,7 +59,7 @@ Existen varios **tipos:**
 
 ### &#x20;**Como identificar vulnerabilidades SQLi**
 
-Para empezar, debo encontrar un elemento de la pagina web que obtenga informacion de una base de datos, ya sea un formulario o un parámetro de una URL **** (normalmente los parámetros tienen la forma **url?dato=valor**).
+Para empezar, debo encontrar un elemento de la pagina web que obtenga informacion de una base de datos, ya sea un formulario o un parámetro de una URL (normalmente los parámetros tienen la forma **url?dato=valor**).
 
 Una vez lo he encontrado, la forma mas sencilla de comprobar si es vulnerable o no es modificando el **valor de busqueda por una comilla simple** ('). De esta manera, obtendremos un **error de sintaxis de SQL** que no solo confirmara que nos encontramos ante una vulnerabilidad sino que ademas **nos indicara el Gestor de Base de Datos que se esta utilizando.**
 

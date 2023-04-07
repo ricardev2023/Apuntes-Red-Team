@@ -8,7 +8,7 @@ description: >-
 # A5-2017. CONTROL DE ACCESO VULNERABLE
 
 {% hint style="info" %}
-Este artículo está copiado de Seguridad Ofensiva, en su artículo: [**OWASP Top 5 – Control de acceso vulnerable**](https://seguridad-ofensiva.com/blog/owasp-top-10/owasp-top-5/)\*\*\*\*
+Este artículo está copiado de Seguridad Ofensiva, en su artículo: [**OWASP Top 5 – Control de acceso vulnerable**](https://seguridad-ofensiva.com/blog/owasp-top-10/owasp-top-5/)
 {% endhint %}
 
 ## CONTROL DE ACCESO VULNERABLE
@@ -25,7 +25,7 @@ Veamos un ejemplo de control de acceso vulnerado. Para entender esta demostraci�
 
 ## ANATOMIA DE UN ATAQUE AL CONTROL DE ACCESO
 
-Es posible para un atacante experimentado hacer un análisis detallado de las posibles vulnerabilidades de una página Web, mucho antes siquiera de pensar en atacar el objetivo. En este caso, el atacante, en su proceso de enumeración, puede encontrar distintas vulnerabilidades, entre ellas una vulnerabilidad llamada “**Ataque transversal de ruta**” \(**directory traversal** en inglés\).
+Es posible para un atacante experimentado hacer un análisis detallado de las posibles vulnerabilidades de una página Web, mucho antes siquiera de pensar en atacar el objetivo. En este caso, el atacante, en su proceso de enumeración, puede encontrar distintas vulnerabilidades, entre ellas una vulnerabilidad llamada “**Ataque transversal de ruta**” (**directory traversal** en inglés).
 
 Este pequeño reporte nos muestra el nombre de la vulnerabilidad, el enlace de la página Web que es vulnerable, el riesgo de ser atacado, que en este caso es alto y la evidencia de que la herramienta de análisis ya fue capaz de confirmar la vulnerabilidad como explotable mostrándonos parte del documento al cual accedió, en este caso “root:x:0:0”:
 
@@ -33,7 +33,7 @@ Este pequeño reporte nos muestra el nombre de la vulnerabilidad, el enlace de l
 
 Esta vulnerabilidad es definida por OWASP-Top 10 de la siguiente manera:
 
-Un **ataque transversal de ruta** \(también conocido como transversal de directorio\) tiene como objetivo **acceder a archivos y directorios que están almacenados fuera de la carpeta raíz web**. Al manipular variables que hacen referencia a archivos con secuencias de “punto-punto-barra diagonal \(../\)” y sus variaciones o al usar rutas de archivos absolutas, es posible acceder a archivos arbitrarios y directorios almacenados en el sistema de archivos, incluido el código fuente o la configuración de la aplicación y archivos críticos del sistema. **Cabe señalar que el acceso a los archivos está limitado por el control de acceso operativo del sistema, o sea, por los permisos que se asignan a las carpetas y archivos.**
+Un **ataque transversal de ruta** (también conocido como transversal de directorio) tiene como objetivo **acceder a archivos y directorios que están almacenados fuera de la carpeta raíz web**. Al manipular variables que hacen referencia a archivos con secuencias de “punto-punto-barra diagonal (../)” y sus variaciones o al usar rutas de archivos absolutas, es posible acceder a archivos arbitrarios y directorios almacenados en el sistema de archivos, incluido el código fuente o la configuración de la aplicación y archivos críticos del sistema. **Cabe señalar que el acceso a los archivos está limitado por el control de acceso operativo del sistema, o sea, por los permisos que se asignan a las carpetas y archivos.**
 
 Si seguimos la misma ruta que la herramienta de análisis nos muestra usando cualquier buscador Web, tenemos acceso al archivo “/etc/passwd” que reside en el servidor donde la aplicación vulnerable reside.
 
@@ -65,9 +65,9 @@ Si una política de asignación de permisos definida no existe en relación a la
 
 #### **Recursos adicionales con relación a este tipo de ataque**:
 
-[https://owasp.org/www-project-top-ten/OWASP\_Top\_Ten\_2017/Top\_10-2017\_A5-Broken\_Access\_Control.html](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A5-Broken_Access_Control.html)
+[https://owasp.org/www-project-top-ten/OWASP\_Top\_Ten\_2017/Top\_10-2017\_A5-Broken\_Access\_Control.html](https://owasp.org/www-project-top-ten/OWASP\_Top\_Ten\_2017/Top\_10-2017\_A5-Broken\_Access\_Control.html)
 
-[https://cheatsheetseries.owasp.org/cheatsheets/Access\_Control\_Cheat\_Sheet.html](https://cheatsheetseries.owasp.org/cheatsheets/Access_Control_Cheat_Sheet.html)
+[https://cheatsheetseries.owasp.org/cheatsheets/Access\_Control\_Cheat\_Sheet.html](https://cheatsheetseries.owasp.org/cheatsheets/Access\_Control\_Cheat\_Sheet.html)
 
 [https://cwe.mitre.org/data/definitions/22.html](https://cwe.mitre.org/data/definitions/22.html)
 
@@ -76,4 +76,3 @@ Si una política de asignación de permisos definida no existe en relación a la
 [https://cwe.mitre.org/data/definitions/285.html](https://cwe.mitre.org/data/definitions/285.html)
 
 [https://cwe.mitre.org/data/definitions/639.html](https://cwe.mitre.org/data/definitions/639.html)
-

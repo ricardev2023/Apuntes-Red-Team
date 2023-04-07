@@ -112,5 +112,4 @@ SAP: $7369F1C8ECD6FCA1C6413F07408CA281C7A85EF0 (SAP)
 
 ## **REFERENCIAS**
 
-****[https://www.kaspersky.es/resource-center/definitions/brute-force-attack](https://www.kaspersky.es/resource-center/definitions/brute-force-attack)****\
-****
+[https://www.kaspersky.es/resource-center/definitions/brute-force-attack](https://www.kaspersky.es/resource-center/definitions/brute-force-attack)\

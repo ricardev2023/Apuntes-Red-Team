@@ -21,7 +21,7 @@ description: >-
 
 Ejemplo utilizando **PORT** (Puerto 8080 abierto / Puerto 7777 cerrado):
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 Ejemplo con **EPRT** (Puerto 8080 abierto / Puerto 7777 cerrado):
 
@@ -29,7 +29,7 @@ Ejemplo con **EPRT** (Puerto 8080 abierto / Puerto 7777 cerrado):
 
 Ejemplo con **RETR** en vez de LIST:
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ## NMAP
 

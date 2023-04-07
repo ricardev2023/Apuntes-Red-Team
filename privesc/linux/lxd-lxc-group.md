@@ -67,7 +67,7 @@ lxc config device add privesc host-root disk source=/ path=/mnt/root recursive=t
 {% hint style="danger" %}
 _**Error: No storage pool found. Please create a new storage pool**_
 
-Ejecute _****_** lxc init** y **repita** el proceso anterior
+Ejecute **lxc init** y **repita** el proceso anterior
 {% endhint %}
 
 Ejecute el container

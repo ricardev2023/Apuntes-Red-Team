@@ -8,7 +8,7 @@ description: >-
 # A3-2017 - EXPOSICIÓN DE DATOS SENSIBLES
 
 {% hint style="info" %}
-Este artículo está copiado de Seguridad Ofensiva, en su artículo: **** [**OWASP Top 3 – Exposición de datos confidenciales**](https://seguridad-ofensiva.com/blog/owasp-top-10/owasp-top-3/)**.**
+Este artículo está copiado de Seguridad Ofensiva, en su artículo: [**OWASP Top 3 – Exposición de datos confidenciales**](https://seguridad-ofensiva.com/blog/owasp-top-10/owasp-top-3/)**.**
 {% endhint %}
 
 ## &#x20;EXPOSICIÓN DE DATOS SENSIBLES
@@ -27,7 +27,7 @@ Permite encontrar datos sensibles expuestos en el código fuente del sitio web.
 
 #### **Uso de “Google Dorks”**&#x20;
 
-Los Google Dorks permiten **** escanear todas las páginas web indexadas por Google para encontrar información que les de acceso no autorizado a diferentes redes. ****  &#x20;
+Los Google Dorks permiten escanear todas las páginas web indexadas por Google para encontrar información que les de acceso no autorizado a diferentes redes.   &#x20;
 
 Esta es una vulnerabilidad que afecta a sitios web, redes Wi-Fi y redes internas, por igual. Es por eso la importancia de ejecutar evaluaciones constantes de vulnerabilidad y pruebas de penetración centradas en toda la red. Vemos empresas que solo solicitan pruebas de penetración de sitios web y no se centran en otros servicios expuestos a Internet como FTP, SSH, SMTP, TELNET o IMAP, por nombrar algunos. Es común que el sitio web pudiese estar lo suficientemente protegido, pero la vulnerabilidad puede residir en un servicio FTP no seguro configurado con una cuenta anónima sin contraseña.
 

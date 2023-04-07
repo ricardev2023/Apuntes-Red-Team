@@ -22,15 +22,15 @@ RSA, al ser un cifrador asimétrico, trabaja con dos claves, una pública y una 
 
 1. Se eligen dos números primos, por ejemplo, **p=3** y **q=11**
 2. Calcula el producto **`n=p*q`**, en este caso, **n=3\*11=33**
-3. Calcula ** `z=(p-1)*(q-1)`**, en nuestro caso: **z=( 3 – 1 ) \* ( 11 – 1 ) = 20**
+3. Calcula **`z=(p-1)*(q-1)`**, en nuestro caso: **z=( 3 – 1 ) \* ( 11 – 1 ) = 20**
 4. Elige un número primo **`k`**, tal que k sea **coprimo** a z, es decir, que k y z no tengan ningún divisor común más que el 1. Tenemos varias opciones en este ejemplo, los valores de k pueden ser 3, 7, 11, 13, 17 o 19. 5 es primo, pero no es coprimo de z puesto que 20 (z) 5 (k) son divisibles por 5.\
    Elijamos a **k=7**, por ejemplo, para simplificarnos los cálculos con un número pequeño.
-5. La **clave pública** va a ser el conjunto de los números ** `(n,k)`**, es decir, _(33,7)_ en nuestro ejemplo.
+5. La **clave pública** va a ser el conjunto de los números **`(n,k)`**, es decir, _(33,7)_ en nuestro ejemplo.
 6. Ahora se calcula la **clave privada**. Para ello, se elige un **número j** que verifique la siguiente ecuación (congruencia lineal):\
    **`k*j=1 (mod z)`**\
    En este caso:\
    _`7*j=1 (mod 20)`_, es decir, un valor que verifique que\
-   _`7*j)/20`_` ``` sea una división con resto «**1**«.\
+   _`7*j)/20`_ sea una división con resto «**1**«.\
    Esta ecuación de congruencia tiene infinitos resultados. Para trabajar con números chicos en este ejemplo, podríamos decir que `21/20` nos devuelve «_algo_» con resto 1, por lo que, para este caso particular, `(7*j) = 21`, de modo que **j=3**. Esta es la **clave privada**.
 
 ### Cifrar un mensaje
